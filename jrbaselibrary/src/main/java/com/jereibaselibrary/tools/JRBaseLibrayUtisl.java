@@ -15,13 +15,13 @@ public class JRBaseLibrayUtisl {
     static Application context;
 
     /**
-     * 初始化基础框架
+     * 在主程序 初始化后 要初始化基础框架
      * @param application
      */
     public static void initLibray(Application application){
         context = application;
         //崩溃日志输出
-        ExceptionHandler crashHandler = ExceptionHandler.getInstance();
+        JRExceptionHandler crashHandler = JRExceptionHandler.getInstance();
         crashHandler.init(context);
     }
 

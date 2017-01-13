@@ -13,6 +13,7 @@ import android.provider.MediaStore;
  * Created by zhush on 2016/12/21.
  * E-mail zhush@jerei.com
  * PS
+ *  uriToPath    uri 转 路径
  */
 public class JRUriUtils {
     /**

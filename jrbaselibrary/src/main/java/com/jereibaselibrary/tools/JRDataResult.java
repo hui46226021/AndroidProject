@@ -4,24 +4,24 @@ import java.util.HashMap;
 
 /***
  * 数据操作结果类
- * @ClassName: DataResult
+ * @ClassName: JRDataResult
  * @Description: TODO
  * @author Guo Jingbing
  * @date 2013-2-17 下午2:32:23
  */
-public class DataResult extends HashMap<String,Object>
+public class JRDataResult extends HashMap<String,Object>
 {
 	private String resultCode;
 	private String resultMessage;
 	private Object resultObject;
 	private HashMap <String,Object>resultMap;
-	public DataResult(){}
-	public DataResult(String resultCode, String resultMessage)
+	public JRDataResult(){}
+	public JRDataResult(String resultCode, String resultMessage)
 	{
 		this.resultCode=resultCode;
 		this.resultMessage=resultMessage;
 	}
-	public DataResult(String resultCode, String resultMessage, Object resultObject)
+	public JRDataResult(String resultCode, String resultMessage, Object resultObject)
 	{
 		this.resultCode=resultCode;
 		this.resultMessage=resultMessage;

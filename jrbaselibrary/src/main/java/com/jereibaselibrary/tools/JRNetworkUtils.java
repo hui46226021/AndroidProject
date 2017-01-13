@@ -4,6 +4,15 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
+/**
+ * Created by zhush on 2017/1/13
+ * E-mail zhush@jerei.com
+ * PS
+ *
+ * isNetworkAvailable 判断是否有网络
+ * isWifiEnabled  判断是否是wifi
+ * is3rd     判断是否是3G
+ */
 
 public class JRNetworkUtils {
 	/**

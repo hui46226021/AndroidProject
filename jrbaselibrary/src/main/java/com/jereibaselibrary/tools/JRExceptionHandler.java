@@ -32,20 +32,20 @@ import java.util.Map;
  * @date 2014-6-23 下午12:03:04 
  *
  */
-public class ExceptionHandler implements UncaughtExceptionHandler {
+public class JRExceptionHandler implements UncaughtExceptionHandler {
 	private UncaughtExceptionHandler mDefaultHandler;// 系统默认的UncaughtException处理类
-	private static ExceptionHandler INSTANCE = new ExceptionHandler();// CrashHandler实例
+	private static JRExceptionHandler INSTANCE = new JRExceptionHandler();// CrashHandler实例
 	private Context mContext;// 程序的Context对象
 	private Map<String, String> info = new HashMap<String, String>();// 用来存储设备信息和异常信息
 	private final static String fileNameEx = "phone_exception";
 	private SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");// 用于格式化日期,作为日志文件名的一部分
 	/** 保证只有一个CrashHandler实例 */
-	private ExceptionHandler() {
+	private JRExceptionHandler() {
 
 	}
 
 	/** 获取CrashHandler实例 ,单例模式 */
-	public static ExceptionHandler getInstance() {
+	public static JRExceptionHandler getInstance() {
 		return INSTANCE;
 	}
 

@@ -10,6 +10,11 @@ import java.util.regex.Pattern;
  * Created by zhush on 2016/11/28.
  * E-mail zhush@jerei.com
  * PS
+ * replaceLowerCase    大写变小写，并且字母前面加下划线
+ * insertXHX            大写字母前面加下划线
+ * format              格式胡字符串
+ * isEmpty            判断字符串是否为空
+ * containStrNumbers  判断包含子字符串的数量
  */
 public class JRStringUtils {
     /**
