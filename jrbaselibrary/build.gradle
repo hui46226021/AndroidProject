@@ -19,8 +19,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 }
-
+def dbFlow_version = "4.0.0-beta3"
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -38,4 +43,5 @@ dependencies {
     compile 'com.squareup.okio:okio:1.7.0'
     //解析JSON
     compile 'com.sh.shjsonutils:shjson:1.0.7'
+
 }
