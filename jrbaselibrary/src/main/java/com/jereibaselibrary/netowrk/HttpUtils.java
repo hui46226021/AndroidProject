@@ -34,7 +34,6 @@ import okhttp3.Response;
  * E-mail zhush@jerei.com
  * PS okhttp封装
  *
- * addHeaderInterceptor   添加消息头拦截器  (在所有的网络请求上 加上 次消息头)
  * addHeader             添加单次请求消息头
  * post
  * get
@@ -60,7 +59,19 @@ public class HttpUtils {
         builder = new OkHttpClient.Builder()
                 .connectTimeout(15, TimeUnit.SECONDS)
                 .writeTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(20, TimeUnit.SECONDS);
+                .readTimeout(20, TimeUnit.SECONDS)
+        .addInterceptor(new Interceptor() {
+            @Override public Response intercept(Interceptor.Chain chain) throws IOException {
+                Request originalRequest = chain.request();
+                //请求拦截器   在每次 发起请求的时候  在拦截器里 可以 增加  消息头
+                Request authorised = originalRequest.newBuilder()
+//                        .header(name, headerValue)
+                        .build();
+                return chain.proceed(authorised);
+            }
+        });
+
+
 
         /**
          * 同步cookie
@@ -73,33 +84,13 @@ public class HttpUtils {
 
     public HttpUtils(String url) {
         requestBuilder=new Request.Builder().url(url);
+        formBodyBuilder = new FormBody.Builder();
+        //公共参数
+      //  formBodyBuilder.add("name","value");
     }
 
     /**
-     * 添加消息头拦截器  (在所有的网络请求上 加上 次消息头)
-     * @param name
-     * @param headerValue
-     */
-    public void addHeaderInterceptor(final String name,final String headerValue){
-        if(builder!=null){
-            builder.addInterceptor(new Interceptor() {
-                @Override public Response intercept(Interceptor.Chain chain) throws IOException {
-                    Request originalRequest = chain.request();
-
-                    Request authorised = originalRequest.newBuilder()
-                            .header(name, headerValue)
-                            .build();
-                    return chain.proceed(authorised);
-                }
-            });
-            mOkHttpClient=builder.build();
-        }
-    }
-
-
-
-    /**
-     * 添加单次请求消息头
+     * 添加请求消息头
      * @param name
      * @param headerValue
      */
@@ -114,9 +105,6 @@ public class HttpUtils {
     public String post(){
         try {
 
-            if(formBodyBuilder==null){
-                formBodyBuilder = new FormBody.Builder();
-            }
             Request request = requestBuilder.post(formBodyBuilder.build()).build();
 
         okhttp3.Response response = mOkHttpClient.newCall(request).execute();
