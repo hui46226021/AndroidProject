@@ -18,8 +18,8 @@ public class JRBaseApplication extends LitePalApplication {
 
         context = this;
         //崩溃日志输出
-        JRExceptionHandler crashHandler = JRExceptionHandler.getInstance();
-        crashHandler.init(context);
+//        JRExceptionHandler crashHandler = JRExceptionHandler.getInstance();
+//        crashHandler.init(context);
         super.onCreate();
         LitePal.initialize(this);
     }

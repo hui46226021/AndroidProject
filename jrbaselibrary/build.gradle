@@ -43,5 +43,9 @@ dependencies {
     compile 'com.squareup.okio:okio:1.7.0'
     //解析JSON
     compile 'com.sh.shjsonutils:shjson:1.0.7'
+    //okhttp3
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'org.jsoup:jsoup:1.9.2'
+
 
 }

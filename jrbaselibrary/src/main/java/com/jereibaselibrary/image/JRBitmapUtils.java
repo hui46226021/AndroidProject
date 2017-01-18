@@ -24,7 +24,7 @@ import java.io.IOException;
  *  bimap2Bytes                       bitmap 转 二进制文件
  *  rotaingImageView                  旋转图片
  *  fastblur                          模糊图像
- *  compressByBitmapSize              递归压缩图片 至100k 以下
+ *  compressByBitmapSize              根据图片大小按比例压缩 最大不超过100K
  *  saveFile                          保存图片到本地
  */
 public class JRBitmapUtils {

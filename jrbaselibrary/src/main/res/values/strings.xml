@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">JereiBaseLibrary</string>
+
+
+    <string name="jr_base_control_no_network">网络异常</string>
+    <string name="jr_base_control_net_error">服务器错误</string>
+
 </resources>
