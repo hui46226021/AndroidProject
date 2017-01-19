@@ -16,5 +16,7 @@ public class MyApplication extends JRBaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        //崩溃日志输出
+//        exceptionLogOut();
     }
 }

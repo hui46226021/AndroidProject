@@ -7,20 +7,14 @@ import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.netowrk.cookie.CookieJarImpl;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
 
-
 import java.io.File;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
-
 import java.util.Collections;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import okhttp3.FormBody;
-
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -46,6 +40,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *  getResponseStr 获取返回值
  *  hasErrors      是否有错误
  *  getMessageString  获取返回信息
+ *  getRetrofit    获取 Retrofit2.0实例
  */
 public class HttpUtils {
 
@@ -287,6 +282,11 @@ public class HttpUtils {
 
 
     static Retrofit retrofit;
+
+    /**
+     * 获取 Retrofit2.0实例
+     * @return
+     */
     public static Retrofit getRetrofit(){
         if(retrofit!=null){
 
@@ -296,7 +296,6 @@ public class HttpUtils {
                     .client(mOkHttpClient)
                     //设置baseUrl,注意，baseUrl必须后缀"/"
                     .baseUrl(baseUrl)
-
                     //添加Gson转换器
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

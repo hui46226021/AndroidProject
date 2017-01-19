@@ -1,1 +1,1 @@
-include ':app', ':jrbaselibrary'
+include ':app', ':jrbaselibrary', ':jr_ui_library'

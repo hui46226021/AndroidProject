@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ui_colorPrimary">#e01121</color>
+    <color name="ui_black">#000000</color>
+
+    <!--防IOS弹框-->
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037bff</color>
+</resources>

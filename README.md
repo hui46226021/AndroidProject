@@ -20,3 +20,18 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * 5:网络图片加载,图片处理  (glide)
 * 6:工具类
 * 7:数据绑定 （butterknife,Data binding）
+
+###jrUIlibrary   UI框架
+* RefreshLayout        上拉刷新组件
+* TemplateTitleBar     顶部标题栏控件
+* NoScrollListview     不可滑动的listView
+* NoScrollGridView     不可滑动的GridView
+* IOSAlertDialog       仿IOS alert
+* TimePickerView       仿IOS 仿IOS 时间选择器
+* IOSSwitchButton      仿IOS SwitchButton
+* DragIndicatorView    消息提示小红点（可拖动）
+
+
+
+
+

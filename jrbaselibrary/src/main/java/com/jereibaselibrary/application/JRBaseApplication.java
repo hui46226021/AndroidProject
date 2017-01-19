@@ -12,14 +12,13 @@ import com.jereibaselibrary.tools.JRExceptionHandler;
  * E-mail zhush@jerei.com
  * PS
  */
-public class JRBaseApplication extends LitePalApplication {
+public class JRBaseApplication extends Application {
     static Application context;
     public void onCreate() {
 
         context = this;
         //崩溃日志输出
-//        JRExceptionHandler crashHandler = JRExceptionHandler.getInstance();
-//        crashHandler.init(context);
+
         super.onCreate();
         LitePal.initialize(this);
     }
@@ -30,5 +29,13 @@ public class JRBaseApplication extends LitePalApplication {
      */
     public static Context getContext(){
         return context;
+    }
+
+    /**
+     * 崩溃日志输出
+     */
+    public void exceptionLogOut(){
+        JRExceptionHandler crashHandler = JRExceptionHandler.getInstance();
+        crashHandler.init(context);
     }
 }
