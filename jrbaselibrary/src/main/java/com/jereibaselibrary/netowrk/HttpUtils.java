@@ -6,7 +6,7 @@ import android.util.Log;
 import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.netowrk.cookie.CookieJarImpl;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
-import com.sh.shjson.JSONUtil;
+
 
 import java.io.File;
 
@@ -26,7 +26,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 import okhttp3.Response;
-
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -53,7 +54,7 @@ public class HttpUtils {
     static OkHttpClient mOkHttpClient;
     static OkHttpClient.Builder builder;
     Request.Builder requestBuilder;
-
+    static String baseUrl="http://www.zhihu.com/";
     static {
         //设置超时
         builder = new OkHttpClient.Builder()
@@ -71,8 +72,6 @@ public class HttpUtils {
             }
         });
 
-
-
         /**
          * 同步cookie
          */
@@ -83,7 +82,7 @@ public class HttpUtils {
     }
 
     public HttpUtils(String url) {
-        requestBuilder=new Request.Builder().url(url);
+        requestBuilder=new Request.Builder().url(baseUrl+url);
         formBodyBuilder = new FormBody.Builder();
         //公共参数
       //  formBodyBuilder.add("name","value");
@@ -238,9 +237,9 @@ public class HttpUtils {
      */
     public <T> T getObject(Class<T> clazz, String name) {
         try {
-            JSONUtil jsonUtil = new JSONUtil(responseStr);
-            T t = jsonUtil.getObject(clazz, name);
-            return t;
+//            JSONUtil jsonUtil = new JSONUtil(responseStr);
+//            T t = jsonUtil.getObject(clazz, name);
+//            return t;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
             e.printStackTrace();
@@ -256,9 +255,9 @@ public class HttpUtils {
      */
     public <T> List<T> getList(Class<T> clazz, String name) {
         try {
-            JSONUtil jsonUtil = new JSONUtil(responseStr);
-            List<T> list = jsonUtil.getList(clazz, name);
-            return list;
+//            JSONUtil jsonUtil = new JSONUtil(responseStr);
+//            List<T> list = jsonUtil.getList(clazz, name);
+//            return list;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
         }
@@ -283,5 +282,25 @@ public class HttpUtils {
      */
     public String getMessageString(){
         return "";
+    }
+
+
+
+    static Retrofit retrofit;
+    public static Retrofit getRetrofit(){
+        if(retrofit!=null){
+
+        }else {
+            retrofit = new Retrofit.Builder()
+                    //设置OKHttpClient
+                    .client(mOkHttpClient)
+                    //设置baseUrl,注意，baseUrl必须后缀"/"
+                    .baseUrl(baseUrl)
+
+                    //添加Gson转换器
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
     }
 }

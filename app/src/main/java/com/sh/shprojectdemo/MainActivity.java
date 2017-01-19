@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 
 import com.jereibaselibrary.db.litepal.crud.DataSupport;
 import com.jereibaselibrary.netowrk.HttpUtils;
+import com.jereibaselibrary.netowrk.retrofit2.BaseCallModel;
+import com.jereibaselibrary.netowrk.retrofit2.MyCallback;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -17,11 +19,14 @@ import org.jsoup.select.Elements;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import okhttp3.FormBody;
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     static {
@@ -51,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
     Button sx;
     @InjectView(R.id.qm)
     Button qm;
+
+    String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +90,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.one_headle:
                 httpUtils.addHeader("one_headle", "one_headle");
                 break;
-            case R.id.all_headle:
-                httpUtils.addHeaderInterceptor("all_headle", "all_headle");
-                break;
             case R.id.add_param:
                 httpUtils.putParam("add_param", "add_param");
                 break;
@@ -96,12 +100,31 @@ public class MainActivity extends AppCompatActivity {
                 httpUtils.putList("newslist", list);
                 break;
             case R.id.fs:
-                new Thread(new Runnable() {
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        httpUtils.post();
+//                    }
+//                }).start();
+
+
+                GitHubAPI gitHubAPI = HttpUtils.getRetrofit().create(GitHubAPI.class);
+
+
+                Call<BaseCallModel<News>> userCall = gitHubAPI.userInfo(news.getTitle());
+
+                userCall.enqueue(new MyCallback<BaseCallModel<News>>() {
                     @Override
-                    public void run() {
-                        httpUtils.post();
+                    public void onSuc(Response<BaseCallModel<News>> response) {
+
                     }
-                }).start();
+
+                    @Override
+                    public void onFail(String message) {
+
+                    }
+
+                });
 
                 break;
             case R.id.sx:

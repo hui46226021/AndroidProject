@@ -12,7 +12,7 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 ###jrbaselibrary   基础框架
 封装 主要分为
 * 1:缓存  （DiskLruCache，LruCache，SharedPreferences）
-* 2:网络操作 (okhttp）
+* 2:网络操作 (Retrofit 2.0,okhttp）
 * 3:数据库操作
 * 4:json解析
 * 5:网络图片加载,图片处理  (glide)
