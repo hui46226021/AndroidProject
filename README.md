@@ -31,6 +31,7 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * OptionsPickerView    仿IOS 选择器（最多可以3级联动）
 * IOSSwitchButton      仿IOS SwitchButton
 * SideslipListView     仿IOS 可左滑listView
+* LetterListView       按字母分组listView
 * DragIndicatorView    消息提示小红点（可拖动）
 * TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
 * MyProgressDialog     等待Dialog
@@ -41,6 +42,8 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * LineFromView         表单行控件（封装各种控件）
 * CycleView            自动滚动banner 图
 * ViewPagerIndicator   仿今日头条顶部Tab
+
+
 
 
 

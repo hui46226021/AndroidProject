@@ -1,15 +1,16 @@
-package com.sh.shprojectdemo;
+package com.sh.shprojectdemo.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jereibaselibrary.image.JRSetImage;
 import com.jruilibarary.widget.RoundCornerImageView;
+import com.sh.shprojectdemo.model.News;
+import com.sh.shprojectdemo.R;
 import com.xinlan.dragindicator.DragIndicatorView;
 
 import java.util.List;

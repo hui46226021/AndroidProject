@@ -6,6 +6,6 @@
     <version value="2" ></version>
 
     <list>
-        <mapping class="com.sh.shprojectdemo.News"></mapping>
+        <mapping class="com.sh.shprojectdemo.model.News"></mapping>
     </list>
 </litepal>

@@ -1,4 +1,4 @@
-package com.sh.shprojectdemo;
+package com.sh.shprojectdemo.model;
 
 
 import android.support.v4.media.RatingCompat;

@@ -15,4 +15,7 @@
     <color name="text_gray2">#767676</color>
     <color name="ios_blue">#4082b8</color>
     <color name="split_line">#dedede</color>
+
+    <color name="ui_background">#e6e6e6</color>
+    <color name="ui_translucent">#27565555</color>
 </resources>
