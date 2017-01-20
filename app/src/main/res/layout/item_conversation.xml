@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ui_white"
+    android:orientation="horizontal" >
+<LinearLayout
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    android:paddingLeft="10dp">
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+
+
+
+        <com.jruilibarary.widget.RoundCornerImageView
+            android:id="@+id/avatar"
+            android:layout_width="45dp"
+            android:scaleType="centerCrop"
+            android:layout_height="45dp" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:textColor="@color/ui_black"
+            android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/last_message"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginTop="3dp"
+            android:singleLine="true"
+            android:textColor="@color/text_gray1"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <com.xinlan.dragindicator.DragIndicatorView
+        android:layout_margin="10dp"
+        android:id="@+id/count"
+        android:layout_width="20dp"
+        android:layout_height="18dp"
+        android:layout_gravity="right"
+        android:background="#ff0000"
+        android:textColor="#ffffff"
+        android:textSize="14sp"/>
+</LinearLayout>
+
+
+    <TextView
+        android:id="@+id/read"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:textColor="@android:color/white"
+        android:paddingRight="20dp"
+        android:text="已读" />
+
+    <TextView
+        android:id="@+id/delete"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:background="#FFFF0000"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:textColor="@android:color/white"
+
+        android:paddingRight="20dp"
+        android:text="删除" />
+</LinearLayout>

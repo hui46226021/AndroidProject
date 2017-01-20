@@ -255,9 +255,7 @@ public class LineFromView extends LinearLayout {
             }
         });
         pvOptions.setSelectOptions(2);
-        View view = new View(myContext);
-        view.setTag("submit");
-        pvOptions.onClick(view);
+
     }
 
     /**
