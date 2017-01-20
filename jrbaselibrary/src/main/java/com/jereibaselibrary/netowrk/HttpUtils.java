@@ -6,6 +6,7 @@ import android.util.Log;
 import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.netowrk.cookie.CookieJarImpl;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
+import com.sh.shjson.JSONUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -232,8 +233,8 @@ public class HttpUtils {
      */
     public <T> T getObject(Class<T> clazz, String name) {
         try {
-//            JSONUtil jsonUtil = new JSONUtil(responseStr);
-//            T t = jsonUtil.getObject(clazz, name);
+            JSONUtil jsonUtil = new JSONUtil(responseStr);
+            T t = jsonUtil.getObject(clazz, name);
 //            return t;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
@@ -250,9 +251,9 @@ public class HttpUtils {
      */
     public <T> List<T> getList(Class<T> clazz, String name) {
         try {
-//            JSONUtil jsonUtil = new JSONUtil(responseStr);
-//            List<T> list = jsonUtil.getList(clazz, name);
-//            return list;
+            JSONUtil jsonUtil = new JSONUtil(responseStr);
+            List<T> list = jsonUtil.getList(clazz, name);
+            return list;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
         }

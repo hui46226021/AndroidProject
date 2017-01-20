@@ -22,4 +22,54 @@
         </attr>
     </declare-styleable>
 
+    <!-- 自定义loading dialog -->
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg_loading_dialog</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- 条形控制控件自定义属性 -->
+    <declare-styleable name="LineFromView">
+        <!-- 名称 -->
+        <attr name="linefromview_tital" format="string" />
+        <!--类型-->
+        <attr name="linefromview_type">
+            <enum name="textView" value="1" />
+            <enum name="editText" value="2" />
+            <enum name="spinner" value="3" />
+            <enum name="time" value="4" />
+            <enum name="switchButton" value="5" />
+        </attr>
+        <!--输入框 是否可编辑-->
+        <attr name="linefromview_edit_enabled" format="boolean" />
+        <!--edit_hint-->
+        <attr name="linefromview_edit_hint" format="string" />
+        <!--edit_hint-->
+        <!--是否有底部分割线-->
+        <attr name="linefromview_bottomLine" format="boolean" />
+        <!--可以点击-->
+        <attr name="linefromview_can_click" format="boolean" />
+        <!--必须填写-->
+        <attr name="linefromview_must" format="boolean" />
+    </declare-styleable>
+
+
+    <!-- 自定义spnner_dialog -->
+    <style name="spnner_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg_loading_dialog</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <style name="main_menu_animstyle">
+        <item name="android:windowEnterAnimation">@anim/photo_dialog_in_anim</item>
+        <item name="android:windowExitAnimation">@anim/photo_dialog_out_anim</item>
+    </style>
+
 </resources>

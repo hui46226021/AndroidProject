@@ -14,4 +14,10 @@
         <attr name="moreText" format="string" />
     </declare-styleable>
 
+    <!--原型控件-->
+    <declare-styleable name="CircleImageView">
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+    </declare-styleable>
+
 </resources>

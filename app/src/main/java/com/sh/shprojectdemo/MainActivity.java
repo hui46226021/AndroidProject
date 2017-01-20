@@ -6,25 +6,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.jereibaselibrary.db.litepal.crud.DataSupport;
 import com.jereibaselibrary.netowrk.HttpUtils;
 import com.jereibaselibrary.netowrk.retrofit2.BaseCallModel;
 import com.jereibaselibrary.netowrk.retrofit2.MyCallback;
+import com.jruilibarary.widget.UISearchView;
+import com.jruilibarary.widget.lineFromView.LineFromView;
+import com.jruilibarary.widget.lineFromView.ViewData;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
-import okhttp3.FormBody;
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -48,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     @InjectView(R.id.activity_main)
     LinearLayout activityMain;
 
-
     HttpUtils httpUtils;
     News news;
     List<News> list;
@@ -58,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
     Button qm;
 
     String TAG = "MainActivity";
+    @InjectView(R.id.searchview)
+    UISearchView searchview;
+    @InjectView(R.id.work_type)
+    LineFromView workType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +83,26 @@ public class MainActivity extends AppCompatActivity {
         httpUtils = new HttpUtils("http://www.zhihu.com/login/email");
         httpUtils.putParam("username", "wangyt");
         httpUtils.putParam("password", "test1234");
+
+
+        ArrayList<ViewData> options1Items  = new ArrayList<>();
+        options1Items.add(new ViewData("第一个",1));
+        options1Items.add(new ViewData("第二个",2));
+        options1Items.add(new ViewData("第三个",3));
+        options1Items.add(new ViewData("第四个",4));
+        options1Items.add(new ViewData("第五个",5));
+        workType.setpvOptionsList(options1Items);
+        workType.setSelectedListener(new LineFromView.SelectedListener() {
+            @Override
+            public void pvOptions(String key, Object value) {
+                Toast.makeText(MainActivity.this,"key="+key+"  value="+value.toString(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
     String xsrf;
-    @OnClick({R.id.one_headle, R.id.all_headle, R.id.add_param, R.id.add_bean, R.id.add_list, R.id.fs, R.id.sx,R.id.qm})
+
+    @OnClick({R.id.one_headle, R.id.all_headle, R.id.add_param, R.id.add_bean, R.id.add_list, R.id.fs, R.id.sx, R.id.qm})
     public void pageOnClick(View v) {
         switch (v.getId()) {
             case R.id.one_headle:
@@ -128,23 +146,13 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.sx:
-                httpUtils = new HttpUtils("http://www.zhihu.com/login/email");
+//                httpUtils = new HttpUtils("http://www.zhihu.com/login/email");
 
-
-
+                searchview.setVisibility(View.GONE);
                 break;
             case R.id.qm:
-              final   HttpUtils   httpUtils2 = new HttpUtils("https://www.zhihu.com/#signin");
-                new  Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                       String resp= httpUtils2.post();
-//                        Document parse = Jsoup.parse(resp);
-//                        Elements select = parse.select("input[type=hidden]");
-//                        Element element = select.get(0);
-//                         xsrf = element.attr("value");
-                    }
-                }).start();
+
+                searchview.setVisibility(View.VISIBLE);
                 break;
         }
     }

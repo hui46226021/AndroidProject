@@ -2,8 +2,17 @@
 <resources>
     <color name="ui_colorPrimary">#e01121</color>
     <color name="ui_black">#000000</color>
+    <color name="ui_white">#ffffff</color>
 
     <!--防IOS弹框-->
     <color name="alertdialog_line">#c6c6c6</color>
     <color name="actionsheet_blue">#037bff</color>
+
+    <color name="background_search1">#EBEBEB</color>
+    <!--LineFromView-->
+    <color name="must">#ff1818</color>
+    <color name="text_gray1">#777777</color>
+    <color name="text_gray2">#767676</color>
+    <color name="ios_blue">#4082b8</color>
+    <color name="split_line">#dedede</color>
 </resources>

@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * 图片压缩处理
- * Created by dxkj on 2015/9/14.
+ * Created by zhush on 2015/9/14.
  *  decodeSampledBitmapFromResource   压缩图片资源文件里的图片
  *  zoomImage                         缩放图像
  *  bytes2Bimap                       二进制文件 转bitmap

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/background_search1"
+    android:layout_height="46dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:gravity="center_vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_search_inputbox"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ui_search"/>
+        <EditText
+            android:id="@+id/inputSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:hint="@string/search_hint"
+            android:textColor="@color/ui_black"
+            android:imeOptions="actionSearch"
+            android:maxLength="11"
+            android:inputType="text"
+            android:textSize="14sp"
+            android:background="@null"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/search_delete"
+            android:visibility="invisible"
+            android:layout_marginRight="6dp"
+            android:layout_gravity="center"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ui_search_delete"/>
+    </LinearLayout>
+</LinearLayout>

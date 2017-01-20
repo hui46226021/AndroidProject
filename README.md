@@ -30,6 +30,13 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * TimePickerView       仿IOS 仿IOS 时间选择器
 * IOSSwitchButton      仿IOS SwitchButton
 * DragIndicatorView    消息提示小红点（可拖动）
+* TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
+* MyProgressDialog     等待Dialog
+* UISearchView         搜索框
+* SquareLayout         宽度和高度一样layout
+* CircleImageView      圆型ImageView
+
+
 
 
 
