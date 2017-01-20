@@ -28,6 +28,7 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * NoScrollGridView     不可滑动的GridView
 * IOSAlertDialog       仿IOS alert
 * TimePickerView       仿IOS 仿IOS 时间选择器
+* OptionsPickerView    仿IOS 选择器（最多可以3级联动）
 * IOSSwitchButton      仿IOS SwitchButton
 * DragIndicatorView    消息提示小红点（可拖动）
 * TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
@@ -35,6 +36,8 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * UISearchView         搜索框
 * SquareLayout         宽度和高度一样layout
 * CircleImageView      圆型ImageView
+* LineFromView         表单行控件（封装各种控件）
+
 
 
 
