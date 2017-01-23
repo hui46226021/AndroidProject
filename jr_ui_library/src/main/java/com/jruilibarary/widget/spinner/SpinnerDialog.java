@@ -1,4 +1,4 @@
-package com.jruilibarary.widget.JRSpinner;
+package com.jruilibarary.widget.spinner;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -19,7 +19,6 @@ import android.widget.TextView;
 import com.sh.zsh.jr_ui_library.R;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**

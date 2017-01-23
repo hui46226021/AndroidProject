@@ -1,14 +1,17 @@
-package com.jruilibarary.widget.JRSpinner;
+package com.jruilibarary.widget.lineformview;
+
+import com.bigkoo.pickerview.model.IPickerViewData;
 
 /**
- * Created by zhush on 2016/9/29.
+ * Created by zhush on 2017/1/19.
  * E-mail zhush@jerei.com
+ * PS
  */
-public class SpinnerModel {
-    private String key;
-    private Object value;
+public class ViewData implements IPickerViewData {
+    String key;
+    Object value;
 
-    public SpinnerModel(String key, Object value) {
+    public ViewData(String key, Object value) {
         this.key = key;
         this.value = value;
     }
@@ -29,5 +32,8 @@ public class SpinnerModel {
         this.value = value;
     }
 
-
+    @Override
+    public String getPickerViewText() {
+        return key;
+    }
 }

@@ -2,6 +2,9 @@ package com.jruilibarary.widget.letterlist;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 
+import java.util.Collections;
+import java.util.List;
+
 
 /**
  * 字母工具类
@@ -52,7 +55,11 @@ public class LetterUtil
         letterModle.setFirstLetter(getHeaderLetter(Str)+"");
 
     }
+    public static void onSort(List<LetterModle> letterModles){
 
+        Collections.sort(letterModles, new SortByName());
+
+    }
 
     private static String getHeaderLetter(String str)
     {

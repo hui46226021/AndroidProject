@@ -1,4 +1,4 @@
-package com.jruilibarary.widget.JRSpinner;
+package com.jruilibarary.widget.spinner;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**

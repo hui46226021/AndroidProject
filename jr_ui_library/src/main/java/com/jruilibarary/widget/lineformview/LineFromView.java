@@ -1,4 +1,4 @@
-package com.jruilibarary.widget.lineFromView;
+package com.jruilibarary.widget.lineformview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,12 +13,7 @@ import android.widget.TextView;
 
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.bigkoo.pickerview.TimePickerView;
-import com.bigkoo.pickerview.model.IPickerViewData;
-import com.jruilibarary.PickerViewData;
-import com.jruilibarary.ProvinceBean;
 import com.jruilibarary.widget.IOSSwitchButton;
-import com.jruilibarary.widget.JRSpinner.JRSpinner;
-import com.jruilibarary.widget.JRSpinner.SpinnerModel;
 import com.sh.zsh.jr_ui_library.R;
 
 
@@ -26,8 +21,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
 
 
 /**
@@ -254,7 +247,8 @@ public class LineFromView extends LinearLayout {
                 }
             }
         });
-        pvOptions.setSelectOptions(2);
+        //默认选中第一个
+        pvOptions.setSelecedItem(0);
 
     }
 
