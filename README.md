@@ -21,8 +21,7 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * 6:工具类
 * 7:数据绑定 （butterknife,Data binding）
 
-###jrUIlibrary   UI框架
-* RefreshLayout        上拉刷新组件
+###jrUIlibrary   UI控件
 * TemplateTitleBar     顶部标题栏控件
 * NoScrollListview     不可滑动的listView
 * NoScrollGridView     不可滑动的GridView
@@ -42,6 +41,13 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * LineFromView         表单行控件（封装各种控件）
 * CycleView            自动滚动banner 图
 * ViewPagerIndicator   仿今日头条顶部Tab
+* JRSpinner            底部弹出菜单
+* TabLayout            viewPage 关联 tab（官方）
+http://blog.csdn.net/chenguang79/article/details/48804125
+* RefreshLayout        上拉刷新组件（官方）
+* Navigation View      抽屉导航（官方）
+
+
 
 
 
