@@ -20,6 +20,7 @@ jrFunclibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * 5:网络图片加载,图片处理  (glide)
 * 6:工具类
 * 7:数据绑定 （butterknife,Data binding）
+* 8:加密 （DES,MD5,RSA）
 
 ###jrUIlibrary   UI控件
 * TemplateTitleBar     顶部标题栏控件
@@ -55,6 +56,10 @@ http://blog.csdn.net/chenguang79/article/details/48804125
 * pdf阅读
 * 二维码扫描 生成
 * 文件下载
+* 启动页
+* 基础 页面视图
+* 右滑页面销毁
+* 图形解锁
 
 
 
