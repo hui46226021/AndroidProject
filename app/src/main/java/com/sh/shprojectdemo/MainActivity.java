@@ -13,8 +13,8 @@ import com.jereibaselibrary.netowrk.HttpUtils;
 import com.jereibaselibrary.netowrk.retrofit2.BaseCallModel;
 import com.jereibaselibrary.netowrk.retrofit2.MyCallback;
 import com.jruilibarary.widget.UISearchView;
-import com.jruilibarary.widget.lineFromView.LineFromView;
-import com.jruilibarary.widget.lineFromView.ViewData;
+import com.jruilibarary.widget.lineformview.LineFromView;
+import com.jruilibarary.widget.lineformview.ViewData;
 import com.sh.shprojectdemo.model.News;
 
 import java.util.ArrayList;

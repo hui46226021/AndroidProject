@@ -59,12 +59,13 @@ public class LetterAdapter extends LetterBaseListAdapter {
     public View getLetterView(int position, View convertView, ViewGroup parent) {
         //这里是字母的item界面设置.
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_letter_list_view, null);
-
+//            convertView = LayoutInflater.from(context).inflate(R.layout.item_letter_list_view, null);
+            convertView = new TextView(context);
             convertView.setBackgroundColor(context.getResources().getColor(R.color.ui_background));
         }
 
-        ((TextView)convertView.findViewById(R.id.text)).setText(list.get(position).getFirstLetter());
+//        ((TextView)convertView.findViewById(R.id.text)).setText(list.get(position).getFirstLetter());
+        ((TextView) convertView).setText("   "+list.get(position).getFirstLetter());
         return convertView;
     }
 

@@ -4,11 +4,11 @@ android 快速开发框架
 ## Android项目依赖框架
 * jrbaselibrary   基础框架
 * jrUIlibrary   UI框架
-* jrFunctionlibrary   功能框架
+* jrFunclibrary   功能框架
 
 
 ## 依赖关系
-jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
+jrFunclibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 
 ##框架详细
 ###jrbaselibrary   基础框架
@@ -40,12 +40,23 @@ jrFunctionlibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * RoundCornerImageView 带圆角圆型ImageView
 * LineFromView         表单行控件（封装各种控件）
 * CycleView            自动滚动banner 图
-* ViewPagerIndicator   仿今日头条顶部Tab
 * JRSpinner            底部弹出菜单
 * TabLayout            viewPage 关联 tab（官方）
 http://blog.csdn.net/chenguang79/article/details/48804125
 * RefreshLayout        上拉刷新组件（官方）
 * Navigation View      抽屉导航（官方）
+
+###jrFunclibrary   封装通用功能（与业务逻辑无关）
+* 版本检查更新
+* 图片选择/拍摄上传  （包含压缩 水印）
+* 音频录制
+* 视频录制  压缩
+* 视频播放
+* pdf阅读
+* 二维码扫描 生成
+* 文件下载
+
+
 
 
 

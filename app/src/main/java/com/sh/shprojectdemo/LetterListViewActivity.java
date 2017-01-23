@@ -41,9 +41,9 @@ public class LetterListViewActivity extends AppCompatActivity {
             cities.add(city);
         }
         /**
-         * 按字母排序list
+         * 按首字母排序list
          */
-        Collections.sort(cities, new SortByName());
+        LetterUtil.onSort(cities);
 
         LetterAdapter letterAdapter = new LetterAdapter(cities,this);
         listview.setAdapter(letterAdapter);

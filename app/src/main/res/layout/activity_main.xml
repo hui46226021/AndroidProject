@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"></com.jruilibarary.widget.UISearchView>\
 
-    <com.jruilibarary.widget.lineFromView.LineFromView
+    <com.jruilibarary.widget.lineformview.LineFromView
         android:id="@+id/work_type"
         app:linefromview_type="spinner"
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:background="@color/ui_white"
         app:linefromview_tital="测试以下">
 
-    </com.jruilibarary.widget.lineFromView.LineFromView>
+    </com.jruilibarary.widget.lineformview.LineFromView>
 
 
     <EditText

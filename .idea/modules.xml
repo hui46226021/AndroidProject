@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ShProjectDemo.iml" filepath="$PROJECT_DIR$/ShProjectDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jr_func_library/jr_func_library.iml" filepath="$PROJECT_DIR$/jr_func_library/jr_func_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/jr_ui_library/jr_ui_library.iml" filepath="$PROJECT_DIR$/jr_ui_library/jr_ui_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/jrbaselibrary/jrbaselibrary.iml" filepath="$PROJECT_DIR$/jrbaselibrary/jrbaselibrary.iml" />
     </modules>
