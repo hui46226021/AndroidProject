@@ -20,7 +20,7 @@ jrFunclibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * 5:网络图片加载,图片处理  (glide)
 * 6:工具类
 * 7:数据绑定 （butterknife,Data binding）
-* 8:加密 （DES,MD5,RSA）
+* 8:数据加密 （DES,MD5,RSA）
 
 ###jrUIlibrary   UI控件
 * TemplateTitleBar     顶部标题栏控件
@@ -46,6 +46,9 @@ jrFunclibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 http://blog.csdn.net/chenguang79/article/details/48804125
 * RefreshLayout        上拉刷新组件（官方）
 * Navigation View      抽屉导航（官方）
+* JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条）
+https://github.com/lzyzsd/JsBridge
+
 
 ###jrFunclibrary   封装通用功能（与业务逻辑无关）
 * 版本检查更新

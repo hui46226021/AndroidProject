@@ -9,6 +9,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 
+import com.jruilibarary.widget.lineformview.LineFromView;
 import com.jruilibrary.form.check.FormCheckInterface;
 import com.jruilibrary.form.check.RoutineVerification;
 import com.jruilibrary.form.check.ViewAttribute;
@@ -183,6 +184,9 @@ public class FormUtls {
     }
 
     static String getContent(View v) {
+        if (v instanceof LineFromView) {
+            ((LineFromView)v).getContent();
+        }
         if (v instanceof CheckBox) {
 
             boolean selected =((CheckBox) v).isChecked();
@@ -206,6 +210,12 @@ public class FormUtls {
     }
 
     static void setContent(View v, String value) {
+
+
+        if (v instanceof LineFromView) {
+            ((LineFromView)v).setContent(value);
+            return;
+        }
         if (v instanceof CheckBox) {
             boolean selected = false;
             try {
