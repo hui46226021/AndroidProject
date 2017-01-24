@@ -3,6 +3,7 @@ package com.jereibaselibrary.application;
 import android.app.Application;
 import android.content.Context;
 
+import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.db.litepal.LitePal;
 import com.jereibaselibrary.db.litepal.LitePalApplication;
 import com.jereibaselibrary.tools.JRExceptionHandler;
@@ -13,7 +14,9 @@ import com.jereibaselibrary.tools.JRExceptionHandler;
  * PS
  */
 public class JRBaseApplication extends Application {
-    static Application context;
+    static JRBaseApplication context;
+    //在 Application 里引用 保证 不会被回收  最多临时缓存30个对象
+    private OwnCache ownCache = new OwnCache(30);
     public void onCreate() {
 
         context = this;
@@ -27,7 +30,7 @@ public class JRBaseApplication extends Application {
      * 获取全局 context
      * @return
      */
-    public static Context getContext(){
+    public static JRBaseApplication getContext(){
         return context;
     }
 
@@ -37,5 +40,9 @@ public class JRBaseApplication extends Application {
     public void exceptionLogOut(){
         JRExceptionHandler crashHandler = JRExceptionHandler.getInstance();
         crashHandler.init(context);
+    }
+
+    public OwnCache getOwnCache() {
+        return ownCache;
     }
 }

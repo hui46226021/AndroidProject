@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.db.litepal.crud.DataSupport;
 import com.jereibaselibrary.image.JRBitmapUtils;
 import com.jereibaselibrary.netowrk.HttpUtils;
@@ -23,7 +24,9 @@ import com.jruilibarary.widget.lineformview.LineFromView;
 import com.jruilibarary.widget.lineformview.ViewData;
 import com.sh.shprojectdemo.GitHubAPI;
 import com.sh.shprojectdemo.R;
+import com.sh.shprojectdemo.common.cache.TemporaryCache;
 import com.sh.shprojectdemo.model.News;
+import com.sh.shprojectdemo.model.User;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,6 +41,7 @@ import retrofit2.Response;
 public class MainActivity extends BaseActivity {
 
 
+    private int LOGIN_REQUESTCODE=10001;
     @InjectView(R.id.one_headle)
     Button oneHeadle;
     @InjectView(R.id.all_headle)
@@ -66,12 +70,17 @@ public class MainActivity extends BaseActivity {
     UISearchView searchview;
     @InjectView(R.id.work_type)
     LineFromView workType;
-
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.inject(this);
+        user = TemporaryCache.getUserSession();
+        if(user==null){
+            startActivityForResult(new Intent(this,LoginActivity.class),LOGIN_REQUESTCODE);
+            return;
+        }
 
         news = new News();
         news.setId(5);
@@ -171,5 +180,15 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==LOGIN_REQUESTCODE){
+            if(resultCode==RESULT_OK){
+                user= (User) data.getSerializableExtra(LoginActivity.LOGIN_USER);
+            }else {
+                finish();
+            }
+        }
+    }
 }

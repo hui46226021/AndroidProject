@@ -18,10 +18,13 @@
         ></com.jruilibarary.widget.TemplateTitleBar>
 
     <com.jruilibarary.widget.CircleImageView
+        android:layout_marginTop="50dp"
         android:id="@+id/image"
         android:layout_margin="30dp"
         android:layout_gravity="center"
         android:layout_width="100dp"
+        app:border_width="3dp"
+        app:border_color="@color/colorPrimary"
         android:layout_height="100dp"></com.jruilibarary.widget.CircleImageView>
 
     <android.support.design.widget.TextInputLayout
