@@ -9,7 +9,7 @@ android 快速开发框架
 
 ## 依赖关系
 
-![](tu/1.gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/1.png)
 ##框架详细
 ###jrbaselibrary   基础框架
 封装 基础数据操作
