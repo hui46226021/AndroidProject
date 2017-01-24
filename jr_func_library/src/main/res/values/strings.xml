@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">JR_Func_Library</string>
+
+    <string name="func_go_to_set_network">是否去设置网络链接</string>
+    <string name="func_load_more">加载更多数据</string>
+    <string name="func_load_ing">数据加载中...</string>
+    <string name="func_success">操作成功.</string>
+    <string name="func_failure">操作失败.</string>
+    <string name="func_server_error">网络连接异常,请稍后再试...</string>
+    <string name="func_data_error">网络连接异常,请稍后重试</string>
+    <string name="func_net_error">网络异常,请稍后...</string>
+    <string name="func_tip_no_net">查询实时数据请打开移动网络或连接WiFi(无线)</string>
+    <string name="func_tip_setting_net">设置网络</string>
+    <string name="func_confirm">确认</string>
+    <string name="func_cancel">取消</string>
+
 </resources>

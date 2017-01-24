@@ -3,6 +3,8 @@ package com.jruilibarary.widget;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +26,7 @@ public class TemplateTitleBar extends RelativeLayout {
     private String backText;
     private String moreText;
     private int moreImg;
+    private int textColors;
     private TextView tvMore;
 
 
@@ -37,6 +40,7 @@ public class TemplateTitleBar extends RelativeLayout {
             backText = ta.getString(R.styleable.TemplateTitle_backText);
             moreImg = ta.getResourceId(R.styleable.TemplateTitle_moreImg, 0);
             moreText = ta.getString(R.styleable.TemplateTitle_moreText);
+            textColors=ta.getResourceId(R.styleable.TemplateTitle_textColors, 0);
             setUpView();
         } finally {
             ta.recycle();
@@ -48,8 +52,9 @@ public class TemplateTitleBar extends RelativeLayout {
         tvTitle.setText(titleText);
         LinearLayout backBtn = (LinearLayout) findViewById(R.id.title_back);
         backBtn.setVisibility(canBack ? VISIBLE : INVISIBLE);
+        TextView  tvBack = (TextView) findViewById(R.id.txt_back);
         if (canBack){
-            TextView tvBack = (TextView) findViewById(R.id.txt_back);
+
             tvBack.setText(backText);
             backBtn.setOnClickListener(new OnClickListener() {
                 @Override
@@ -64,6 +69,14 @@ public class TemplateTitleBar extends RelativeLayout {
         }
         tvMore = (TextView) findViewById(R.id.txt_more);
         tvMore.setText(moreText);
+
+        if(textColors!=0){
+            tvTitle.setTextColor(ContextCompat.getColor(getContext(),textColors));
+            tvMore.setTextColor(ContextCompat.getColor(getContext(),textColors));
+            tvBack.setTextColor(ContextCompat.getColor(getContext(),textColors));
+            TextView  tvMore2 = (TextView) findViewById(R.id.txt_more2);
+            tvMore2.setTextColor(ContextCompat.getColor(getContext(),textColors));
+        }
     }
 
 
@@ -137,7 +150,7 @@ public class TemplateTitleBar extends RelativeLayout {
      *
      * @param listener 事件监听
      */
-    public void setMoreImg2(int img,OnClickListener listener){
+    public void setMoreImgAction(int img,OnClickListener listener){
         ImageView moreImgView = (ImageView) findViewById(R.id.img_more2);
         moreImgView.setVisibility(VISIBLE);
         moreImgView.setImageDrawable(getContext().getResources().getDrawable(img));
@@ -168,7 +181,7 @@ public class TemplateTitleBar extends RelativeLayout {
      * 设置更多文字内容
      * @param text 更多文本
      */
-    public void setMoreTextContext2(String text,OnClickListener listener){
+    public void setMoreTextContextAction(String text,OnClickListener listener){
         TextView  tvMore2 = (TextView) findViewById(R.id.txt_more2);
         tvMore2 .setText(text+"  ");
         tvMore2.setOnClickListener(listener);

@@ -80,8 +80,4 @@
             android:textColor="@color/ui_black"/>
     </LinearLayout>
 
-    <View android:layout_width="match_parent"
-        android:layout_height="5px"
-        android:background="@color/ui_colorPrimary"
-        android:layout_alignParentBottom="true"/>
 </RelativeLayout>

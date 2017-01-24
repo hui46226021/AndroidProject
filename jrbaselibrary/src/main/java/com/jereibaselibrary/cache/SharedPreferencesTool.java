@@ -120,8 +120,8 @@ public class SharedPreferencesTool {
         return (long) getData(key,DEFAULT,Long.class);
     }
 
-    public long getBooleanData(String key){
-        return (long) getData(key,DEFAULT,Boolean.class);
+    public Boolean getBooleanData(String key){
+        return (Boolean) getData(key,DEFAULT,Boolean.class);
     }
     public String getStringData(String key){
         return (String) getData(key,DEFAULT,String.class);

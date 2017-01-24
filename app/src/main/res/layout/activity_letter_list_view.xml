@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.sh.shprojectdemo.LetterListViewActivity">
+    tools:context="com.sh.shprojectdemo.ui.LetterListViewActivity">
     <com.jruilibarary.widget.letterlist.LetterListView
         android:id="@+id/listview"
         android:layout_width="match_parent"

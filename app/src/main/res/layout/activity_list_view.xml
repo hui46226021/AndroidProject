@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.sh.shprojectdemo.ListViewActivity">
+    tools:context="com.sh.shprojectdemo.ui.ListViewActivity">
     <com.jruilibarary.widget.RefreshLayout
         android:id="@+id/refreshlayout"
         android:layout_width="match_parent"

@@ -12,6 +12,11 @@
         <attr name="moreImg" format="reference" />
         <!-- 右侧更多功能按钮文字 -->
         <attr name="moreText" format="string" />
+
+        <!-- 文字颜色 -->
+        <attr name="textColors" format="reference" />
+
+
     </declare-styleable>
 
     <!--原型控件-->

@@ -20,12 +20,12 @@
         "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
-        "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
         "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",

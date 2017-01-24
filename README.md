@@ -8,11 +8,11 @@ android 快速开发框架
 
 
 ## 依赖关系
-jrFunclibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 
+![](tu/1.gif)
 ##框架详细
 ###jrbaselibrary   基础框架
-封装 主要分为
+封装 基础数据操作
 * 1:缓存  （DiskLruCache，LruCache，SharedPreferences）
 * 2:网络操作 (Retrofit 2.0,okhttp）
 * 3:数据库操作(litepal)
@@ -43,12 +43,13 @@ jrFunclibrary --> 依赖  jrUIlibrary  -->依赖 jrbaselibrary
 * CycleView            自动滚动banner 图
 * JRSpinner            底部弹出菜单
 * TabLayout            viewPage 关联 tab（官方）
-http://blog.csdn.net/chenguang79/article/details/48804125
+http://www.jianshu.com/p/2b2bb6be83a8
 * RefreshLayout        上拉刷新组件（官方）
 * Navigation View      抽屉导航（官方）
 * JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条）
 https://github.com/lzyzsd/JsBridge
-
+* formUtiks            表单映射工具
+https://github.com/hui46226021/ShFormUtils
 
 ###jrFunclibrary   封装通用功能（与业务逻辑无关）
 * 版本检查更新

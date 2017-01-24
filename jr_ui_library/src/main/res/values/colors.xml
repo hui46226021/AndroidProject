@@ -18,4 +18,6 @@
 
     <color name="ui_background">#e6e6e6</color>
     <color name="ui_translucent">#27565555</color>
+    <color name="ui_all_translucent">#00ffffff</color>
+    <color name="ui_mask">#90000000</color>
 </resources>

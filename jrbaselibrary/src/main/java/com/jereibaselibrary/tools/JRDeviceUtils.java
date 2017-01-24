@@ -86,7 +86,8 @@ import java.util.UUID;
  getBoard 获取主板信息
  getRadioVersion 获取基带版本(无线电固件版本 Api14以上)
  getUA 获取的浏览器指纹(User-Agent)
- getDensity 获取得屏幕密度
+ getDensity 获取得屏幕密度寬度
+
  getGoogleAccounts 获取google账号
  */
 
