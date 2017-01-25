@@ -33,6 +33,8 @@ android 快速开发框架
 * IOSSwitchButton      仿IOS SwitchButton
 * SideslipListView     仿IOS 可左滑listView
 * DragIndicatorView    消息提示小红点（仿QQ可拖动）
+
+
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/4.gif)
 * LetterListView       按字母分组listView
 * TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
@@ -43,11 +45,15 @@ android 快速开发框架
 * RoundCornerImageView 带圆角圆型ImageView
 * LineFromView         表单行控件（封装各种控件）
 * CycleView            自动滚动banner 图
+
+
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/2.gif)
 * JRSpinner            底部弹出菜单
 * TabLayout            viewPage 关联 tab（官方）
 http://www.jianshu.com/p/2b2bb6be83a8
 * RefreshLayout        上拉刷新组件（官方）
+
+
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/3.gif)
 * Navigation View      抽屉导航（官方）
 * JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条）
