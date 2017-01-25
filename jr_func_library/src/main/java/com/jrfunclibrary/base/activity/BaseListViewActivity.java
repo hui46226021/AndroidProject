@@ -27,11 +27,13 @@ public class BaseListViewActivity extends BaseActivity implements SwipeRefreshLa
 
     ListView listview;
     RefreshLayout swiperefreshlayout;
-
+    BaseAdapter baseAdapter;
 
    public   void initListView(ListView listView,final RefreshLayout swiperefreshlayout,BaseAdapter baseAdapter){
        this.listview =listView;
        this.swiperefreshlayout =swiperefreshlayout;
+       this.baseAdapter =baseAdapter;
+
          listview.setAdapter(baseAdapter);
          listview.setOnItemClickListener(this);
          swiperefreshlayout.setOnRefreshListener(this);
@@ -53,7 +55,10 @@ public class BaseListViewActivity extends BaseActivity implements SwipeRefreshLa
      }
 
 
-
+    /**
+     * 设置刷新 圈的颜色
+     * @param colorsRes
+     */
     public void setColorSchemeColors( @ColorRes int colorsRes){
         swiperefreshlayout.setColorSchemeColors(ContextCompat.getColor(this, colorsRes));
     }
@@ -84,13 +89,15 @@ public class BaseListViewActivity extends BaseActivity implements SwipeRefreshLa
     public void getDataSuccess(Object object) {
         //关闭动画
         swiperefreshlayout.setRefreshing(false);
-
+        baseAdapter.notifyDataSetChanged();
     }
+
     //获取数据失败
     @Override
     public void getDataFail(String failMessage) {
         //关闭动画
         swiperefreshlayout.setRefreshing(false);
         showMessage(failMessage);
+
     }
 }

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.MainActivity"></activity>
-        <activity android:name=".ui.ListViewActivity" />
+        <activity android:name=".ui.UserListActivity" />
         <activity android:name=".ui.LetterListViewActivity" />
         <activity android:name=".ui.WelcomeActivity">
             <intent-filter>

@@ -19,7 +19,7 @@ import com.jruilibarary.widget.cycleview.widget.CycleView;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.presenter.HomePresenter;
 import com.sh.shprojectdemo.ui.LetterListViewActivity;
-import com.sh.shprojectdemo.ui.ListViewActivity;
+import com.sh.shprojectdemo.ui.UserListActivity;
 import com.sh.shprojectdemo.view.HomeView;
 
 import java.util.Timer;
@@ -103,7 +103,7 @@ public class HomeFragment extends LazyFragment implements HomeView {
 
     @OnClick({R.id.sideslipListView})
     void pageOnClick(View v) {
-        startActivity(new Intent(getActivity(), ListViewActivity.class));
+        startActivity(new Intent(getActivity(), UserListActivity.class));
     }
 
     @Override

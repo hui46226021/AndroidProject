@@ -12,6 +12,8 @@ public interface RefreshLayoutView extends BaseView{
      */
     public void getDataSuccess(Object object);
 
+
+
     /**
      * 获取数据失败
      * @param failMessage

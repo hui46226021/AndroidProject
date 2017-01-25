@@ -9,6 +9,6 @@ public class BaseConstant {
     public static class NetworkConstant {
         public static String CODE_FAILURE ="2";
         public static String CODE_SUCCESS ="1";
-        public static int NOT_NETOWRK =0;
+        public static int NOT_NETOWRK =0; //没有网络
     }
 }

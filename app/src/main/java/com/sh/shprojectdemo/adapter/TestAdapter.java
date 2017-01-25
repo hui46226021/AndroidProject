@@ -11,6 +11,7 @@ import com.jereibaselibrary.image.JRSetImage;
 import com.jruilibarary.widget.RoundCornerImageView;
 import com.sh.shprojectdemo.model.News;
 import com.sh.shprojectdemo.R;
+import com.sh.shprojectdemo.model.User;
 import com.xinlan.dragindicator.DragIndicatorView;
 
 import java.util.List;
@@ -24,10 +25,10 @@ import butterknife.InjectView;
  * PS
  */
 public class TestAdapter extends BaseAdapter {
-    private List<News> listData;
+    private List<User> listData;
     private Context context;
 
-    public TestAdapter(List<News> listData, Context context) {
+    public TestAdapter(List<User> listData, Context context) {
         this.listData = listData;
         this.context = context;
     }
@@ -57,12 +58,12 @@ public class TestAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        News news = (News) getItem(i);
-        JRSetImage.setLocalBitmap(context,R.drawable.avatar,holder.avatar);
+        User user = (User) getItem(i);
+        JRSetImage.setNetWorkImage(context,user.getHeadImage(),holder.avatar);
         holder.count.setVisibility(View.VISIBLE);
-        holder.count.setText(news.getId()+"");
-        holder.name.setText(news.getTitle());
-        holder.lastMessage.setText(news.getContent());
+        holder.count.setText(user.getUserId()+"");
+        holder.name.setText(user.getName());
+        holder.lastMessage.setText(user.getSign());
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override

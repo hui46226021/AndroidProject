@@ -33,6 +33,10 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
     private HashMap<String, Object> objectParam ;
     private String url;
     private HttpCacheInterface httpCacheInterface; //缓存调用
+    private int cacheTrigger;
+    public static final int FOREVER_CACHE = 0;  //先查询缓存  没有在查询网络
+    public static final int NO_NETWORK_CACHE = 1;//有网时 查询网络，没网时候 查询缓存
+
     final Context context = JRBaseApplication.getContext();
 
     //网络请求方式
@@ -71,11 +75,22 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
 
     @Override
     protected JRDataResult doInBackground(Void... voids) {
-        JRDataResult result = null;
 
+        JRDataResult  result = new JRDataResult(BaseConstant.NetworkConstant.CODE_FAILURE, context.getString(R.string.jr_base_control_net_error));
         //如果设置了缓存查询 策略先查询缓存
         if(httpCacheInterface!=null){
-            result = httpCacheInterface.getHttpCache();
+
+            switch (cacheTrigger){
+                case FOREVER_CACHE://始终查询缓存
+                    httpCacheInterface.getHttpCache(result);
+                    break;
+                case NO_NETWORK_CACHE: //无网络时候 查询缓存
+                    if(!JRNetworkUtils.isNetworkAvailable(JRBaseApplication.getContext())){
+                        httpCacheInterface.getHttpCache(result);
+                    }
+                    break;
+            }
+
             if(result.getResultCode().equals(BaseConstant.NetworkConstant.CODE_SUCCESS)){
                 return result;
             }
@@ -88,7 +103,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
         }
         //访问网络
         try {
-            result = new JRDataResult(BaseConstant.NetworkConstant.CODE_FAILURE, context.getString(R.string.jr_base_control_net_error));
+
             if(requestMode){
                 client.get();
             }else {
@@ -169,11 +184,12 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
      * 查询缓存策略
      * @param httpCacheInterface
      */
-    public void setHttpCacheInterface(HttpCacheInterface httpCacheInterface) {
+    public void setHttpCacheInterface(HttpCacheInterface httpCacheInterface,int cacheTrigger) {
         this.httpCacheInterface = httpCacheInterface;
+        this.cacheTrigger =cacheTrigger;
     }
 
     public static interface  HttpCacheInterface{
-        public JRDataResult getHttpCache();
+        public void getHttpCache(    JRDataResult result);
     }
 }
