@@ -2,8 +2,8 @@ package com.sh.shprojectdemo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CancellationSignal;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -14,10 +14,12 @@ import com.jruilibarary.widget.CircleImageView;
 import com.jruilibarary.widget.TemplateTitleBar;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.model.User;
+import com.sh.shprojectdemo.presenter.LoginPresenter;
 import com.sh.shprojectdemo.view.LoginView;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity implements LoginView {
 
@@ -32,12 +34,16 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @InjectView(R.id.activity_login)
     LinearLayout activityLogin;
     public static String LOGIN_USER = "login_user";
+    LoginPresenter loginPresenter;
+    @InjectView(R.id.button)
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.inject(this);
+        loginPresenter = new LoginPresenter(this);
         initView();
     }
 
@@ -49,10 +55,13 @@ public class LoginActivity extends BaseActivity implements LoginView {
             }
         });
         String url = "http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
-        JRSetImage.setNetWorkImage(this,url,image);
+        JRSetImage.setNetWorkImage(this, url, image);
     }
 
-
+    @OnClick(R.id.button)
+    void pageOnClick(){
+        loginPresenter.login(account.getText()+"",pwd.getText()+"");
+    }
     @Override
     public void loginSuccess(User user) {
 

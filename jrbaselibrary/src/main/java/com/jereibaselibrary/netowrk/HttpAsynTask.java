@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import com.jereibaselibrary.R;
 import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.constant.BaseConstant;
+import com.jereibaselibrary.constant.SystemConfig;
 import com.jereibaselibrary.netowrk.listen.HandleResponse;
 import com.jereibaselibrary.netowrk.listen.NetRequestCall;
 import com.jereibaselibrary.tools.JRDataResult;
@@ -25,7 +26,7 @@ import java.util.Set;
  * E-mail zhush@jerei.com
  */
 public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
-
+    HttpUtils client;
     private NetRequestCall httpRequestCall;//响应回调
     private HandleResponse handleResponse;//组织成功返回值接口
     private HashMap<String, Object> param ;
@@ -33,10 +34,29 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
     private String url;
     private HttpCacheInterface httpCacheInterface; //缓存调用
     final Context context = JRBaseApplication.getContext();
-    HttpUtils client;
+
+    //网络请求方式
+  static   public boolean POST=false;
+   static public boolean GET=true;
+    private boolean requestMode;
+    /**
+     * 创建网络请求 默认是post
+     * @param url
+     */
     public HttpAsynTask(String url) {
         this.url = url;
+        client = new HttpUtils(url);
+    }
+
+    /**
+     * 创建网络请求 默认是post
+     * @param url
+     * @param requestMode
+     */
+    public HttpAsynTask(String url,boolean requestMode) {
+        this.url = url;
          client = new HttpUtils(url);
+        this.requestMode = requestMode;
     }
 
     public void putBean(String key,Object object){
@@ -69,9 +89,11 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
         //访问网络
         try {
             result = new JRDataResult(BaseConstant.NetworkConstant.CODE_FAILURE, context.getString(R.string.jr_base_control_net_error));
-
-            //发送请求
-            client.post();
+            if(requestMode){
+                client.get();
+            }else {
+                client.post();
+            }
             if (client.hasErrors()) {
                 //请求失败
                 result.setResultCode(BaseConstant.NetworkConstant.CODE_FAILURE);
@@ -103,7 +125,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
         }
         if (dataControlResult.getResultCode() == BaseConstant.NetworkConstant.CODE_SUCCESS&&httpRequestCall!=null) {
             //执行完毕
-            httpRequestCall.success(dataControlResult);
+            httpRequestCall.success(dataControlResult.getResultObject());
         } else {
             httpRequestCall.failed(dataControlResult.getResultMessage(),0);
         }

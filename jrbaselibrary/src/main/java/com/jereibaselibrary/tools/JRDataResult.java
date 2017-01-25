@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @author Guo Jingbing
  * @date 2013-2-17 下午2:32:23
  */
-public class JRDataResult extends HashMap<String,Object>
+public class JRDataResult
 {
 	private String resultCode;
 	private String resultMessage;
@@ -44,13 +44,5 @@ public class JRDataResult extends HashMap<String,Object>
 	}
 	public void setResultObject(Object resultObject) {
 		this.resultObject = resultObject;
-	}
-
-	public synchronized void setResultObjectForMap(String key,Object resultObject){
-		put(key,resultObject);
-	}
-
-	public Object getResultObjectForMap(String key){
-		return get(key);
 	}
 }

@@ -17,7 +17,7 @@ public class WelcomeActivity extends BaseActivity {
         setContentView(R.layout.activity_welcome);
         if(!SharedPreferencesTool.newInstance().getBooleanData(FIRSTLOGIN)){
             SharedPreferencesTool.newInstance().saveData(FIRSTLOGIN,true);
-            int[] ids = new int[]{R.mipmap.guide01, R.mipmap.guide02, R.mipmap.guide03,R.mipmap.guide04};
+            int[] ids = new int[]{R.drawable.guide01, R.drawable.guide02, R.drawable.guide03,R.drawable.guide04};
             Intent intent = new Intent(this, BootActivity.class);
             intent.putExtra(BootActivity.IDS_KEY,ids);
             intent.putExtra(BootActivity.IDS_ACTIVITY_KEY,MainActivity.class);

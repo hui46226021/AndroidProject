@@ -4,8 +4,11 @@ import android.util.Log;
 
 
 import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.constant.SystemConfig;
+import com.jereibaselibrary.db.litepal.util.LogUtil;
 import com.jereibaselibrary.netowrk.cookie.CookieJarImpl;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
+import com.jereibaselibrary.tools.JRLogUtils;
 import com.sh.shjson.JSONUtil;
 
 import java.io.File;
@@ -50,7 +53,7 @@ public class HttpUtils {
     static OkHttpClient mOkHttpClient;
     static OkHttpClient.Builder builder;
     Request.Builder requestBuilder;
-    static String baseUrl="http://www.zhihu.com/";
+    static String baseUrl= SystemConfig.getFullUrl();
     static {
         //设置超时
         builder = new OkHttpClient.Builder()
@@ -75,13 +78,20 @@ public class HttpUtils {
         builder.cookieJar(cookieJarImpl);
         //获取Client 实例
         mOkHttpClient=builder.build();
+////        /**
+////         * 添加证书
+////         */
+//        HttpsCerts.addCerts(JRBaseApplication.getContext());
+//        mOkHttpClient=  HttpsCerts.createOkhttp(builder).build();
     }
-
+    public String url;
+    private StringBuilder paramSb = new StringBuilder();
     public HttpUtils(String url) {
+        this.url = url;
         requestBuilder=new Request.Builder().url(baseUrl+url);
         formBodyBuilder = new FormBody.Builder();
         //公共参数
-      //  formBodyBuilder.add("name","value");
+        //  formBodyBuilder.add("name","value");
     }
 
     /**
@@ -99,13 +109,18 @@ public class HttpUtils {
      */
     public String post(){
         try {
-
+            JRLogUtils.d("url",baseUrl+url);
+            JRLogUtils.d("param",paramSb.toString());
             Request request = requestBuilder.post(formBodyBuilder.build()).build();
 
         okhttp3.Response response = mOkHttpClient.newCall(request).execute();
             if (response.isSuccessful()) {
                 responseStr = response.body().string();
+            }else {
+                responseStr=responseStr+":"+response.code();
             }
+
+            JRLogUtils.d("responseStr",responseStr);
     } catch (Exception e) {
         e.printStackTrace();
     }
@@ -118,14 +133,19 @@ public class HttpUtils {
      */
     public String get(){
         try {
-
+            JRLogUtils.d("url",baseUrl+url);
+            JRLogUtils.d("param",paramSb.toString());
             //可以省略，默认是GET请求
             requestBuilder.method("GET",null);
             Request request = requestBuilder.build();
             Response response = mOkHttpClient.newCall(request).execute();
             if (response.isSuccessful()) {
-                responseStr = response.body().string();
+                responseStr = response.body().string().replace(" ","").replace("\n","");
+            }else {
+                responseStr=responseStr+":"+response.code();
             }
+
+            JRLogUtils.d("responseStr",responseStr);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -142,6 +162,10 @@ public class HttpUtils {
             formBodyBuilder = new FormBody.Builder();
         }
         formBodyBuilder.add(name,value.toString());
+        paramSb.append(name);
+        paramSb.append("==");
+        paramSb.append(value.toString());
+        paramSb.append("|");
     }
 
     /**
@@ -235,7 +259,7 @@ public class HttpUtils {
         try {
             JSONUtil jsonUtil = new JSONUtil(responseStr);
             T t = jsonUtil.getObject(clazz, name);
-//            return t;
+            return t;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
             e.printStackTrace();
@@ -264,12 +288,13 @@ public class HttpUtils {
         return responseStr;
     }
 
+
     /**
      * 是否有错误
      * @return
      */
     public boolean hasErrors(){
-        return false;
+        return !getObject(boolean.class,"success");
     }
 
     /**
@@ -277,7 +302,7 @@ public class HttpUtils {
      * @return
      */
     public String getMessageString(){
-        return "";
+        return getObject(String.class,"message");
     }
 
 

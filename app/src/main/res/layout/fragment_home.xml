@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sh.shprojectdemo.ui.fragment.HomeFragment">
+
+    <com.jruilibarary.widget.TemplateTitleBar
+
+        android:id="@+id/template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:textColors="@color/white"
+        app:titleText="首页" />
+
+    <com.jruilibarary.widget.cycleview.widget.CycleView
+        android:id="@+id/cycleView"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:myselected_color="#ffffff"
+        app:myshape="oval"
+        app:myunselected_color="#33000000"
+        app:scaleType="centerCrop" />
+    <com.jruilibarary.widget.RefreshLayout
+        android:id="@+id/refreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:text="SideslipListView "
+            android:id="@+id/sideslipListView"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+    </com.jruilibarary.widget.RefreshLayout>
+</LinearLayout>

@@ -30,10 +30,10 @@ public class LetterAdapter extends LetterBaseListAdapter {
 
     private Context context;
 
-    public LetterAdapter(List<LetterModle> dataList, Context context) {
+    public LetterAdapter(List<LetterModle> dataList, Context context,Selected selected) {
         super(dataList);
         this.context = context;
-
+        this.selected = selected;
     }
 
     /**
@@ -88,10 +88,15 @@ public class LetterAdapter extends LetterBaseListAdapter {
         } else {
             holder = (LetterAdapter.ViewHolder) convertView.getTag();
         }
-        City city = (City) getItem(position);
+       final City city = (City) getItem(position);
 
         holder.text.setText(city.getName());
-
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selected.selectde(city);
+            }
+        });
         return convertView;
     }
 
@@ -105,6 +110,8 @@ public class LetterAdapter extends LetterBaseListAdapter {
         return i;
     }
 
+
+
     static class ViewHolder {
 
         @InjectView(R.id.text)
@@ -113,5 +120,9 @@ public class LetterAdapter extends LetterBaseListAdapter {
         ViewHolder(View view) {
             ButterKnife.inject(this, view);
         }
+    }
+    Selected selected;
+   public static interface Selected{
+        public void selectde(City city);
     }
 }

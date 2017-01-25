@@ -64,6 +64,7 @@
     
     
     <Button
+        android:id="@+id/button"
         android:text="登录"
         android:textColor="@color/white"
         android:layout_margin="16dp"

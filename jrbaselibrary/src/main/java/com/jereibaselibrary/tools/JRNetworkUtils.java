@@ -34,6 +34,7 @@ public class JRNetworkUtils {
 			}
 		}
 		return false;
+
 	}
 	/**
 	 * 判断wifi启用

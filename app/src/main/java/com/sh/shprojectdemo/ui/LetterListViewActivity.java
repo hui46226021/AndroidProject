@@ -3,6 +3,8 @@ package com.sh.shprojectdemo.ui;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.AdapterView;
 
 
 import com.jrfunclibrary.base.activity.BaseActivity;
@@ -25,7 +27,7 @@ public class LetterListViewActivity extends BaseActivity {
 
     @InjectView(R.id.listview)
     LetterListView listview;
-
+    List<LetterModle>  cities;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class LetterListViewActivity extends BaseActivity {
         ButterKnife.inject(this);
         String[] cityArray =citys.split(",");
         //实体续继承 LetterModle
-        List<LetterModle>  cities = new ArrayList<>();
+        cities = new ArrayList<>();
         for(String  str :cityArray ){
             if(TextUtils.isEmpty(str)){
                 continue;
@@ -48,8 +50,15 @@ public class LetterListViewActivity extends BaseActivity {
          */
         LetterUtil.onSort(cities);
 
-        LetterAdapter letterAdapter = new LetterAdapter(cities,this);
+        LetterAdapter letterAdapter = new LetterAdapter(cities, this, new LetterAdapter.Selected() {
+            @Override
+            public void selectde(City city) {
+                setResult(RESULT_OK,getIntent().putExtra("city",city.getName()));
+                finish();
+            }
+        });
         listview.setAdapter(letterAdapter);
+
     }
 
 

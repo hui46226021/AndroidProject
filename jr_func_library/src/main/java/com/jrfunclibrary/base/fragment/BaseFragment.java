@@ -1,19 +1,22 @@
 package com.jrfunclibrary.base.fragment;
 
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.Toast;
 
 import com.jrfunclibrary.base.activity.BaseActivity;
+import com.jrfunclibrary.base.view.BaseView;
 import com.jruilibarary.widget.IOSAlertDialog;
 import com.jruilibarary.widget.MyProgressDialog;
+import com.sh.zsh.jrfunclibrary.R;
 
 
 /**
  * Created by Administrator on 2016/9/14.
  */
-public class BaseFragment extends Fragment {
+public class BaseFragment extends Fragment implements BaseView {
     /**
      * 显示进度对话框
      */
@@ -80,4 +83,43 @@ public class BaseFragment extends Fragment {
 
     }
 
+    @Override
+    public void showProgress(String message) {
+        showProgressDialog(message);
+    }
+
+    @Override
+    public void closeProgress() {
+        closeProgressDialog();
+    }
+
+    @Override
+    public void showMessage(String message) {
+        closeProgressDialog();
+        setToastMessage(message,Toast.LENGTH_LONG);
+    }
+
+    @Override
+    public void noNetwork() {
+
+        showAlertDialog(getString(R.string.func_tip_setting_net), "是否去设置网络链接", getString(R.string.func_cancel), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = null;
+                // 先判断当前系统版本
+                if(Build.VERSION.SDK_INT > 10){  // 3.0以上
+                    intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+                }else{
+                    intent = new Intent();
+                    intent.setClassName("com.android.settings", "com.android.settings.WirelessSettings");
+                }
+                startActivity(intent);
+            }
+        }, getString(R.string.general_cancel), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
 }

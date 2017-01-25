@@ -14,7 +14,7 @@ android 快速开发框架
 ###jrbaselibrary   基础框架
 封装 基础数据操作
 * 1:缓存  （DiskLruCache，LruCache，SharedPreferences）
-* 2:网络操作 (Retrofit 2.0,okhttp）
+* 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
 * 3:数据库操作(litepal)
 * 4:json解析
 * 5:网络图片加载,图片处理  (glide)

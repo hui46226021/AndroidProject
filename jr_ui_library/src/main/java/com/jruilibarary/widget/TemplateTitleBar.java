@@ -24,10 +24,9 @@ public class TemplateTitleBar extends RelativeLayout {
     private String titleText;
     private boolean canBack;
     private String backText;
-    private String moreText;
-    private int moreImg;
+
     private int textColors;
-    private TextView tvMore;
+
 
 
     public TemplateTitleBar(Context context, AttributeSet attrs) {
@@ -38,8 +37,7 @@ public class TemplateTitleBar extends RelativeLayout {
             titleText = ta.getString(R.styleable.TemplateTitle_titleText);
             canBack = ta.getBoolean(R.styleable.TemplateTitle_canBack, false);
             backText = ta.getString(R.styleable.TemplateTitle_backText);
-            moreImg = ta.getResourceId(R.styleable.TemplateTitle_moreImg, 0);
-            moreText = ta.getString(R.styleable.TemplateTitle_moreText);
+
             textColors=ta.getResourceId(R.styleable.TemplateTitle_textColors, 0);
             setUpView();
         } finally {
@@ -63,16 +61,11 @@ public class TemplateTitleBar extends RelativeLayout {
                 }
             });
         }
-        if (moreImg != 0){
-            ImageView moreImgView = (ImageView) findViewById(R.id.img_more);
-            moreImgView.setImageDrawable(getContext().getResources().getDrawable(moreImg));
-        }
-        tvMore = (TextView) findViewById(R.id.txt_more);
-        tvMore.setText(moreText);
+
 
         if(textColors!=0){
             tvTitle.setTextColor(ContextCompat.getColor(getContext(),textColors));
-            tvMore.setTextColor(ContextCompat.getColor(getContext(),textColors));
+
             tvBack.setTextColor(ContextCompat.getColor(getContext(),textColors));
             TextView  tvMore2 = (TextView) findViewById(R.id.txt_more2);
             tvMore2.setTextColor(ContextCompat.getColor(getContext(),textColors));
@@ -91,30 +84,10 @@ public class TemplateTitleBar extends RelativeLayout {
         tvTitle.setText(titleText);
     }
 
-    /**
-     * 标题更多按钮
-     *
-     * @param img 设置更多按钮
-     */
-    public void setMoreImg(int img){
-        moreImg = img;
-        ImageView moreImgView = (ImageView) findViewById(R.id.img_more);
-        moreImgView.setImageDrawable(getContext().getResources().getDrawable(moreImg));
-    }
 
 
-    /**
-     * 标题更多按钮
-     *
-     * @param img 设置更多按钮
-     */
-    public void setMoreImg(int img,OnClickListener listener){
-        moreImg = img;
-        ImageView moreImgView = (ImageView) findViewById(R.id.img_more);
-        moreImgView.setImageDrawable(getContext().getResources().getDrawable(moreImg));
-        moreImgView.setOnClickListener(listener);
 
-    }
+
 
     /**
      * 左侧图标 按钮
@@ -125,22 +98,14 @@ public class TemplateTitleBar extends RelativeLayout {
 
         ImageView moreImgView = (ImageView) findViewById(R.id.img_life);
         moreImgView.setImageDrawable(getContext().getResources().getDrawable(img));
-        moreImgView.setOnClickListener(listener);
-        moreImgView.setVisibility(VISIBLE);
+        if(listener!=null){
+            moreImgView.setOnClickListener(listener);
+        }
 
     }
 
 
 
-    /**
-     * 设置更多按钮事件
-     *
-     * @param listener 事件监听
-     */
-    public void setMoreImgAction(OnClickListener listener){
-        ImageView moreImgView = (ImageView) findViewById(R.id.img_more);
-        moreImgView.setOnClickListener(listener);
-    }
 
 
 
@@ -154,28 +119,14 @@ public class TemplateTitleBar extends RelativeLayout {
         ImageView moreImgView = (ImageView) findViewById(R.id.img_more2);
         moreImgView.setVisibility(VISIBLE);
         moreImgView.setImageDrawable(getContext().getResources().getDrawable(img));
-        moreImgView.setOnClickListener(listener);
+        if(listener!=null){
+            moreImgView.setOnClickListener(listener);
+        }
     }
 
 
 
-    /**
-     * 设置更多按钮事件
-     *
-     * @param listener 事件监听
-     */
-    public void setMoreTextAction(OnClickListener listener){
-        tvMore.setOnClickListener(listener);
-    }
 
-
-    /**
-     * 设置更多文字内容
-     * @param text 更多文本
-     */
-    public void setMoreTextContext(String text){
-        tvMore.setText(text);
-    }
 
     /**
      * 设置更多文字内容
@@ -184,9 +135,29 @@ public class TemplateTitleBar extends RelativeLayout {
     public void setMoreTextContextAction(String text,OnClickListener listener){
         TextView  tvMore2 = (TextView) findViewById(R.id.txt_more2);
         tvMore2 .setText(text+"  ");
-        tvMore2.setOnClickListener(listener);
+
+        if(listener!=null){
+            tvMore2.setOnClickListener(listener);
+        }
     }
 
+
+    /**
+     * 设置返回文字内容
+     * @param text 更多文本
+     */
+    public void setTxtBackContextAction(String text,OnClickListener listener){
+        TextView  txtBack = (TextView) findViewById(R.id.txt_back);
+        txtBack .setText(text+"  ");
+        if(listener!=null){
+            txtBack.setOnClickListener(listener);
+        }
+        txtBack.setVisibility(VISIBLE);
+        LinearLayout backBtn = (LinearLayout) findViewById(R.id.title_back);
+        backBtn.setVisibility(VISIBLE);
+        findViewById(R.id.img_back).setVisibility(GONE);
+
+    }
 
 
     /**

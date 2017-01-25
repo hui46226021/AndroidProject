@@ -58,7 +58,7 @@ public class TestAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         News news = (News) getItem(i);
-        JRSetImage.setLocalBitmap(context,R.mipmap.avatar,holder.avatar);
+        JRSetImage.setLocalBitmap(context,R.drawable.avatar,holder.avatar);
         holder.count.setVisibility(View.VISIBLE);
         holder.count.setText(news.getId()+"");
         holder.name.setText(news.getTitle());
