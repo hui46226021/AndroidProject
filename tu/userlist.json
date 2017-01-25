@@ -1,0 +1,67 @@
+{
+    "success": true,
+    "message": "登录成功",
+    "errorCode": 0,
+    "data": [
+        {
+            "name": "刘能",
+            "userId": 10001,
+            "company": "乡村爱情",
+            "department": "刘老谦大舞台̨",
+            "birthday": "1989-05-11 11:23:44",
+            "sex": true,
+            "headImage": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1485254304557&di=4e876ed757f2858b57b2ffed0bc63bc5&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3De3ed665799504fc2a25fb00dd5dce7f0%2Fdba285cad1c8a78605d4a0516509c93d71cf5035.jpg",
+            "sign": "老铁来波666"
+        },
+        {
+            "name": "谢广坤",
+            "userId": 10001,
+            "company": "乡村爱情",
+            "department": "刘老谦大舞台̨",
+            "birthday": "1989-05-11 11:23:44",
+            "sex": true,
+            "headImage": "http://www.cnr.cn/jy/list/201403/W020140314599483130833.jpg",
+            "sign": "老铁来波666"
+        },
+        {
+            "name": "赵四",
+            "userId": 10001,
+            "company": "乡村爱情",
+            "department": "刘老谦大舞台̨",
+            "birthday": "1989-05-11 11:23:44",
+            "sex": true,
+            "headImage": "http://www.ys137.com/uploads/cj_img/geshou/52765-4.jpg",
+            "sign": "老铁来波666"
+        },
+        {
+            "name": "王大拿",
+            "userId": 10001,
+            "company": "乡村爱情",
+            "department": "刘老谦大舞台̨",
+            "birthday": "1989-05-11 11:23:44",
+            "sex": true,
+            "headImage": "http://img4.cache.netease.com/ent/2011/5/5/201105051638333307a.jpg",
+            "sign": "老铁来波666"
+        },
+        {
+            "name": "谢大脚",
+            "userId": 10001,
+            "company": "乡村爱情",
+            "department": "刘老谦大舞台̨",
+            "birthday": "1989-05-11 11:23:44",
+            "sex": true,
+            "headImage": "http://img.mp.itc.cn/upload/20160907/9d2161eddab34ad89f1edc099c4a6633_th.jpg",
+            "sign": "老铁来波666"
+        },
+        {
+            "name": "刘大脑袋",
+            "userId": 10001,
+            "company": "乡村爱情",
+            "department": "刘老谦大舞台̨",
+            "birthday": "1989-05-11 11:23:44",
+            "sex": true,
+            "headImage": "http://imgsrc.baidu.com/forum/w%3D580/sign=8802b82d622762d0803ea4b790ed0849/6059252dd42a2834157531055ab5c9ea14cebfe8.jpg",
+            "sign": "老铁来波666"
+        }
+    ]
+}
