@@ -11,7 +11,7 @@ android 快速开发框架
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/1.png)
 ##框架详细
-###jrbaselibrary   基础框架  API https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/javadoc/jrbase.rar
+###jrbaselibrary   基础框架  API https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/jrbase.rar
 封装 基础数据操作
 * 1:缓存  （DiskLruCache，LruCache，SharedPreferences）
 * 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
@@ -23,7 +23,7 @@ android 快速开发框架
 * 8:数据加密 （DES,MD5,RSA）
 * 9:依赖注入IOC （自定义）
 
-###jrUIlibrary   UI控件  API https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/javadoc/jrui.rar
+###jrUIlibrary   UI控件  API https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/jrui.rar
 * TemplateTitleBar     顶部标题栏控件
 * NoScrollListview     不可滑动的listView
 * NoScrollGridView     不可滑动的GridView
