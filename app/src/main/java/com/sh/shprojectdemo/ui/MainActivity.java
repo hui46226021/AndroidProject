@@ -10,6 +10,7 @@ import android.widget.RadioGroup;
 import com.jrfunclibrary.base.activity.BaseActivity;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
+import com.sh.shprojectdemo.im.MyConversationFragment;
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.ui.fragment.HomeFragment;
 import com.sh.shprojectdemo.ui.fragment.IMFragment;
@@ -80,7 +81,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         }
         if (checkedId == R.id.classification) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.id_fragment_title, IMFragment.newInstance()).commit();
+                    .replace(R.id.id_fragment_title,new  MyConversationFragment()).commit();
 
         }
     }
