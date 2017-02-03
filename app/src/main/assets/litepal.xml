@@ -3,7 +3,7 @@
 
     <dbname value="demo" ></dbname>
 
-    <version value="3" ></version>
+    <version value="4" ></version>
 
     <list>
         <mapping class="com.sh.shprojectdemo.model.News"></mapping>

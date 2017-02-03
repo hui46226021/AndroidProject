@@ -4,8 +4,15 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Environment;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.util.Log;
 
 import java.io.BufferedOutputStream;
@@ -26,6 +33,7 @@ import java.io.IOException;
  *  fastblur                          模糊图像
  *  compressByBitmapSize              根据图片大小按比例压缩 最大不超过100K
  *  saveFile                          保存图片到本地
+ *  watermarkBitmap                    水印
  */
 public class JRBitmapUtils {
     /**
@@ -420,5 +428,53 @@ public class JRBitmapUtils {
         bos.flush();
         bos.close();
         return myCaptureFile;
+    }
+
+    /**
+     * 水印
+     * @param src 添加水印的图
+     * @param watermark 水印图
+     * @return
+     */
+// 加水印 也可以加文字
+    public static Bitmap watermarkBitmap(Bitmap src, Bitmap watermark,
+                                         String title) {
+        if (src == null) {
+            return null;
+        }
+        int w = src.getWidth();
+        int h = src.getHeight();
+        //需要处理图片太大造成的内存超过的问题,这里我的图片很小所以不写相应代码了
+        Bitmap newb= Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);// 创建一个新的和SRC长度宽度一样的位图
+        Canvas cv = new Canvas(newb);
+        cv.drawBitmap(src, 0, 0, null);// 在 0，0坐标开始画入src
+        Paint paint=new Paint();
+        //加入图片
+        if (watermark != null) {
+            int ww = watermark.getWidth();
+            int wh = watermark.getHeight();
+            paint.setAlpha(50);
+            cv.drawBitmap(watermark, w - ww + 5, h - wh + 5, paint);// 在src的右下角画入水印
+        }
+        //加入文字
+        if(title!=null)
+        {
+            String familyName ="宋体";
+            Typeface font = Typeface.create(familyName,Typeface.BOLD);
+            TextPaint textPaint=new TextPaint();
+            textPaint.setColor(Color.RED);
+            textPaint.setTypeface(font);
+            textPaint.setTextSize(22);
+            //这里是自动换行的
+            StaticLayout layout = new StaticLayout(title,textPaint,w, Layout.Alignment.ALIGN_NORMAL,1.0F,0.0F,true);
+            layout.draw(cv);
+            //文字就加左上角算了
+            //cv.drawText(title,0,40,paint);
+        }
+        cv.save(Canvas.ALL_SAVE_FLAG);// 保存
+        cv.restore();// 存储
+        src.recycle();
+        src = null;
+        return newb;
     }
 }

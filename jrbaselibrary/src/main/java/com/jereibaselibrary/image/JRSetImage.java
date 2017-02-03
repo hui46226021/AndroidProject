@@ -60,7 +60,7 @@ public class JRSetImage {
 
 
     /**
-     * 利用 Picasso 加载本地 大图 防止 内存溢出
+     * 利用 Glide 加载本地 大图 防止 内存溢出
      * @param context
      * @param path
      * @param view
@@ -72,31 +72,5 @@ public class JRSetImage {
     public static  void  setLocalBitmap(Context context, int resourcesId, ImageView view){
         Glide.with(context).load(resourcesId).into(view);
     }
-
-
-
-    /**
-     * 设置网络图片 防止混乱
-     * @param context
-     * @param url
-     * @param view
-     * @param defaultBitmap
-     * @param errorBitmap
-     */
-//    public static  void  setNetWorkBitmapNoChaos(Context context, String url, NetworkImageView view, int defaultBitmap, int errorBitmap){
-////        if(mQueue == null){
-////            mQueue = Volley.newRequestQueue(context);
-////        }
-////        ImageLoader imageLoader = new ImageLoader(mQueue, BitmapCache.getInstance());
-////        view.setDefaultImageResId(defaultBitmap);
-////        view.setDefaultImageResId(errorBitmap);
-////
-////        view.setImageUrl(url,imageLoader);
-//    }
-
-
-
-
-
 
 }

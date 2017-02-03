@@ -30,4 +30,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(path: ':jr_ui_library')
     compile project(path: ':jrbaselibrary')
+    //下载
+    compile 'com.liulishuo.filedownloader:library:0.1.2'
 }

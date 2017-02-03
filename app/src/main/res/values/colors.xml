@@ -6,4 +6,5 @@
 
     <color name="white">#ffffff</color>
     <color name="background_grey">#808080</color>
+    <color name="template_line">#DDDDDD</color>
 </resources>

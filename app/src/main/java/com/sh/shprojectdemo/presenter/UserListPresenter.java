@@ -1,12 +1,11 @@
 package com.sh.shprojectdemo.presenter;
 
 import com.jereibaselibrary.constant.BaseConstant;
-import com.jereibaselibrary.netowrk.listen.NetRequestCall;
+import com.jereibaselibrary.netowrk.listen.RequestCall;
 import com.jrfunclibrary.base.view.RefreshLayoutView;
 import com.sh.shprojectdemo.biz.UserListBiz;
 import com.sh.shprojectdemo.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,7 +42,7 @@ public class UserListPresenter {
      * @param refresh true 刷新 ralse 加载
      */
     public void queryUserList(final boolean refresh){
-        userListBiz.queryUserList(page, new NetRequestCall<List<User>>() {
+        userListBiz.queryUserList(page, new RequestCall<List<User>>() {
 
             @Override
             public void success(List<User> dataResult) {

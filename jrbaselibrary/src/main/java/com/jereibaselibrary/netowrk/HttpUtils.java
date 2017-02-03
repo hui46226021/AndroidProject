@@ -140,7 +140,7 @@ public class HttpUtils {
             Request request = requestBuilder.build();
             Response response = mOkHttpClient.newCall(request).execute();
             if (response.isSuccessful()) {
-                responseStr = response.body().string().replace(" ","").replace("\n","");
+                responseStr = response.body().string().replace("\n","");
             }else {
                 responseStr=responseStr+":"+response.code();
             }

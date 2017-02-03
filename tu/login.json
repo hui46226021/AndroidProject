@@ -5,8 +5,8 @@
     "data": {
         "name": "刘能",
         "userId": 10001, 
-        "company": "乡村爱情",
-        "department": "刘老谦大舞台̨",
+        "company": 1,
+        "department": 11,
         "birthday": "1989-05-11 11:23:44", 
         "sex": true, 
         "headImage": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1485254304557&di=4e876ed757f2858b57b2ffed0bc63bc5&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%253D580%2Fsign%3De3ed665799504fc2a25fb00dd5dce7f0%2Fdba285cad1c8a78605d4a0516509c93d71cf5035.jpg", 

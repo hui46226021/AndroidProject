@@ -7,16 +7,13 @@ import android.os.AsyncTask;
 import com.jereibaselibrary.R;
 import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.constant.BaseConstant;
-import com.jereibaselibrary.constant.SystemConfig;
 import com.jereibaselibrary.netowrk.listen.HandleResponse;
-import com.jereibaselibrary.netowrk.listen.NetRequestCall;
+import com.jereibaselibrary.netowrk.listen.RequestCall;
 import com.jereibaselibrary.tools.JRDataResult;
 import com.jereibaselibrary.tools.JRNetworkUtils;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
@@ -27,7 +24,7 @@ import java.util.Set;
  */
 public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
     HttpUtils client;
-    private NetRequestCall httpRequestCall;//响应回调
+    private RequestCall httpRequestCall;//响应回调
     private HandleResponse handleResponse;//组织成功返回值接口
     private HashMap<String, Object> param ;
     private HashMap<String, Object> objectParam ;
@@ -166,7 +163,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
      * 回调
      * @param httpRequestCall
      */
-    public void setHttpRequestCall(NetRequestCall httpRequestCall) {
+    public void setHttpRequestCall(RequestCall httpRequestCall) {
         this.httpRequestCall = httpRequestCall;
     }
 

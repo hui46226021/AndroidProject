@@ -12,8 +12,8 @@ import java.io.Serializable;
 public class User extends DataSupport implements Serializable{
     private String name;
     private int userId;
-    private String company;
-    private String department;
+    private int company;
+    private int department;
     private String birthday;
     private boolean sex;// true 男 false 女
     private String headImage;
@@ -35,19 +35,19 @@ public class User extends DataSupport implements Serializable{
         this.userId = userId;
     }
 
-    public String getCompany() {
+    public int getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(int company) {
         this.company = company;
     }
 
-    public String getDepartment() {
+    public int getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDepartment(int department) {
         this.department = department;
     }
 
@@ -81,5 +81,19 @@ public class User extends DataSupport implements Serializable{
 
     public void setSign(String sign) {
         this.sign = sign;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", userId=" + userId +
+                ", company=" + company +
+                ", department=" + department +
+                ", birthday='" + birthday + '\'' +
+                ", sex=" + sex +
+                ", headImage='" + headImage + '\'' +
+                ", sign='" + sign + '\'' +
+                '}';
     }
 }

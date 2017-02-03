@@ -44,7 +44,7 @@ public class BaseFormActivity extends BaseActivity implements FormSubmitView, Fo
     /**
      * 表单转换成对象
      */
-    protected Object FormToObjectAndCheck(Class classz) {
+    protected Object formToObjectAndCheck(Class classz) {
         return FormUtls.formToObjectAndCheck(this, classz);
     }
 

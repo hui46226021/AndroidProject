@@ -5,9 +5,8 @@ import com.jereibaselibrary.db.litepal.crud.DataSupport;
 import com.jereibaselibrary.netowrk.HttpAsynTask;
 import com.jereibaselibrary.netowrk.HttpUtils;
 import com.jereibaselibrary.netowrk.listen.HandleResponse;
-import com.jereibaselibrary.netowrk.listen.NetRequestCall;
+import com.jereibaselibrary.netowrk.listen.RequestCall;
 import com.jereibaselibrary.tools.JRDataResult;
-import com.sh.shprojectdemo.MyApplication;
 import com.sh.shprojectdemo.common.constant.UrlConstant;
 import com.sh.shprojectdemo.model.User;
 
@@ -22,13 +21,13 @@ public class UserListBiz {
     /**
      * 查询用户列表
      * @param page
-     * @param netRequestCall
+     * @param requestCall
      */
-    public void queryUserList(int page, NetRequestCall netRequestCall){
+    public void queryUserList(int page, RequestCall requestCall){
         HttpAsynTask httpAsynTask = new HttpAsynTask(UrlConstant.USERLIST_URL,HttpAsynTask.GET);
         httpAsynTask.putParam("page", page);
 
-        httpAsynTask.setHttpRequestCall(netRequestCall);
+        httpAsynTask.setHttpRequestCall(requestCall);
         //设置查询回掉解析 考虑到反射效率问题 该段代码 会在 子线程中运行
         httpAsynTask.setHandleResponse(new HandleResponse() {
             @Override

@@ -19,6 +19,7 @@ import com.jruilibarary.widget.cycleview.widget.CycleView;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.presenter.HomePresenter;
 import com.sh.shprojectdemo.ui.LetterListViewActivity;
+import com.sh.shprojectdemo.ui.SettingActivity;
 import com.sh.shprojectdemo.ui.UserListActivity;
 import com.sh.shprojectdemo.view.HomeView;
 
@@ -67,10 +68,10 @@ public class HomeFragment extends LazyFragment implements HomeView {
 
 
     void initView() {
-        template.setMoreTextContextAction("表单", new View.OnClickListener() {
+        template.setMoreTextContextAction("设置", new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), SettingActivity.class));
             }
         });
         template.setTxtBackContextAction("地区", new View.OnClickListener() {

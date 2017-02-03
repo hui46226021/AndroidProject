@@ -185,7 +185,7 @@ public class FormUtls {
 
     static String getContent(View v) {
         if (v instanceof LineFromView) {
-            ((LineFromView)v).getContent();
+           return  ((LineFromView)v).getContent();
         }
         if (v instanceof CheckBox) {
 

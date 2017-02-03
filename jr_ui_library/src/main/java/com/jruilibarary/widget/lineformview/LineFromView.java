@@ -439,8 +439,8 @@ public class LineFromView extends LinearLayout {
         try {
 
             format.setLenient(false);
-            Date date= format.parse(timeStr);
-            resulTtimeStr = format2.format(date);
+            Date date= format2.parse(timeStr);
+            resulTtimeStr = format.format(date);
             return resulTtimeStr;
         } catch (ParseException e) {
             throw new RuntimeException("时间格式不合法");

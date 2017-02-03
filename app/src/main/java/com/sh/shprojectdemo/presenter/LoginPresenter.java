@@ -2,12 +2,14 @@ package com.sh.shprojectdemo.presenter;
 
 import android.text.TextUtils;
 
+import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.constant.BaseConstant;
-import com.jereibaselibrary.netowrk.listen.NetRequestCall;
-import com.jereibaselibrary.tools.JRDataResult;
+import com.jereibaselibrary.netowrk.listen.RequestCall;
+import com.jereibaselibrary.tools.JRAppUtils;
 import com.sh.shprojectdemo.biz.UserOperationBiz;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
 import com.sh.shprojectdemo.model.User;
+import com.sh.shprojectdemo.model.VersionModel;
 import com.sh.shprojectdemo.view.LoginView;
 
 /**
@@ -27,7 +29,7 @@ public class LoginPresenter {
             return;
         }
         loginView.showProgress("正在登录");
-        loginBiz.login(account, pwd, new NetRequestCall<User>() {
+        loginBiz.login(account, pwd, new RequestCall<User>() {
 
             @Override
             public void success(User dataResult) {
@@ -57,6 +59,23 @@ public class LoginPresenter {
             return true;
         }
 
+    }
+
+    public void checkVersion(){
+        loginBiz.checkVersion(new RequestCall <VersionModel>(){
+            @Override
+            public void success(VersionModel dataResult) {
+                String version =  JRAppUtils.getAppVersionName(JRBaseApplication.getContext(),JRBaseApplication.getContext().getPackageName());
+                if(version!=dataResult.getVersion()){
+                    loginView.updateWindow(dataResult.getMessage(),dataResult.getUrl(),dataResult.getVersion());
+                }
+            }
+
+            @Override
+            public void failed(String message, int errorCode) {
+
+            }
+        });
     }
 
 }

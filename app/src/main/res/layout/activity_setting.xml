@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.sh.shprojectdemo.ui.SettingActivity">
+    <com.jruilibarary.widget.TemplateTitleBar
+        android:id="@+id/template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:textColors="@color/white"
+        app:titleText="设置" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_margin="40dp"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:id="@+id/headImage"
+                android:layout_height="100dp" />
+
+
+            <com.jruilibarary.widget.lineformview.LineFromView
+                app:linefromview_type="editText"
+                style="@style/lineFromView"
+                android:id="@+id/name"
+                app:linefromview_must="true"
+                app:linefromview_tital="姓名：" />
+            <com.jruilibarary.widget.lineformview.LineFromView
+                app:linefromview_type="spinner"
+                style="@style/lineFromView"
+                android:id="@+id/company"
+                app:linefromview_must="true"
+                app:linefromview_tital="公司：" />
+            <com.jruilibarary.widget.lineformview.LineFromView
+                app:linefromview_type="spinner"
+                style="@style/lineFromView"
+                android:id="@+id/department"
+                app:linefromview_must="true"
+                app:linefromview_tital="部门：" />
+            <com.jruilibarary.widget.lineformview.LineFromView
+                app:linefromview_type="time"
+                style="@style/lineFromView"
+                android:id="@+id/birthday"
+                app:linefromview_must="true"
+                app:linefromview_tital="出生日期：" />
+            <com.jruilibarary.widget.lineformview.LineFromView
+                app:linefromview_type="switchButton"
+                style="@style/lineFromView"
+                android:id="@+id/sex"
+                app:linefromview_must="true"
+                app:linefromview_tital="男性：" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="18dp"
+                    android:textSize="@dimen/form_text_size"
+                    android:text="签名" />
+
+                <EditText
+                    android:id="@+id/sign"
+                    android:gravity="top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp"
+                    android:padding="5dp"
+                    android:textSize="@dimen/form_text_size"
+                    android:background="@drawable/bg_text_factoryaudit"
+                    android:hint="多行输入" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

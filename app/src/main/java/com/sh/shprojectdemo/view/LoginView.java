@@ -20,4 +20,6 @@ public interface LoginView extends BaseView{
      * @param message
      */
     public void loginfail(String message);
+
+    public void updateWindow(String message,String url,String version);
 }

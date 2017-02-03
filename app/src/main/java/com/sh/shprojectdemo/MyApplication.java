@@ -5,7 +5,7 @@ import android.app.Application;
 import com.jereibaselibrary.application.JRBaseApplication;
 import com.jereibaselibrary.db.litepal.LitePal;
 import com.jereibaselibrary.db.litepal.LitePalApplication;
-import com.sh.shprojectdemo.im.IMHelper;
+
 
 
 /**
@@ -20,6 +20,6 @@ public class MyApplication extends JRBaseApplication {
         //崩溃日志输出
 //        exceptionLogOut();
         //初始哈IM
-        IMHelper.initIM(this);
+//        IMHelper.initIM(this);
     }
 }

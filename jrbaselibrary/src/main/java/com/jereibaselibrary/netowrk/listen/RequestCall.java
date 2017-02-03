@@ -8,7 +8,7 @@ import com.jereibaselibrary.tools.JRDataResult;
  * E-mail zhush@jerei.com
  * 网络请求回调
  */
-public interface NetRequestCall <T>{
+public interface RequestCall<T>{
     /**
      * 成功
      * @param dataResult

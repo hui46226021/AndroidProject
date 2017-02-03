@@ -10,4 +10,7 @@ public class UrlConstant {
     public static String LOGGIN_URL ="master/tu/login.json";
     //获取列表
     public static String USERLIST_URL ="master/tu/userlist.json";
+
+    //查询版本更新
+    public static String CHECKVERSION_URL ="master/tu/checkversion.json";
 }
