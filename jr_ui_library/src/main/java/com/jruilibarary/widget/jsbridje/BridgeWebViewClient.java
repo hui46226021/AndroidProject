@@ -32,6 +32,7 @@ public class BridgeWebViewClient extends WebViewClient {
             webView.flushMessageQueue();
             return true;
         } else {
+            webView.notifyUrl(url);
             return super.shouldOverrideUrlLoading(view, url);
         }
     }

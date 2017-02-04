@@ -1,48 +1,52 @@
 package com.sh.shprojectdemo.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
-
 
 import com.jrfunclibrary.base.activity.BaseActivity;
+import com.jruilibarary.widget.UISearchView;
 import com.jruilibarary.widget.letterlist.LetterListView;
 import com.jruilibarary.widget.letterlist.LetterModle;
 import com.jruilibarary.widget.letterlist.LetterUtil;
-import com.jruilibarary.widget.letterlist.SortByName;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.adapter.LetterAdapter;
 import com.sh.shprojectdemo.model.City;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class LetterListViewActivity extends BaseActivity {
+public class LetterListViewActivity extends BaseActivity implements UISearchView.SearchViewListener {
 
     @InjectView(R.id.listview)
     LetterListView listview;
-    List<LetterModle>  cities;
+    List<LetterModle> cities;
+    @InjectView(R.id.search_view)
+    UISearchView searchView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_letter_list_view);
         ButterKnife.inject(this);
-        String[] cityArray =citys.split(",");
+        initView();
+
+    }
+
+    void initView(){
+        searchView.setSearchViewListener(this);
+        String[] cityArray = citys.split(",");
         //实体续继承 LetterModle
         cities = new ArrayList<>();
-        for(String  str :cityArray ){
-            if(TextUtils.isEmpty(str)){
+        for (String str : cityArray) {
+            if (TextUtils.isEmpty(str)) {
                 continue;
             }
-            City city =new City(str);
+            City city = new City(str);
             //设置 改对象的首字母
-            LetterUtil.setFirstLetter(city,city.getName());
+            LetterUtil.setFirstLetter(city, city.getName());
             cities.add(city);
         }
         /**
@@ -53,17 +57,20 @@ public class LetterListViewActivity extends BaseActivity {
         LetterAdapter letterAdapter = new LetterAdapter(cities, this, new LetterAdapter.Selected() {
             @Override
             public void selectde(City city) {
-                setResult(RESULT_OK,getIntent().putExtra("city",city.getName()));
+                setResult(RESULT_OK, getIntent().putExtra("city", city.getName()));
                 finish();
             }
         });
         listview.setAdapter(letterAdapter);
+    }
 
+    @Override
+    public void searchViewCallText(String text) {
+        showMessage("选择逻辑没有写~~~");
     }
 
 
-
-    String citys="上海市," +
+    String citys = "上海市," +
             ",重庆市,合川市,永川市,江津市,南川市," +
             ",河北省," +
             ",石家庄市,辛集市,藁城市,晋州市,新乐市,鹿泉市," +
@@ -407,4 +414,6 @@ public class LetterListViewActivity extends BaseActivity {
             ",伊犁哈萨克自治州,伊宁市,奎屯市" +
             ",塔城地区,塔城市,乌苏市" +
             ",阿勒泰地区,阿勒泰市";
+
+
 }

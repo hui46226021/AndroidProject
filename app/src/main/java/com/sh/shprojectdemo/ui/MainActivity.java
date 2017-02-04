@@ -53,14 +53,16 @@ public class MainActivity extends BaseActivity {
     void initView() {
 
 
-        String[] title = new String[]{"首页","IM"};
-        int[] images = new int[]{R.drawable.bg_tab_selector_home1,R.drawable.bg_tab_selector_home2};
+        String[] title = new String[]{"首页","IM","IM2","我的"};
+        int[] images = new int[]{R.drawable.bg_tab_selector_home1,R.drawable.bg_tab_selector_home2,R.drawable.bg_tab_selector_home2,R.drawable.bg_tab_selector_home2};
         tabRadioView.setTabTexts(title,R.drawable.bg_radiobutton_selector_home_page,images);
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(HomeFragment.newInstance());
         fragments.add(IMFragment.newInstance());
+        fragments.add(IMFragment.newInstance());
+        fragments.add(IMFragment.newInstance());
         tabRadioView.setFragmentList(fragments,R.id.id_fragment_title);
-        tabRadioView.setCount(new int[]{0,19});
+        tabRadioView.setCount(new int[]{0,19,0,2});
     }
 
 

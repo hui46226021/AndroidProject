@@ -39,43 +39,7 @@ public class UISearchView extends LinearLayout implements View.OnKeyListener {
         return editText;
     }
 
-    public UISearchView(Context context) {
-        super(context);
 
-        LayoutInflater.from(context).inflate(R.layout.widget_search, this);
-
-        searchDelete= (ImageView) findViewById(R.id.search_delete);
-        searchDelete.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                editText.setText("");
-            }
-        });
-
-        editText = (EditText) findViewById(R.id.inputSearch);
-        editText.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(TextUtils.isEmpty(editText.getText()+"")){
-                    searchDelete.setVisibility(GONE);
-                }else {
-                    searchDelete.setVisibility(VISIBLE);
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-        });
-
-    }
 
     public UISearchView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -91,6 +55,7 @@ public class UISearchView extends LinearLayout implements View.OnKeyListener {
 
         editText = (EditText) findViewById(R.id.inputSearch);
         editText.setImeOptions(EditorInfo.IME_ACTION_SEARCH);
+        editText.setOnKeyListener(this);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

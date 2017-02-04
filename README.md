@@ -56,7 +56,7 @@ http://www.jianshu.com/p/2b2bb6be83a8
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/3.gif)
 * Navigation View      抽屉导航（官方）
-* JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条）
+* JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
 https://github.com/lzyzsd/JsBridge
 * formUtiks            表单映射工具
 https://github.com/hui46226021/ShFormUtils
@@ -73,7 +73,6 @@ https://github.com/hui46226021/ShFormUtils
 * 文件下载
 * 启动页
 * 基础 页面视图
-* 右滑页面销毁
 * 图形解锁
 
 

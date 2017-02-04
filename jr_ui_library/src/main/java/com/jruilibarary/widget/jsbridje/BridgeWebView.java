@@ -221,6 +221,15 @@ public class BridgeWebView extends WebView implements WebViewJavascriptBridge {
 		}
 	}
 
+	public void notifyUrl(String url){
+		BridgeHandler handler;
+		handler = defaultHandler;
+		if (handler != null){
+			handler.urlHandler(url, null);
+		}
+	}
+
+
 	public void loadUrl(String jsUrl, CallBackFunction returnCallback) {
 		this.loadUrl(jsUrl);
 		responseCallbacks.put(BridgeUtil.parseFunctionName(jsUrl), returnCallback);

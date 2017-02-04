@@ -4,12 +4,12 @@
         "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png",
-        "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png"
-    },
-    {
         "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png",
         "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png"
     },
     {
         "merged": "D:\\github\\ShProjectDemo\\jrbaselibrary\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png",

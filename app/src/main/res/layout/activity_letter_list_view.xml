@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_letter_list_view"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
     tools:context="com.sh.shprojectdemo.ui.LetterListViewActivity">
+    <com.jruilibarary.widget.TemplateTitleBar
+        android:id="@+id/template"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleText="地区选择"
+        app:canBack="true"
+        app:textColors="@color/white"
+        android:background="@color/colorPrimary"
+        ></com.jruilibarary.widget.TemplateTitleBar>
+
+    <com.jruilibarary.widget.UISearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.jruilibarary.widget.UISearchView>
     <com.jruilibarary.widget.letterlist.LetterListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         ></com.jruilibarary.widget.letterlist.LetterListView>
-</RelativeLayout>
+</LinearLayout>
