@@ -96,7 +96,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
          * 检查网络
          */
         if(!JRNetworkUtils.isNetworkAvailable(JRBaseApplication.getContext())){
-            return result;
+            return null;
         }
         //访问网络
         try {

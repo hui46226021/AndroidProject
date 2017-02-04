@@ -18,28 +18,9 @@
 
     </FrameLayout>
 
-    <View
+
+    <com.jruilibarary.widget.TabRadioView
+        android:id="@+id/tabRadioView"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/background_grey"/>
-    <RadioGroup
-        android:id="@+id/radio_group"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="44dp">
-        <RadioButton
-            style="@style/homepage_tabbar"
-            android:drawableTop="@drawable/bg_tab_selector_home1"
-            android:id="@+id/homepage"
-            android:checked="true"
-            android:text="首页" />
-        <RadioButton
-            android:drawableTop="@drawable/bg_tab_selector_home2"
-            android:id="@+id/classification"
-            style="@style/homepage_tabbar"
-            android:text="IM" />
-
-
-
-    </RadioGroup>
+        android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -16,7 +16,7 @@ public class VersionModel {
     private String version;
     private String message;
     private String url;
-
+    private long size;
     public String getVersion() {
         return version;
     }
@@ -39,5 +39,13 @@ public class VersionModel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public long getSize() {
+        return size;
+    }
+
+    public void setSize(long size) {
+        this.size = size;
     }
 }

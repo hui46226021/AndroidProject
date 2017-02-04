@@ -67,7 +67,7 @@ public class LoginPresenter {
             public void success(VersionModel dataResult) {
                 String version =  JRAppUtils.getAppVersionName(JRBaseApplication.getContext(),JRBaseApplication.getContext().getPackageName());
                 if(version!=dataResult.getVersion()){
-                    loginView.updateWindow(dataResult.getMessage(),dataResult.getUrl(),dataResult.getVersion());
+                    loginView.updateWindow(dataResult.getMessage(),dataResult.getUrl(),dataResult.getVersion(),dataResult.getSize());
                 }
             }
 

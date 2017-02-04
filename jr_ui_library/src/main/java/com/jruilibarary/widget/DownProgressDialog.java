@@ -33,16 +33,19 @@ public class DownProgressDialog {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                Activity activity = (Activity) mContext;
-                activity.finish();
             }
         });
         downloadDialog = builder.create();
         downloadDialog.setCanceledOnTouchOutside(false);// 设置点击屏幕Dialog不消失
         downloadDialog.show();
+
     }
 
     public static void setProgress(int progress){
         mProgress.setProgress(progress);
+    }
+
+    public static void dismiss(){
+        downloadDialog.dismiss();
     }
 }

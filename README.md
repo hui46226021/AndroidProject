@@ -60,6 +60,7 @@ http://www.jianshu.com/p/2b2bb6be83a8
 https://github.com/lzyzsd/JsBridge
 * formUtiks            表单映射工具
 https://github.com/hui46226021/ShFormUtils
+* TabRadioView            底部Tab菜单 带红点提示
 
 ###jrFunclibrary   封装通用功能（与业务逻辑无关）
 * 版本检查更新

@@ -21,5 +21,5 @@ public interface LoginView extends BaseView{
      */
     public void loginfail(String message);
 
-    public void updateWindow(String message,String url,String version);
+    public void updateWindow(String message,String url,String version,long fileSize);
 }

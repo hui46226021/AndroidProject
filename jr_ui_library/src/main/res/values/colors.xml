@@ -20,4 +20,5 @@
     <color name="ui_translucent">#27565555</color>
     <color name="ui_all_translucent">#00ffffff</color>
     <color name="ui_mask">#90000000</color>
+    <color name="ui_background_grey">#808080</color>
 </resources>

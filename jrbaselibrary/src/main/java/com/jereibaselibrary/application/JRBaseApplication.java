@@ -7,6 +7,7 @@ import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.db.litepal.LitePal;
 import com.jereibaselibrary.db.litepal.LitePalApplication;
 import com.jereibaselibrary.tools.JRExceptionHandler;
+import com.liulishuo.filedownloader.FileDownloader;
 
 /**
  * Created by zhush on 2017/1/14.
@@ -24,6 +25,8 @@ public class JRBaseApplication extends Application {
 
         super.onCreate();
         LitePal.initialize(this);
+        //初始化 下载引擎
+        FileDownloader.init(this);
     }
 
     /**

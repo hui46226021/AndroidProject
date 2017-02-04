@@ -26,7 +26,7 @@ public abstract class DownloadReceiver extends BroadcastReceiver {
             downloading("正在下载",intent.getStringExtra(DownloadService.URL_KEY),intent.getIntExtra(DownloadService.PROGRESS_KEY,0));
         }
         if(state== DownloadService.DOWNLOADFINIS){
-            downloadASuccess("下载成功",intent.getStringExtra(DownloadService.URL_KEY));
+            downloadASuccess("下载成功",intent.getStringExtra(DownloadService.URL_KEY),intent.getStringExtra(DownloadService.LOCAL_KEY));
         }
         if(state== DownloadService.DOWNLOAD_FAIL){
             downloadAFail("下载失败",intent.getStringExtra(DownloadService.URL_KEY));
@@ -44,7 +44,7 @@ public abstract class DownloadReceiver extends BroadcastReceiver {
     /**
      * 下载后
      */
-    public abstract  void  downloadASuccess(String state,String url);
+    public abstract  void  downloadASuccess(String state,String url,String local);
 
     /**
      * 下载失败

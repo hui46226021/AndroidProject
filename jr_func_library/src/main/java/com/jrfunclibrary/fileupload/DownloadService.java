@@ -12,6 +12,8 @@ import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.sh.zsh.jrfunclibrary.R;
 
+import java.io.File;
+
 
 /**
  * Created by zhush on 2016/11/2.
@@ -26,6 +28,7 @@ public class DownloadService {
     public static String STATE_KEY="state_key";
     public static String URL_KEY="url_key";
     public static String PROGRESS_KEY="progress_key";
+    public static String LOCAL_KEY="local_key";
     public static String ACTION="com.jr.downloader";
 
     public static int WAITCONN = 0;//等待连接
@@ -40,6 +43,21 @@ public class DownloadService {
     int progress;
 
     /**
+     * 判断文件是否本地已下载  如果已下载 返回路径
+     * @param fileName
+     * @param fileType
+     * @param fileSize
+     * @return
+     */
+    public String  isDownloaded( String fileName,  String fileType,long fileSize){
+        String path = Environment.getExternalStorageDirectory() + DIRECTORY + fileName + fileType;
+        File file = new File(path);
+        if(file.exists()&&file.length()==fileSize){
+            return path;
+        }
+        return null;
+    }
+    /**
      * 封装下载
      *
      * @param url
@@ -50,17 +68,18 @@ public class DownloadService {
     public void downloader(final int resourceId, String url, final String fileName, final String fileType) {
 
 
-        FileDownloader.getImpl().create(SystemConfig.getFullUrl() + "/upload/" + url)
+        FileDownloader.getImpl().create(url)
                 .setPath(Environment.getExternalStorageDirectory() + DIRECTORY + fileName + fileType)
                 .setListener(new FileDownloadListener() {
                     @Override
                     protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-                        sendBroadcast(WAITCONN,task.getUrl(),0);
+                        JRLogUtils.e("DownloaderUtils", "等待链接");
+                        sendBroadcast(WAITCONN,task.getUrl(),0,task.getPath());
                     }
 
                     @Override
                     protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
-                        sendBroadcast(CONN_SUCCESSE,task.getUrl(),0);
+                        sendBroadcast(CONN_SUCCESSE,task.getUrl(),0,task.getPath());
                     }
 
                     @Override
@@ -69,7 +88,7 @@ public class DownloadService {
                         progress = soFarBytes * 100 / totalBytes;
                         notificationUtils.addProgressNotification(resourceId,progress,"正在下载",fileName + "." + fileType);
 
-                        sendBroadcast(DOWNLOADING,task.getUrl(),progress);
+                        sendBroadcast(DOWNLOADING,task.getUrl(),progress,task.getPath());
                     }
 
                     @Override
@@ -81,6 +100,7 @@ public class DownloadService {
 
                     @Override
                     protected void retry(final BaseDownloadTask task, final Throwable ex, final int retryingTimes, final int soFarBytes) {
+
                     }
 
                     @Override
@@ -88,7 +108,7 @@ public class DownloadService {
                         JRLogUtils.e("DownloaderUtils", "完成" + task.getPath());
                         notificationUtils.addNotification(resourceId,"下载成功",fileName + fileType, true);
 
-                        sendBroadcast(DOWNLOADFINIS,task.getUrl(),100);
+                        sendBroadcast(DOWNLOADFINIS,task.getUrl(),100,task.getPath());
                     }
 
                     @Override
@@ -100,10 +120,10 @@ public class DownloadService {
                     protected void error(BaseDownloadTask task, Throwable e) {
                         JRLogUtils.e("DownloaderUtils", "错误" + task.getPath());
                         if (progress >= 99) {
-                            sendBroadcast(DOWNLOADFINIS,task.getUrl(),100);
+                            sendBroadcast(DOWNLOADFINIS,task.getUrl(),100,task.getPath());
                             notificationUtils.addNotification(resourceId,"下载成功",fileName + fileType, true);
                         } else {
-                            sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0);
+                            sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0,task.getPath());
                             notificationUtils.addNotification(resourceId,"下载失败",fileName + fileType, true);
                         }
 
@@ -122,11 +142,12 @@ public class DownloadService {
      * @param url
      * @param progress
      */
-        public void sendBroadcast(int state,String url,int progress){
+        public void sendBroadcast(int state,String url,int progress,String local){
             Intent intent = new Intent();
             intent.setAction(ACTION);
             intent.putExtra(STATE_KEY,state);
             intent.putExtra(URL_KEY,url);
+            intent.putExtra(LOCAL_KEY,local);
             if(progress>0){
                 intent.putExtra(PROGRESS_KEY,progress);
             }

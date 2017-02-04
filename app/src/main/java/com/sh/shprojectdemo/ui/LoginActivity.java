@@ -3,7 +3,9 @@ package com.sh.shprojectdemo.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,16 +13,20 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.jereibaselibrary.image.JRSetImage;
+import com.jereibaselibrary.tools.JRAppUtils;
 import com.jrfunclibrary.base.activity.BaseActivity;
 import com.jrfunclibrary.base.receiver.DownloadReceiver;
 import com.jrfunclibrary.fileupload.DownloadService;
 import com.jruilibarary.widget.CircleImageView;
+import com.jruilibarary.widget.DownProgressDialog;
 import com.jruilibarary.widget.TemplateTitleBar;
 import com.sh.shprojectdemo.R;
 
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.presenter.LoginPresenter;
 import com.sh.shprojectdemo.view.LoginView;
+
+import java.io.File;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -61,6 +67,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         });
         String url = "http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
         JRSetImage.setNetWorkImage(this, url, image);
+        loginPresenter.checkVersion();
     }
 
     @OnClick(R.id.button)
@@ -90,18 +97,26 @@ public class LoginActivity extends BaseActivity implements LoginView {
     }
 
     @Override
-    public void updateWindow(String message,final String url,final String version) {
+    public void updateWindow(String message,final String url,final String version,final long fileSize) {
         showAlertDialog("版本更新:" + version, message, "现在更新", new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IntentFilter intentFilter = new IntentFilter();
-                intentFilter.addAction(DownloadService.ACTION);
-                registerReceiver(downloadReceiver,intentFilter);//注册下载广播
-
                 DownloadService downloadService = new DownloadService();
-                downloadService.downloader(0,url,version,".apk");
+                String path = downloadService.isDownloaded(version,".apk",fileSize);
+                if(path!=null){
+                    JRAppUtils.installApk(LoginActivity.this,path);
+                }else {
+                    IntentFilter intentFilter = new IntentFilter();
+                    intentFilter.addAction(DownloadService.ACTION);
+                    registerReceiver(downloadReceiver,intentFilter);//注册下载广播
+                    downloadService.downloader(0,url,version,".apk");
+                    DownProgressDialog.show(LoginActivity.this,"正在下载");
+                }
+
             }
         },"取消",null);
+
+
     }
 
 
@@ -114,22 +129,27 @@ public class LoginActivity extends BaseActivity implements LoginView {
 
         @Override
         public void downloadBefore(String state, String url) {
-
+            DownProgressDialog.setProgress(0);
         }
 
         @Override
         public void downloading(String state, String url, int progress) {
 
+            DownProgressDialog.setProgress(progress);
         }
 
         @Override
-        public void downloadASuccess(String state, String url) {
-
+        public void downloadASuccess(String state, String url,String local) {
+            DownProgressDialog.dismiss();
+            JRAppUtils.installApk(LoginActivity.this,local);
         }
 
         @Override
         public void downloadAFail(String state, String url) {
-
+            DownProgressDialog.dismiss();
+            showMessage(state);
         }
     };
+
+
 }

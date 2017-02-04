@@ -2,32 +2,33 @@ package com.sh.shprojectdemo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v4.app.Fragment;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.jrfunclibrary.base.activity.BaseActivity;
+import com.jruilibarary.widget.TabRadioView;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.ui.fragment.HomeFragment;
 import com.sh.shprojectdemo.ui.fragment.IMFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener{
+public class MainActivity extends BaseActivity {
 
 
     @InjectView(R.id.id_fragment_title)
     FrameLayout idFragmentTitle;
-    @InjectView(R.id.homepage)
-    RadioButton homepage;
-    @InjectView(R.id.classification)
-    RadioButton classification;
-    @InjectView(R.id.radio_group)
-    RadioGroup radioGroup;
+
+    @InjectView(R.id.tabRadioView)
+    TabRadioView tabRadioView;
     private int LOGIN_REQUESTCODE = 10001;
 
     User user;
@@ -45,16 +46,21 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         }
 
 
-
         initView();
 
     }
 
-    void initView(){
-        radioGroup.setOnCheckedChangeListener(this);
+    void initView() {
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.id_fragment_title, HomeFragment.newInstance()).commit();
+
+        String[] title = new String[]{"首页","IM"};
+        int[] images = new int[]{R.drawable.bg_tab_selector_home1,R.drawable.bg_tab_selector_home2};
+        tabRadioView.setTabTexts(title,R.drawable.bg_radiobutton_selector_home_page,images);
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(HomeFragment.newInstance());
+        fragments.add(IMFragment.newInstance());
+        tabRadioView.setFragmentList(fragments,R.id.id_fragment_title);
+        tabRadioView.setCount(new int[]{0,19});
     }
 
 
@@ -71,17 +77,4 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         }
     }
 
-    @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-        if (checkedId == R.id.homepage) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.id_fragment_title, HomeFragment.newInstance()).commit();
-
-        }
-        if (checkedId == R.id.classification) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.id_fragment_title,new  IMFragment()).commit();
-
-        }
-    }
 }

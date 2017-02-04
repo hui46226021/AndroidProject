@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+   >
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/ui_background_grey"/>
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="50dp">
+        <RadioButton
+            android:visibility="gone"
+            style="@style/homepage_tabbar"
+
+            android:id="@+id/r1"
+            android:checked="true"
+             />
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/r2"
+            style="@style/homepage_tabbar"
+             />
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/r3"
+            style="@style/homepage_tabbar"
+            />
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/r4"
+            style="@style/homepage_tabbar"
+            />
+
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/r5"
+            style="@style/homepage_tabbar"
+            />
+
+
+
+    </RadioGroup>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <FrameLayout
+        android:visibility="gone"
+        android:id="@+id/drag_layout1"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <com.xinlan.dragindicator.DragIndicatorView
+            style="@style/drag_indicator"
+            android:id="@+id/count1"
+         />
+    </FrameLayout>
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/drag_layout2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.xinlan.dragindicator.DragIndicatorView
+                style="@style/drag_indicator"
+                android:id="@+id/count2"
+               />
+        </FrameLayout>
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/drag_layout3"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.xinlan.dragindicator.DragIndicatorView
+                style="@style/drag_indicator"
+                android:id="@+id/count3"
+              />
+        </FrameLayout>
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/drag_layout4"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.xinlan.dragindicator.DragIndicatorView
+                style="@style/drag_indicator"
+                android:id="@+id/count4"
+               />
+        </FrameLayout>
+        <FrameLayout
+            android:visibility="gone"
+            android:id="@+id/drag_layout5"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.xinlan.dragindicator.DragIndicatorView
+                style="@style/drag_indicator"
+                android:id="@+id/count5"
+                />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>
