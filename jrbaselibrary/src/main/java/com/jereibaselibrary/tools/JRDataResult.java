@@ -11,28 +11,30 @@ import java.util.HashMap;
  */
 public class JRDataResult
 {
-	private String resultCode;
+	private int resultCode;
 	private String resultMessage;
 	private Object resultObject;
-	private HashMap <String,Object>resultMap;
 	public JRDataResult(){}
-	public JRDataResult(String resultCode, String resultMessage)
+	public JRDataResult(int resultCode, String resultMessage)
 	{
 		this.resultCode=resultCode;
 		this.resultMessage=resultMessage;
 	}
-	public JRDataResult(String resultCode, String resultMessage, Object resultObject)
+	public JRDataResult(int resultCode, String resultMessage, Object resultObject)
 	{
 		this.resultCode=resultCode;
 		this.resultMessage=resultMessage;
 		this.resultObject=resultObject;
 	}
-	public String getResultCode() {
+
+	public int getResultCode() {
 		return resultCode;
 	}
-	public void setResultCode(String resultCode) {
+
+	public void setResultCode(int resultCode) {
 		this.resultCode = resultCode;
 	}
+
 	public String getResultMessage() {
 		return resultMessage;
 	}

@@ -7,8 +7,11 @@ package com.jereibaselibrary.constant;
  */
 public class BaseConstant {
     public static class NetworkConstant {
-        public static String CODE_FAILURE ="2";
-        public static String CODE_SUCCESS ="1";
-        public static int NOT_NETOWRK =-9999; //没有网络
+        public final static int CODE_FAILURE =2;
+        public final static int CODE_SUCCESS =0;
+        public final static int NOT_NETOWRK =-9998; //没有网络
+        public final static int NOT_SESSION =-9999; //掉线
+        public final static String  NETOWRK_BROADCAST_ACTION ="com.jr.newwork"; //没有网络
+        public final static String  NETWORK_STATE ="network_state";
     }
 }

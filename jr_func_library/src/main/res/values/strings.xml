@@ -13,5 +13,7 @@
     <string name="func_tip_setting_net">设置网络</string>
     <string name="func_confirm">确认</string>
     <string name="func_cancel">取消</string>
-
+    <string name="func_login_again">重新登录</string>
+    <string name="func_sign_out">退出</string>
+    <string name="func_hint">提示</string>
 </resources>

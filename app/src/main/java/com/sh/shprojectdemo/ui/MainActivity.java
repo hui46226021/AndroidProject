@@ -34,7 +34,7 @@ public class MainActivity extends BaseActivity {
     TabRadioView tabRadioView;
     @InjectView(R.id.navigation_view)
     NavigationView navigationView;
-    private int LOGIN_REQUESTCODE = 10001;
+
 
     User user;
 

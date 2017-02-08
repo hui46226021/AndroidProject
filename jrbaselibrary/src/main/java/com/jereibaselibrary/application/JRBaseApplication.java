@@ -48,4 +48,12 @@ public class JRBaseApplication extends Application {
     public OwnCache getOwnCache() {
         return ownCache;
     }
+
+    /**
+     * 设置离线后 默认调转到的 页面
+     * @param classz
+     */
+    public void setLoginPage(Class classz){
+        ownCache.setLoginPage(classz);
+    }
 }

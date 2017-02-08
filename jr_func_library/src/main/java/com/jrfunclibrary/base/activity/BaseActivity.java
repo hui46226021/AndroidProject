@@ -1,8 +1,10 @@
 package com.jrfunclibrary.base.activity;
 
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -24,10 +26,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 
+import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.cache.OwnCache;
+import com.jereibaselibrary.constant.BaseConstant;
 import com.jereibaselibrary.image.JRBitmapUtils;
 import com.jereibaselibrary.tools.JRLogUtils;
 import com.jereibaselibrary.tools.JRUriUtils;
+import com.jrfunclibrary.base.receiver.NetworkReceiver;
 import com.jrfunclibrary.base.view.BaseView;
+import com.jrfunclibrary.fileupload.DownloadService;
 import com.jruilibarary.widget.IOSAlertDialog;
 import com.jruilibarary.widget.MyProgressDialog;
 import com.sh.zsh.jrfunclibrary.R;
@@ -42,10 +49,12 @@ import java.util.TimerTask;
  *
  * Created by zhush on 2016/7/8.
  */
-public class BaseActivity extends AppCompatActivity implements BaseView {
+public  class BaseActivity extends AppCompatActivity implements BaseView {
 
-
+    private Activity activity;
     boolean isCut;//是否图像 截取
+    boolean isActive;//当前activity是否活跃
+    protected int LOGIN_REQUESTCODE = 10001;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,13 +64,24 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
 //            //透明导航栏
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 //        }
-
-
+        activity = this;
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(BaseConstant.NetworkConstant.NETOWRK_BROADCAST_ACTION);
+        registerReceiver(networkReceiver,intentFilter);//注册网络状态广播
     }
 
-    private ViewGroup.LayoutParams mNightViewParam = null;
-    private View mask = null;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        isActive=true;
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        isActive=false;
+    }
 
     /**
      * 点击空白页面收起输入法
@@ -120,8 +140,34 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
         });
     }
 
+    @Override
+    public void offLine() {
 
+        showAlertDialog(getString(R.string.func_hint), "您的账号已在其他设备上登录", getString(R.string.func_login_again), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login_again();
+            }
+        }, getString(R.string.func_sign_out), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeProgram();
+            }
+        });
+    }
 
+    /**
+     * 重新登录 可在子类 重写
+     */
+    public  void login_again(){
+        if(OwnCache.getInstance().getLoginPage()!=null){
+            startActivityForResult(new Intent(this, OwnCache.getInstance().getLoginPage()), LOGIN_REQUESTCODE);
+        }
+    };
+    /**
+     * 关闭程序 可在子类重写
+     */
+    public  void closeProgram(){};
 
     /**
      * Activity之间相互切换的动画枚举
@@ -420,4 +466,23 @@ public class BaseActivity extends AppCompatActivity implements BaseView {
     public void getPhonePhoto(Bitmap bitmap){
 
     }
+
+    /**
+     * 网络状态广播
+     */
+    NetworkReceiver networkReceiver = new NetworkReceiver() {
+        @Override
+        public void noHaveNetwork() {
+            if(isActive){
+                noNetwork();
+            }
+        }
+
+        @Override
+        public void dropped() {
+            if(isActive){
+                noNetwork();
+            }
+        }
+    };
 }

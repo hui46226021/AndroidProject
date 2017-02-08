@@ -91,6 +91,22 @@
                 android:layout_marginRight="16dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+            <Button
+                android:text="layerListView"
+                android:id="@+id/layerListView"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:text="测试掉线"
+                android:id="@+id/drop_test"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
     </ScrollView>

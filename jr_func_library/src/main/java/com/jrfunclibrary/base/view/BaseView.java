@@ -26,4 +26,8 @@ public interface BaseView {
      * 没有网络
      */
     public void noNetwork();
+    /**
+     * 离线
+     */
+    public void offLine();
 }

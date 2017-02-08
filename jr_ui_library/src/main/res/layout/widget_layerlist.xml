@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent" >
+    <com.jruilibarary.widget.NoScrollGridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:minHeight="40dp"
+        android:background="@color/ui_white"
+        android:numColumns="4"
+        android:stretchMode="columnWidth"
+        android:layout_height="wrap_content"></com.jruilibarary.widget.NoScrollGridView>
+    <ListView
+        android:layout_marginTop="12dp"
+        android:id="@+id/id_tree"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="#aaa"
+        android:dividerHeight="1px" >
+    </ListView>
+
+</LinearLayout>

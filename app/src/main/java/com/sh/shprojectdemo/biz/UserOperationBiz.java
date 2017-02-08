@@ -56,5 +56,16 @@ public class UserOperationBiz {
         httpAsynTask.execute();
     }
 
+    /**
+     * 测试掉线
+     * @param requestCall
+     */
+    public void dropTest(RequestCall requestCall){
+        HttpAsynTask httpAsynTask = new HttpAsynTask(UrlConstant.DROPTEST_URL,HttpAsynTask.GET);
+        httpAsynTask.setHttpRequestCall(requestCall);
+
+        httpAsynTask.execute();
+    }
+
 
 }

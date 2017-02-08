@@ -1,6 +1,7 @@
 package com.jereibaselibrary.netowrk;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 
 
@@ -26,8 +27,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
     HttpUtils client;
     private RequestCall httpRequestCall;//响应回调
     private HandleResponse handleResponse;//组织成功返回值接口
-    private HashMap<String, Object> param ;
-    private HashMap<String, Object> objectParam ;
+
     private String url;
     private HttpCacheInterface httpCacheInterface; //缓存调用
     private int cacheTrigger;
@@ -88,7 +88,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
                     break;
             }
 
-            if(result.getResultCode().equals(BaseConstant.NetworkConstant.CODE_SUCCESS)){
+            if(result.getResultCode()==BaseConstant.NetworkConstant.CODE_SUCCESS){
                 return result;
             }
         }
@@ -108,7 +108,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
             }
             if (client.hasErrors()) {
                 //请求失败
-                result.setResultCode(BaseConstant.NetworkConstant.CODE_FAILURE);
+                result.setResultCode(client.getResultCode());
                 result.setResultMessage(client.getMessageString());
 
             } else {
@@ -132,6 +132,10 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
 
         if(dataControlResult==null){
             httpRequestCall.failed(context.getString(R.string.jr_base_control_no_network),BaseConstant.NetworkConstant.NOT_NETOWRK);
+            Intent intent = new Intent();
+            intent.setAction(BaseConstant.NetworkConstant.NETOWRK_BROADCAST_ACTION);
+            intent.putExtra(BaseConstant.NetworkConstant.NETWORK_STATE,BaseConstant.NetworkConstant.NOT_NETOWRK);
+             context.sendBroadcast(intent,null); //发送个没有网络的广播
             return;
 
         }
@@ -139,24 +143,15 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
             //执行完毕
             httpRequestCall.success(dataControlResult.getResultObject());
         } else {
-            httpRequestCall.failed(dataControlResult.getResultMessage(),0);
+            httpRequestCall.failed(dataControlResult.getResultMessage(),dataControlResult.getResultCode());
+            if(dataControlResult.getResultCode()==BaseConstant.NetworkConstant.NOT_SESSION){
+                Intent intent = new Intent();
+                intent.setAction(BaseConstant.NetworkConstant.NETOWRK_BROADCAST_ACTION);
+                intent.putExtra(BaseConstant.NetworkConstant.NETWORK_STATE,BaseConstant.NetworkConstant.NOT_SESSION);
+                context.sendBroadcast(intent,null); //发送掉线广播
+            }
         }
 
-    }
-
-    /**
-     * 参数
-     * @param param
-     */
-    public void setParam(HashMap<String, Object> param) {
-        this.param = param;
-    }
-    /**
-     * 对象参数
-     * @param param
-     */
-    public void setObjectParam(HashMap<String, Object> param) {
-        this.objectParam = param;
     }
 
     /**

@@ -333,6 +333,7 @@ public class HttpUtils {
      * @return
      */
     public boolean hasErrors(){
+
         return !getObject(boolean.class,"success");
     }
 
@@ -344,7 +345,13 @@ public class HttpUtils {
         return getObject(String.class,"message");
     }
 
-
+    /**
+     * 获取返回码
+     * @return
+     */
+    public int getResultCode(){
+        return getObject(Integer.class,"errorCode");
+    }
 
     static Retrofit retrofit;
 

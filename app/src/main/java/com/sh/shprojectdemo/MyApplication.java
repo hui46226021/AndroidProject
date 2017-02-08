@@ -1,11 +1,10 @@
 package com.sh.shprojectdemo;
 
-import android.app.Application;
+
 
 import com.jereibaselibrary.application.JRBaseApplication;
-import com.jereibaselibrary.db.litepal.LitePal;
-import com.jereibaselibrary.db.litepal.LitePalApplication;
 
+import com.sh.shprojectdemo.ui.LoginActivity;
 
 
 /**
@@ -21,5 +20,7 @@ public class MyApplication extends JRBaseApplication {
 //        exceptionLogOut();
         //初始哈IM
 //        IMHelper.initIM(this);
+        //设置离线后 默认调转到的 页面
+        setLoginPage(LoginActivity.class);
     }
 }

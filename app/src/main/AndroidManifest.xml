@@ -24,11 +24,12 @@
         <activity android:name=".ui.LoginActivity" />
         <activity android:name=".ui.SettingActivity" />
         <activity android:name=".ui.TabLayoutActivity" />
-        <activity android:name=".ui.TabLayout2Activity"></activity>
-        <activity android:name=".ui.VideoRecordDemoActivity"></activity>
-        <activity android:name=".ui.VideoActivity"  android:configChanges="orientation|keyboardHidden|screenSize"></activity>
-
+        <activity android:name=".ui.TabLayout2Activity" />
+        <activity android:name=".ui.VideoRecordDemoActivity" />
+        <activity
+            android:name=".ui.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".ui.LayerListViewActivity"></activity>
     </application>
-
 
 </manifest>

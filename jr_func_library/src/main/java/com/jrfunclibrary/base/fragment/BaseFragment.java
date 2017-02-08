@@ -102,24 +102,9 @@ public class BaseFragment extends Fragment implements BaseView {
     @Override
     public void noNetwork() {
 
-        showAlertDialog(getString(R.string.func_tip_setting_net), "是否去设置网络链接", getString(R.string.func_cancel), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = null;
-                // 先判断当前系统版本
-                if(Build.VERSION.SDK_INT > 10){  // 3.0以上
-                    intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
-                }else{
-                    intent = new Intent();
-                    intent.setClassName("com.android.settings", "com.android.settings.WirelessSettings");
-                }
-                startActivity(intent);
-            }
-        }, getString(R.string.general_cancel), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    }
+    @Override
+    public void offLine() {
 
-            }
-        });
     }
 }

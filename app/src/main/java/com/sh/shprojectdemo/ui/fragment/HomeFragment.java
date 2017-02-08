@@ -23,6 +23,7 @@ import com.jruilibarary.widget.spinner.SpinnerDialog;
 import com.jruilibarary.widget.spinner.SpinnerModel;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.presenter.HomePresenter;
+import com.sh.shprojectdemo.ui.LayerListViewActivity;
 import com.sh.shprojectdemo.ui.LetterListViewActivity;
 import com.sh.shprojectdemo.ui.SettingActivity;
 import com.sh.shprojectdemo.ui.TabLayout2Activity;
@@ -123,7 +124,7 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
         spinnerDialog.createLoadingDialog(getActivity(), list);
     }
 
-    @OnClick({R.id.sideslipListView,R.id.tabLayout,R.id.tabLayout2,R.id.spinnerDialog,R.id.image_look,R.id.video_record,R.id.video_paly})
+    @OnClick({R.id.sideslipListView,R.id.tabLayout,R.id.tabLayout2,R.id.spinnerDialog,R.id.image_look,R.id.video_record,R.id.video_paly,R.id.layerListView})
     void pageOnClick(View v) {
         switch (v.getId()){
             case R.id.sideslipListView:
@@ -157,6 +158,12 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
                 break;
             case R.id.video_paly:
                 startActivity( new Intent(getActivity(), VideoActivity.class));
+                break;
+            case R.id.layerListView:
+                startActivity( new Intent(getActivity(), LayerListViewActivity.class));
+                break;
+            case R.id.drop_test:
+
                 break;
 
 
@@ -202,4 +209,6 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
     public void selectedCall(SpinnerModel spinnerModel) {
         showMessage("点击了"+spinnerModel.getKey()+" 菜单ID"+spinnerModel.getValue());
     }
+
+
 }

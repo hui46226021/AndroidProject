@@ -1,5 +1,7 @@
 package com.sh.shprojectdemo.presenter;
 
+import com.jereibaselibrary.netowrk.listen.RequestCall;
+import com.sh.shprojectdemo.biz.UserOperationBiz;
 import com.sh.shprojectdemo.view.HomeView;
 
 /**
@@ -10,7 +12,7 @@ import com.sh.shprojectdemo.view.HomeView;
 public class HomePresenter {
 
     HomeView homeView;
-
+    UserOperationBiz userOperationBiz = new UserOperationBiz();
     public HomePresenter(HomeView homeView) {
         this.homeView = homeView;
     }
@@ -21,5 +23,22 @@ public class HomePresenter {
                 "http://www.12fly.com.my/images/lifestyle/EventsC/2015/angry-cat/02.jpg"
        };
         homeView.getImages(urls);
+    }
+
+    /**
+     * 测试掉线
+     */
+    public void dropTest(){
+        userOperationBiz.dropTest(new RequestCall() {
+            @Override
+            public void success(Object dataResult) {
+
+            }
+
+            @Override
+            public void failed(String message, int errorCode) {
+
+            }
+        });
     }
 }

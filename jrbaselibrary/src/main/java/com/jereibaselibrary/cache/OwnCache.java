@@ -48,4 +48,14 @@ public class OwnCache extends LruCache {
     public Object getObjce(String key){
       return   get(key);
     }
+
+    public void setLoginPage(Class classz){
+        putObject("loginPage",classz);
+    }
+    public Class getLoginPage(){
+        if(getObjce("loginPage")!=null){
+            return (Class) getObjce("loginPage");
+        }
+        return null;
+    }
 }

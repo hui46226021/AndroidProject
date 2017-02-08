@@ -13,4 +13,6 @@ public class UrlConstant {
 
     //查询版本更新
     public static String CHECKVERSION_URL ="master/tu/checkversion.json";
+    //测试掉线
+    public static String DROPTEST_URL ="master/tu/offline.json";
 }
