@@ -35,9 +35,9 @@ android 快速开发框架
 * DragIndicatorView    消息提示小红点（仿QQ可拖动）
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog .gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView .gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog .gif =180x320)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif =180x320)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView .gif =180x320)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/4.gif)
 * LetterListView       按字母分组listView
 * TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
