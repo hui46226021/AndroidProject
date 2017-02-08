@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/g1">
+    <item
+        android:id="@+id/one"
+        android:icon="@drawable/two"
+        android:title="第一行"/>
+    </group>
+    <group android:id="@+id/g2">
+    <item
+        android:id="@+id/two"
+        android:icon="@drawable/two"
+        android:title="第二行"/>
+    </group>
+    <group android:id="@+id/g3">
+    <item
+        android:id="@+id/three"
+        android:icon="@drawable/three"
+        android:title="第三行"/>
+    </group>
+    <group android:id="@+id/g4">
+    <item
+        android:id="@+id/four"
+        android:icon="@drawable/four"
+        android:title="第四行"/>
+    </group>
+</menu>

@@ -26,4 +26,5 @@ public class TemporaryCache extends OwnCache{
     public static User getUserSession(){
        return (User) OwnCache.getInstance().getObjce("user");
     }
+
 }

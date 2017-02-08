@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_black"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    >
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+    <Button
+        android:id="@+id/goback"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="0dp"
+
+        android:background="@drawable/search_del"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        >
+        <TextView
+            android:id="@+id/index"
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="(1/5)"
+            android:textColor="@color/ui_white"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:textSize="15sp"
+            android:layout_height="match_parent"  />
+        <Button
+            android:layout_margin="8dp"
+            android:id="@+id/save"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/ui_white"
+            android:text="保存图片"
+            android:gravity="center"
+            android:background="@color/ui_mask"
+            android:textSize="15sp"
+            />
+    </LinearLayout>
+
+
+</FrameLayout>

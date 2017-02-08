@@ -34,6 +34,7 @@ import java.io.IOException;
  *  compressByBitmapSize              根据图片大小按比例压缩 最大不超过100K
  *  saveFile                          保存图片到本地
  *  watermarkBitmap                    水印
+ *  id2Bitmap                         id 转bitmap
  */
 public class JRBitmapUtils {
     /**
@@ -476,5 +477,15 @@ public class JRBitmapUtils {
         src.recycle();
         src = null;
         return newb;
+    }
+
+    /**
+     * id 转bitmap
+     * @param res
+     * @param id
+     * @return
+     */
+    public static Bitmap id2Bitmap(Resources   res,int id){
+        return  BitmapFactory. decodeResource ( res, id);
     }
 }

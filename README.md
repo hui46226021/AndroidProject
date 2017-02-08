@@ -48,11 +48,10 @@ android 快速开发框架
 
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/2.gif)
-* JRSpinner            底部弹出菜单
+* SpinnerDialog        底部弹出菜单
 * TabLayout            viewPage 关联 tab（官方）
 http://www.jianshu.com/p/2b2bb6be83a8
 * RefreshLayout        上拉刷新组件（官方）
-
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/3.gif)
 * Navigation View      抽屉导航（官方）

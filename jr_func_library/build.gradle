@@ -30,5 +30,8 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile project(path: ':jr_ui_library')
     compile project(path: ':jrbaselibrary')
-    
+    //视频录制   https://github.com/hui46226021/ShVideoDemo
+    compile 'com.sh.shvideo:shvideolibrary:1.0.2'
+    //视频播放   https://github.com/hui46226021/ShVideoPlay
+    compile 'com.sh.zsh.code:shvideoplayer:1.0.2'
 }

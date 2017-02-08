@@ -11,4 +11,9 @@ public class DefaultHandler implements BridgeHandler{
 		}
 	}
 
+	@Override
+	public void urlHandler(String url, CallBackFunction function) {
+
+	}
+
 }

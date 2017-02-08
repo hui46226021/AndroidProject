@@ -14,7 +14,7 @@ public class HomePresenter {
     public HomePresenter(HomeView homeView) {
         this.homeView = homeView;
     }
-
+    //一般 这些数据 都在再网络上获取   这里应该是获取逻辑
     public void initViewData(){
         String[] urls = new String[]{"http://imgsrc.baidu.com/forum/w%3D580/sign=4c51a1afa5efce1bea2bc8c29f50f3e8/4353b319ebc4b7459f17554fcdfc1e178b8215ea.jpg",
                 "http://tc.sinaimg.cn/maxwidth.2048/tc.service.weibo.com/p/img4_cache_netease_com/2479a6e4a2845db0727f44808138f946.jpg",

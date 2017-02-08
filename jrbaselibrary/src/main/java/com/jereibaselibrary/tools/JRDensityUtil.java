@@ -18,6 +18,7 @@ package com.jereibaselibrary.tools;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Build;
 import android.util.DisplayMetrics;
@@ -41,6 +42,8 @@ import java.lang.reflect.Method;
  getScreenRealSize 获取屏幕的真实高度
  getStatusBarH 获取状态栏高度
  getNavigationBarrH 获取导航栏高度
+ isHorizontalScreen  是否十横屏
+
  */
 
 public class JRDensityUtil {
@@ -118,5 +121,20 @@ public class JRDensityUtil {
         Resources resources = c.getResources();
         int identifier = resources.getIdentifier("navigation_bar_height", "dimen", "android");
         return resources.getDimensionPixelOffset(identifier);
+    }
+
+    /**
+     *是否十横屏
+     * @param c
+     * @return
+     */
+    public static boolean isHorizontalScreen(Context c){
+        Configuration mConfiguration = c.getResources().getConfiguration(); //获取设置的配置信息
+        int ori = mConfiguration.orientation ; //获取屏幕方向
+        if(ori == mConfiguration.ORIENTATION_LANDSCAPE){//横屏
+        return true;
+        }else {
+            return false;
+        }
     }
 }

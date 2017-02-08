@@ -257,8 +257,27 @@ public class HttpUtils {
      */
     public <T> T getObject(Class<T> clazz, String name) {
         try {
+        JSONUtil jsonUtil = new JSONUtil(responseStr);
+        T t = jsonUtil.getObject(clazz, name);
+        return t;
+    } catch (Exception e) {
+        Log.w("json", e.getMessage(), e);
+        e.printStackTrace();
+    }
+    return null;
+}
+
+    /**
+     * 解析json 带一层数组
+     * @param clazz
+     * @param name
+     * @param <T>
+     * @return
+     */
+    public <T> T getObject(Class<T> clazz,Class clazz2, String name) {
+        try {
             JSONUtil jsonUtil = new JSONUtil(responseStr);
-            T t = jsonUtil.getObject(clazz, name);
+            T t = jsonUtil.getObject(clazz,clazz2, name);
             return t;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
@@ -283,6 +302,26 @@ public class HttpUtils {
         }
         return Collections.emptyList();
     }
+
+    /**
+     * 解析json 集合 二维数组
+     * @param clazz
+     * @param name
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> getList(Class<T> clazz, Class clazz2,String name) {
+        try {
+            JSONUtil jsonUtil = new JSONUtil(responseStr);
+            List<T> list = jsonUtil.getList(clazz,clazz2, name);
+            return list;
+        } catch (Exception e) {
+            Log.w("json", e.getMessage(), e);
+        }
+        return Collections.emptyList();
+    }
+
+
 
     public String getResponseStr() {
         return responseStr;

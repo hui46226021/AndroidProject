@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.jruilibarary.widget.CircleImageView
+
+        android:id="@+id/image"
+
+        android:layout_width="70dp"
+        app:border_width="3dp"
+        app:border_color="@color/white"
+        android:src="@drawable/avatar"
+        android:layout_height="70dp"/>
+</LinearLayout>
