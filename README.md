@@ -27,6 +27,10 @@ android 快速开发框架
 * TemplateTitleBar     顶部标题栏控件
 * NoScrollListview     不可滑动的listView
 * NoScrollGridView     不可滑动的GridView
+* SquareLayout         宽度和高度一样layout
+* LineFromView         表单行控件（封装各种控件）
+* CircleImageView      圆型ImageView
+* RoundCornerImageView 带圆角圆型ImageView
 * IOSAlertDialog       仿IOS alert
 * TimePickerView       仿IOS 仿IOS 时间选择器
 * OptionsPickerView    仿IOS 选择器（最多可以3级联动）
@@ -35,33 +39,47 @@ android 快速开发框架
 * DragIndicatorView    消息提示小红点（仿QQ可拖动）
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog .gif =180x320)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif =180x320)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView .gif =180x320)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog .gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView .gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/4.gif)
-* LetterListView       按字母分组listView
-* TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
-* MyProgressDialog     等待Dialog
 * UISearchView         搜索框
-* SquareLayout         宽度和高度一样layout
-* CircleImageView      圆型ImageView
-* RoundCornerImageView 带圆角圆型ImageView
-* LineFromView         表单行控件（封装各种控件）
+* LetterListView       按字母分组listView
+
+
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LetterListView.gif)
+* TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
+
+
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TouchPhotoView.gif)
+* MyProgressDialog     等待Dialog
 * CycleView            自动滚动banner 图
 
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/2.gif)
 * SpinnerDialog        底部弹出菜单
+
+
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SpinnerDialog.gif)
 * TabLayout            viewPage 关联 tab（官方）
 http://www.jianshu.com/p/2b2bb6be83a8
+
+
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout1.gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout2.gif)
+
 * RefreshLayout        上拉刷新组件（官方）
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/3.gif)
 * Navigation View      抽屉导航（官方）
+
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/Navigation.gif)
 * JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
 https://github.com/lzyzsd/JsBridge
 * formUtiks            表单映射工具
 https://github.com/hui46226021/ShFormUtils
+
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/formUtiks.gif)
 * TabRadioView            底部Tab菜单 带红点提示
 
 ###jrFunclibrary   封装通用功能（与业务逻辑无关）
