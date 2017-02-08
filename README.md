@@ -11,7 +11,7 @@ android 快速开发框架
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/1.png)
 ##框架详细
-###jrbaselibrary   基础框架  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/jrbase.rar)
+###jrbaselibrary   基础框架  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
 封装 基础数据操作
 * 1:缓存  （DiskLruCache，LruCache，SharedPreferences）
 * 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
@@ -23,7 +23,7 @@ android 快速开发框架
 * 8:数据加密 （DES,MD5,RSA）
 * 9:依赖注入IOC （自定义）
 
-###jrUIlibrary   UI控件  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/jrui.rar)
+###jrUIlibrary   UI控件  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
 * TemplateTitleBar     顶部标题栏控件
 * NoScrollListview     不可滑动的listView
 * NoScrollGridView     不可滑动的GridView
@@ -42,7 +42,7 @@ android 快速开发框架
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog .gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView .gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/4.gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SideslipListView.gif)
 * UISearchView         搜索框
 * LetterListView       按字母分组listView
 
@@ -56,7 +56,7 @@ android 快速开发框架
 * CycleView            自动滚动banner 图
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/2.gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/CycleView.gif)
 * SpinnerDialog        底部弹出菜单
 
 
@@ -70,7 +70,7 @@ http://www.jianshu.com/p/2b2bb6be83a8
 
 * RefreshLayout        上拉刷新组件（官方）
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/3.gif)
+![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/RefreshLayout.gif)
 * Navigation View      抽屉导航（官方）
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/Navigation.gif)
