@@ -119,7 +119,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
     @Override
     public void noNetwork() {
 
-        showAlertDialog(getString(R.string.func_tip_setting_net), "是否去设置网络链接", getString(R.string.func_cancel), new View.OnClickListener() {
+        showAlertDialog(getString(R.string.func_tip_setting_net), "是否去设置网络链接", getString(R.string.func_confirm), new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = null;
@@ -481,8 +481,15 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         @Override
         public void dropped() {
             if(isActive){
-                noNetwork();
+                offLine();
             }
         }
     };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //取消注册的广播
+        unregisterReceiver(networkReceiver);
+    }
 }

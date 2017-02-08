@@ -124,7 +124,8 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
         spinnerDialog.createLoadingDialog(getActivity(), list);
     }
 
-    @OnClick({R.id.sideslipListView,R.id.tabLayout,R.id.tabLayout2,R.id.spinnerDialog,R.id.image_look,R.id.video_record,R.id.video_paly,R.id.layerListView})
+    @OnClick({R.id.sideslipListView,R.id.tabLayout,R.id.tabLayout2,R.id.spinnerDialog,R.id.image_look,
+            R.id.video_record,R.id.video_paly,R.id.layerListView,R.id.drop_test})
     void pageOnClick(View v) {
         switch (v.getId()){
             case R.id.sideslipListView:
@@ -163,7 +164,7 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
                 startActivity( new Intent(getActivity(), LayerListViewActivity.class));
                 break;
             case R.id.drop_test:
-
+                homePresenter.dropTest();
                 break;
 
 
