@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Environment;
 import android.text.format.Formatter;
 import android.util.Log;
 
@@ -66,6 +67,8 @@ import java.util.zip.GZIPOutputStream;
  openImage 打开图片
  openVideo 打开视频
  openURL 打开URL
+ getRootDirctory 获取手机根目录
+ existSDCard  判断SD卡 是否存在
  */
 
 public class JRFileUtils {
@@ -89,8 +92,17 @@ public class JRFileUtils {
         return new File(filename).delete();
     }
 
-    public static boolean isFileExist(String filePath) {
-        return new File(filePath).exists();
+    public static boolean isFileExist(String filePath,long size) {
+        try {
+            File file = new File(filePath);
+            if(file.exists()&&file.length()==size){
+                return true;
+            }
+        }catch (Exception e){
+
+        }
+        return false;
+
     }
 
     public static boolean writeFile(String filename, String content) {
@@ -193,6 +205,35 @@ public class JRFileUtils {
         } finally {
             closeIO(is);
             closeIO(os);
+        }
+    }
+
+    /**
+     * 获取手机跟目录
+     */
+    public static String getRootDirctory(){
+            return  Environment.getExternalStorageDirectory().toString();
+    }
+
+    /**
+     * 获取 项目在sdk的路径没有 目录则自动创建
+     * @return
+     */
+    public static String getRootAppDirctory(Context context){
+        String path = getRootDirctory()+"/"+JRAppUtils.getAppPackageName(context);
+        createFolder(path);
+        return path;
+    }
+
+    /**
+     * 判断SD卡是否可用
+     * @return
+     */
+    public static boolean isSDAvailable(){
+        if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+            return true;
+        }else {
+            return false;
         }
     }
 
@@ -442,7 +483,7 @@ public class JRFileUtils {
         File file = new File(filePath);
         if (file.exists())
         {
-            Uri path = Uri.parse(filePath);
+            Uri path = Uri.fromFile(file);
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(path, apName);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -463,7 +504,7 @@ public class JRFileUtils {
         File file = new File(filePath);
         if (file.exists())
         {
-            Uri path = Uri.parse(filePath);
+            Uri path = Uri.fromFile(file);
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setDataAndType(path, getMIMEType(file));
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -474,28 +515,7 @@ public class JRFileUtils {
             catch (ActivityNotFoundException e){}
         }
     }
-    /**
-     * 打开文件
-     * @param filePath
-     * @param apName
-     */
-    public static void openFile(Activity act, String filePath)
-    {
-        File file = new File(filePath);
-        if (file.exists())
-        {
-            Uri path = Uri.parse(filePath);
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(path, getMIMEType(file));
-            intent.setFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-            try
-            {
-                act.startActivity(intent);
-            } catch (ActivityNotFoundException e){
-                Log.e("jrerror", e.toString());
-            }
-        }
-    }
+
     /**Like功能**/
     public static int likeFUCByCounts(String str,String pattenStr)
     {
@@ -510,23 +530,7 @@ public class JRFileUtils {
         }
         return result;
     }
-    /**
-     * 文件是否存在
-     * @param filePath
-     * @return
-     */
-    public static boolean fileIsExists(String filePath)
-    {
-        try
-        {
-            File f=new File(filePath);
-            if(f.exists())
-            {
-                return true;
-            }
-        }catch(Exception ex){}
-        return false;
-    }
+
     /**
      * 根据文件后缀名获得对应的MIME类型。
      * @param file

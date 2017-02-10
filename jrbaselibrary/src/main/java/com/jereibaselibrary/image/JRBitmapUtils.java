@@ -9,14 +9,15 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.os.Environment;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.Log;
 
+import com.jereibaselibrary.application.JrApp;
+import com.jereibaselibrary.tools.JRFileUtils;
+
 import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -417,17 +418,20 @@ public class JRBitmapUtils {
      * @param fileName
      * @throws IOException
      */
-    public static File saveFile(Bitmap bm, String fileName,String pashNmae) throws IOException {
-        String path = Environment.getExternalStorageDirectory() + "/" + pashNmae + "/";
-        File dirFile = new File(path);
-        if (!dirFile.exists()) {
-            dirFile.mkdir();
+    public static File saveFile(Bitmap bm, String fileName) throws IOException {
+        File myCaptureFile = null;
+        if(JRFileUtils.isSDAvailable()){
+            String path = JRFileUtils.getRootAppDirctory(JrApp.getContext()) + "/image/";
+            File dirFile = new File(path);
+            if (!dirFile.exists()) {
+                dirFile.mkdir();
+            }
+            myCaptureFile = new File(path + fileName);
+            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
+            bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
+            bos.flush();
+            bos.close();
         }
-        File myCaptureFile = new File(path + fileName);
-        BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(myCaptureFile));
-        bm.compress(Bitmap.CompressFormat.JPEG, 80, bos);
-        bos.flush();
-        bos.close();
         return myCaptureFile;
     }
 

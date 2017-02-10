@@ -1,16 +1,12 @@
 package com.jrfunclibrary.fileupload;
 
-import android.graphics.Bitmap;
 import android.os.Handler;
 import android.os.Message;
 
 
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
 import com.jereibaselibrary.tools.JRLogUtils;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -91,7 +87,7 @@ public class FileUpload {
                     conn.setRequestProperty("connection", "keep-alive");
                     conn.setRequestProperty("Content-Type", CONTENT_TYPE + ";boundary=" + BOUNDARY);
                     //同步http cookie
-                    PersistentCookieStore store = new PersistentCookieStore(JRBaseApplication.getContext());
+                    PersistentCookieStore store = new PersistentCookieStore(JrApp.getContext());
                     for(Cookie cookie:store.getCookies()){
                         conn.setRequestProperty("Cookie",cookie.name()+"="+cookie.value());
                     }
@@ -174,7 +170,7 @@ public class FileUpload {
                     fileUploadListener.uploadFileSuccess(result);
                     break;
                 case FAIL:
-                    fileUploadListener.uploadFileFail();
+                    fileUploadListener.uploadFileFail(result);
                     break;
                 case PROGRESSVALUE:
                     fileUploadListener.fileUploadProgress(progress);
@@ -200,7 +196,7 @@ public class FileUpload {
         /**
          * 上传图片失败
          */
-        public void uploadFileFail();
+        public void uploadFileFail(String resultStr);
     }
 
     ;

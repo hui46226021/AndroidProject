@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.jereibaselibrary.image.JRSetImage;
 import com.jruilibarary.widget.RoundCornerImageView;
-import com.sh.shprojectdemo.model.News;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.model.User;
 import com.xinlan.dragindicator.DragIndicatorView;
@@ -52,7 +51,7 @@ public class TestAdapter extends BaseAdapter {
     public View getView(final int i, View view, ViewGroup viewGroup) {
       final   ViewHolder holder;
         if (view == null) {
-            view = LayoutInflater.from(context).inflate(R.layout.item_conversation, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.item_list, viewGroup, false);
             holder = new ViewHolder(view);
             view.setTag(holder);
         } else {

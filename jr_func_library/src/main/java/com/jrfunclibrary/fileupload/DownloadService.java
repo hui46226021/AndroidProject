@@ -1,18 +1,15 @@
 package com.jrfunclibrary.fileupload;
 
 import android.content.Intent;
-import android.os.Environment;
 
-import com.jereibaselibrary.application.JRBaseApplication;
-import com.jereibaselibrary.constant.SystemConfig;
+import com.jereibaselibrary.application.JrApp;
+import com.jereibaselibrary.tools.JRFileUtils;
 import com.jereibaselibrary.tools.JRLogUtils;
 import com.jereibaselibrary.tools.NotificationUtils;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.sh.zsh.jrfunclibrary.R;
-
-import java.io.File;
 
 
 /**
@@ -23,24 +20,22 @@ import java.io.File;
 
 public class DownloadService {
 
-    private static DownloadService downloaderPresenter;
-
     public static String STATE_KEY="state_key";
     public static String URL_KEY="url_key";
     public static String PROGRESS_KEY="progress_key";
     public static String LOCAL_KEY="local_key";
-    public static String ACTION="com.jr.downloader";
+    private   String receiverAction="com.jr.downloader";
 
     public static int WAITCONN = 0;//等待连接
     public static int CONN_SUCCESSE = 1;//链接成功
     public static int DOWNLOADING = 2;//正在下载
     public static int DOWNLOADFINIS = 3;//下载完成
     public static int DOWNLOAD_FAIL = 4;//下载失败
+    String  rootAppDirctoryPate=JRFileUtils.getRootAppDirctory(JrApp.getContext());
+    String DIRECTORY = rootAppDirctoryPate+"/DOWN/";
 
-    public static final String DIRECTORY = "/DOWN/";
 
-
-    int progress;
+    int progress;  //下载进度
 
     /**
      * 判断文件是否本地已下载  如果已下载 返回路径
@@ -50,9 +45,10 @@ public class DownloadService {
      * @return
      */
     public String  isDownloaded( String fileName,  String fileType,long fileSize){
-        String path = Environment.getExternalStorageDirectory() + DIRECTORY + fileName + fileType;
-        File file = new File(path);
-        if(file.exists()&&file.length()==fileSize){
+
+        String path =DIRECTORY + fileName + fileType;
+
+        if(JRFileUtils.isFileExist(path,fileSize)){
             return path;
         }
         return null;
@@ -66,10 +62,14 @@ public class DownloadService {
      */
     NotificationUtils  notificationUtils = new NotificationUtils(R.drawable.design_fab_background);
     public void downloader(final int resourceId, String url, final String fileName, final String fileType) {
-
+        if(!JRFileUtils.isSDAvailable()){
+            sendBroadcast(DOWNLOAD_FAIL,url,0, JrApp.getContext().getString(R.string.func_no_sd_card));
+            return;
+        }
 
         FileDownloader.getImpl().create(url)
-                .setPath(Environment.getExternalStorageDirectory() + DIRECTORY + fileName + fileType)
+
+                .setPath(DIRECTORY + fileName + fileType)
                 .setListener(new FileDownloadListener() {
                     @Override
                     protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
@@ -123,7 +123,7 @@ public class DownloadService {
                             sendBroadcast(DOWNLOADFINIS,task.getUrl(),100,task.getPath());
                             notificationUtils.addNotification(resourceId,"下载成功",fileName + fileType, true);
                         } else {
-                            sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0,task.getPath());
+                            sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0,e.getMessage());
                             notificationUtils.addNotification(resourceId,"下载失败",fileName + fileType, true);
                         }
 
@@ -132,6 +132,8 @@ public class DownloadService {
                     @Override
                     protected void warn(BaseDownloadTask task) {
                         JRLogUtils.e("DownloaderUtils", "有相同任务" + task.getPath());
+                        sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0,"已存在相同任务");
+                        notificationUtils.addNotification(resourceId,"下载失败",fileName + fileType, true);
                     }
                 }).start();
     }
@@ -144,14 +146,18 @@ public class DownloadService {
      */
         public void sendBroadcast(int state,String url,int progress,String local){
             Intent intent = new Intent();
-            intent.setAction(ACTION);
+            intent.setAction(receiverAction);
             intent.putExtra(STATE_KEY,state);
             intent.putExtra(URL_KEY,url);
-            intent.putExtra(LOCAL_KEY,local);
+            intent.putExtra(LOCAL_KEY,local);//如果下载成功 这里是 文件的本地地址 如果 失败 这里是 失败原因
             if(progress>0){
                 intent.putExtra(PROGRESS_KEY,progress);
             }
-            JRBaseApplication.getContext().sendOrderedBroadcast(intent,null);
+            JrApp.getContext().sendBroadcast(intent,null);
+    }
+    //设置 下载发送的广播的
+    public void setReceiverActivity(String receiverAction) {
+        this.receiverAction = receiverAction;
     }
 }
 

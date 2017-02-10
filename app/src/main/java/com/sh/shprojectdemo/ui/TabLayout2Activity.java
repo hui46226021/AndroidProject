@@ -5,8 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 
 import com.sh.shprojectdemo.R;
-import com.sh.shprojectdemo.ui.fragment.HomeFragment;
-import com.sh.shprojectdemo.ui.fragment.IMFragment;
+import com.sh.shprojectdemo.ui.fragment.DataBindingFragment;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -38,11 +37,11 @@ public class TabLayout2Activity extends AppCompatActivity {
                 //选中了tab的逻辑
                 if(tab==tab1){
                    getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.id_fragment_title, IMFragment.newInstance(1)).commit();
+                            .replace(R.id.id_fragment_title, DataBindingFragment.newInstance(1)).commit();
                 }
                 if(tab==tab2){
                     getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.id_fragment_title, IMFragment.newInstance(2)).commit();
+                            .replace(R.id.id_fragment_title, DataBindingFragment.newInstance(2)).commit();
                 }
             }
 

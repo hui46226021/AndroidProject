@@ -161,9 +161,9 @@ public class JRExceptionHandler implements UncaughtExceptionHandler {
 		long timetamp = System.currentTimeMillis();
 		String time = format.format(new Date());
 		String fileName = fileNameEx + time + "-" + timetamp + ".log";
-		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+		if (JRFileUtils.isSDAvailable()) {
 			try {
-				File dir = new File(Environment.getExternalStorageDirectory() + "/" + "jerei_phone_logs");
+				File dir = new File(JRFileUtils.getRootAppDirctory(mContext) + "/" + "jerei_phone_logs");
 				if (!dir.exists())
 					dir.mkdir();
 				FileOutputStream fos = new FileOutputStream(dir  + "/" + fileName);

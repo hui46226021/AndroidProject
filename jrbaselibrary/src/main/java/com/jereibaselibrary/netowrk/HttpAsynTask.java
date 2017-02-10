@@ -6,14 +6,13 @@ import android.os.AsyncTask;
 
 
 import com.jereibaselibrary.R;
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.constant.BaseConstant;
 import com.jereibaselibrary.netowrk.listen.HandleResponse;
 import com.jereibaselibrary.netowrk.listen.RequestCall;
 import com.jereibaselibrary.tools.JRDataResult;
 import com.jereibaselibrary.tools.JRNetworkUtils;
 
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -34,7 +33,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
     public static final int FOREVER_CACHE = 0;  //先查询缓存  没有在查询网络
     public static final int NO_NETWORK_CACHE = 1;//有网时 查询网络，没网时候 查询缓存
 
-    final Context context = JRBaseApplication.getContext();
+    final Context context = JrApp.getContext();
 
     //网络请求方式
   static   public boolean POST=false;
@@ -82,7 +81,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
                     httpCacheInterface.getHttpCache(result);
                     break;
                 case NO_NETWORK_CACHE: //无网络时候 查询缓存
-                    if(!JRNetworkUtils.isNetworkAvailable(JRBaseApplication.getContext())){
+                    if(!JRNetworkUtils.isNetworkAvailable(JrApp.getContext())){
                         httpCacheInterface.getHttpCache(result);
                     }
                     break;
@@ -95,7 +94,7 @@ public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
         /**
          * 检查网络
          */
-        if(!JRNetworkUtils.isNetworkAvailable(JRBaseApplication.getContext())){
+        if(!JRNetworkUtils.isNetworkAvailable(JrApp.getContext())){
             return null;
         }
         //访问网络

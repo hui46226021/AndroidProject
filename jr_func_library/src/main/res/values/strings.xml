@@ -16,4 +16,5 @@
     <string name="func_login_again">重新登录</string>
     <string name="func_sign_out">退出</string>
     <string name="func_hint">提示</string>
+    <string name="func_no_sd_card">没有找到SD卡</string>
 </resources>

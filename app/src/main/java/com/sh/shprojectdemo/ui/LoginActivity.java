@@ -22,6 +22,8 @@ import com.jruilibarary.widget.DownProgressDialog;
 import com.jruilibarary.widget.TemplateTitleBar;
 import com.sh.shprojectdemo.R;
 
+//import com.sh.shprojectdemo.im.IMHelper;
+import com.sh.shprojectdemo.im.IMHelper;
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.presenter.LoginPresenter;
 import com.sh.shprojectdemo.view.LoginView;
@@ -67,20 +69,19 @@ public class LoginActivity extends BaseActivity implements LoginView {
         });
         String url = "http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
         JRSetImage.setNetWorkImage(this, url, image);
-        loginPresenter.checkVersion();
     }
 
     @OnClick(R.id.button)
     void pageOnClick(){
         loginPresenter.login(account.getText()+"",pwd.getText()+"");
-//        /**
-//         * 模仿IM登录
-//         */
-//        String imSig= "eJxNjdFOg0AQRf9lX2t0F1hWTXwghEYQammt8W1Dy0CHUqCwYmnjvwukJM7bzJl77pV8*Ov7Jj7IqKowJs*EGZRSphtPgtyNEM4V1iCjREE9cM651r-c6BiTkZJ6PaSns8IjjLJHKoxeN8kwhkJhgqPqB3TBGVzYeZLtduV3oaTqKvgnazDtt8DZ2G5oJ7Nsf-DFJYfyy-5cbmLTWaU*U5GVJeX7fr59s9E8gtqeQjddFZY7m3ee25jaggp74YQBj9ee1*KJqSZ4XWYPuRW1XR683MpaqBssi75Qo4wzTafDkN8-TWZZFQ__";
-//        String image="http://appservice.etian365.com/upload/upload/20161127/5a458f6d-d675-44a5-a463-4e24219b23e0.jpg";
-//        String nickName = "赵四";
-//        String id ="we3751ez1x";
-//        IMHelper.newIMHelper(this).manualLogin(id,imSig,image,nickName,"铁岭");
+        /**
+         * 模仿IM登录
+         */
+        String imSig= "eJxFkF1vgjAUhv8LtyxLW2mHS3bhxIAMxzLBr5umKwWbOexoh7rF-y42mF2e58mb857z52TJ-J4pJQvKDB00hfPoAOfOYnFUshGUlUY0HYYYYwTAzbai0XJfdwIBiCEaAPAvZSFqI0tpg79622Mtq26eTfLxNGqX6NuLWpOlGIbPbJyiacne43S25pjMebCpXoY6D-USjeRkBMMgSvnuNWjfNqtdGCeLY-VAsgq6iSZKAffgHsp6637E*dNtWfFJ7WXX7l7XDXnYx7008ktY7hOCfOAPe8443--UhpqTEvYV5ws6q1W4 ";
+        String image="http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
+        String nickName = "呵呵";
+        String id ="zsh";
+        IMHelper.newIMHelper(this).manualLogin(id,imSig,image,nickName,"铁岭");
     }
     @Override
     public void loginSuccess(User user) {
@@ -95,61 +96,5 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public void loginfail(String message) {
         showMessage(message);
     }
-
-    @Override
-    public void updateWindow(String message,final String url,final String version,final long fileSize) {
-        showAlertDialog("版本更新:" + version, message, "现在更新", new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DownloadService downloadService = new DownloadService();
-                String path = downloadService.isDownloaded(version,".apk",fileSize);
-                if(path!=null){
-                    JRAppUtils.installApk(LoginActivity.this,path);
-                }else {
-                    IntentFilter intentFilter = new IntentFilter();
-                    intentFilter.addAction(DownloadService.ACTION);
-                    registerReceiver(downloadReceiver,intentFilter);//注册下载广播
-                    downloadService.downloader(0,url,version,".apk");
-                    DownProgressDialog.show(LoginActivity.this,"正在下载");
-                }
-
-            }
-        },"取消",null);
-
-
-    }
-
-
-
-    DownloadReceiver downloadReceiver = new DownloadReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            super.onReceive(context, intent);
-        }
-
-        @Override
-        public void downloadBefore(String state, String url) {
-            DownProgressDialog.setProgress(0);
-        }
-
-        @Override
-        public void downloading(String state, String url, int progress) {
-
-            DownProgressDialog.setProgress(progress);
-        }
-
-        @Override
-        public void downloadASuccess(String state, String url,String local) {
-            DownProgressDialog.dismiss();
-            JRAppUtils.installApk(LoginActivity.this,local);
-        }
-
-        @Override
-        public void downloadAFail(String state, String url) {
-            DownProgressDialog.dismiss();
-            showMessage(state);
-        }
-    };
-
 
 }

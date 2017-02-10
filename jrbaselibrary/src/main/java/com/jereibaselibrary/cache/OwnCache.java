@@ -2,7 +2,7 @@ package com.jereibaselibrary.cache;
 
 import android.support.v4.util.LruCache;
 
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 
 
 /**
@@ -28,7 +28,7 @@ public class OwnCache extends LruCache {
 
 
     public static OwnCache getInstance(){
-        return JRBaseApplication.getContext().getOwnCache();
+        return JrApp.getContext().getOwnCache();
     }
 
     /**

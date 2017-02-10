@@ -4,12 +4,9 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 
-import com.android.tedcoder.wkvideoplayer.util.DensityUtil;
 import com.android.tedcoder.wkvideoplayer.view.MediaController;
 import com.android.tedcoder.wkvideoplayer.view.SuperVideoPlayer;
 import com.jereibaselibrary.tools.JRDensityUtil;
@@ -24,7 +21,7 @@ import com.sh.shprojectdemo.R;
  * 注意  要在 manifest.xml 设置  android:configChanges="keyboardHidden|orientation"
  */
 
-public class VideoActivity extends BaseActivity implements View.OnClickListener {
+public class ShVideoActivity extends BaseActivity implements View.OnClickListener {
 
     private SuperVideoPlayer mSuperVideoPlayer;
     private View mPlayBtnView;
@@ -36,7 +33,7 @@ public class VideoActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
+        setContentView(R.layout.activity_shvideo);
 
 
         path = getIntent().getStringExtra(FILEPATH_KEY);

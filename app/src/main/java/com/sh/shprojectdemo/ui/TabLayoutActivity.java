@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.adapter.FragmentAdapter;
-import com.sh.shprojectdemo.ui.fragment.IMFragment;
+import com.sh.shprojectdemo.ui.fragment.DataBindingFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +33,16 @@ public class TabLayoutActivity extends AppCompatActivity {
         initView();
     }
     void initView(){
-        fragments.add(IMFragment.newInstance(1));
-        fragments.add(IMFragment.newInstance(2));
-        fragments.add(IMFragment.newInstance(3));
-        fragments.add(IMFragment.newInstance(4));
-        fragments.add(IMFragment.newInstance(5));
-        fragments.add(IMFragment.newInstance(6));
-        fragments.add(IMFragment.newInstance(7));
-        fragments.add(IMFragment.newInstance(8));
-        fragments.add(IMFragment.newInstance(9));
-        fragments.add(IMFragment.newInstance(10));
+        fragments.add(DataBindingFragment.newInstance(1));
+        fragments.add(DataBindingFragment.newInstance(2));
+        fragments.add(DataBindingFragment.newInstance(3));
+        fragments.add(DataBindingFragment.newInstance(4));
+        fragments.add(DataBindingFragment.newInstance(5));
+        fragments.add(DataBindingFragment.newInstance(6));
+        fragments.add(DataBindingFragment.newInstance(7));
+        fragments.add(DataBindingFragment.newInstance(8));
+        fragments.add(DataBindingFragment.newInstance(9));
+        fragments.add(DataBindingFragment.newInstance(10));
         titles.add("第一个");
         titles.add("第二个");
         titles.add("第三个");

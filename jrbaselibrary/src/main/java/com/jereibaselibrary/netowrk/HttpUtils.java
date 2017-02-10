@@ -3,9 +3,8 @@ package com.jereibaselibrary.netowrk;
 import android.util.Log;
 
 
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.constant.SystemConfig;
-import com.jereibaselibrary.db.litepal.util.LogUtil;
 import com.jereibaselibrary.netowrk.cookie.CookieJarImpl;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
 import com.jereibaselibrary.tools.JRLogUtils;
@@ -74,14 +73,14 @@ public class HttpUtils {
         /**
          * 同步cookie
          */
-        CookieJarImpl cookieJarImpl = new CookieJarImpl(new PersistentCookieStore(JRBaseApplication.getContext()));
+        CookieJarImpl cookieJarImpl = new CookieJarImpl(new PersistentCookieStore(JrApp.getContext()));
         builder.cookieJar(cookieJarImpl);
         //获取Client 实例
         mOkHttpClient=builder.build();
 ////        /**
 ////         * 添加证书
 ////         */
-//        HttpsCerts.addCerts(JRBaseApplication.getContext());
+//        HttpsCerts.addCerts(JrApp.getContext());
 //        mOkHttpClient=  HttpsCerts.createOkhttp(builder).build();
     }
     public String url;

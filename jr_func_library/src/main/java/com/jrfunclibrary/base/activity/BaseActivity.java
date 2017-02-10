@@ -2,47 +2,43 @@ package com.jrfunclibrary.base.activity;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.constant.BaseConstant;
 import com.jereibaselibrary.image.JRBitmapUtils;
-import com.jereibaselibrary.tools.JRLogUtils;
-import com.jereibaselibrary.tools.JRUriUtils;
+import com.jereibaselibrary.tools.JRAppUtils;
+import com.jereibaselibrary.tools.JRFileUtils;
+import com.jereibaselibrary.tools.JRNetworkUtils;
+import com.jrfunclibrary.activity.ImageViewPageActivity;
+import com.jrfunclibrary.base.receiver.DownloadReceiver;
 import com.jrfunclibrary.base.receiver.NetworkReceiver;
 import com.jrfunclibrary.base.view.BaseView;
 import com.jrfunclibrary.fileupload.DownloadService;
+import com.jruilibarary.widget.DownProgressDialog;
 import com.jruilibarary.widget.IOSAlertDialog;
 import com.jruilibarary.widget.MyProgressDialog;
 import com.sh.zsh.jrfunclibrary.R;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 /**
@@ -69,20 +65,16 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         intentFilter.addAction(BaseConstant.NetworkConstant.NETOWRK_BROADCAST_ACTION);
         registerReceiver(networkReceiver,intentFilter);//注册网络状态广播
     }
-
-
     @Override
     protected void onResume() {
         super.onResume();
         isActive=true;
     }
-
     @Override
     protected void onPause() {
         super.onPause();
         isActive=false;
     }
-
     /**
      * 点击空白页面收起输入法
      *
@@ -115,60 +107,6 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         closeProgressDialog();
         setToastMessage(message,Toast.LENGTH_LONG);
     }
-
-    @Override
-    public void noNetwork() {
-
-        showAlertDialog(getString(R.string.func_tip_setting_net), "是否去设置网络链接", getString(R.string.func_confirm), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = null;
-                // 先判断当前系统版本
-                if(Build.VERSION.SDK_INT > 10){  // 3.0以上
-                    intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
-                }else{
-                    intent = new Intent();
-                    intent.setClassName("com.android.settings", "com.android.settings.WirelessSettings");
-                }
-                startActivity(intent);
-            }
-        }, getString(R.string.general_cancel), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-    }
-
-    @Override
-    public void offLine() {
-
-        showAlertDialog(getString(R.string.func_hint), "您的账号已在其他设备上登录", getString(R.string.func_login_again), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login_again();
-            }
-        }, getString(R.string.func_sign_out), new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                closeProgram();
-            }
-        });
-    }
-
-    /**
-     * 重新登录 可在子类 重写
-     */
-    public  void login_again(){
-        if(OwnCache.getInstance().getLoginPage()!=null){
-            startActivityForResult(new Intent(this, OwnCache.getInstance().getLoginPage()), LOGIN_REQUESTCODE);
-        }
-    };
-    /**
-     * 关闭程序 可在子类重写
-     */
-    public  void closeProgram(){};
-
     /**
      * Activity之间相互切换的动画枚举
      */
@@ -182,7 +120,6 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         SLIDE_OUT,
         N0_ANIM;
     }
-
     @Override
     public void startActivity(Intent intent) {
         startActivity(intent, Animation.SLIDE_RIGHT);
@@ -197,10 +134,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
     public void startActivity(Intent intent, Animation nimation) {
         super.startActivity(intent);
         startAnimation(nimation);
-
-
     }
-
     public void finish(int i) {
         if(i==0){
             super.finish();
@@ -210,15 +144,11 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         }
 
     }
-
-
     @Override
     public void finish() {
         super.finish();
         overridePendingTransition(R.anim.lift_out_small, R.anim.left_out);
-
     }
-
     /**
      * 帶动画 切换
      *
@@ -228,13 +158,10 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
     public void startActivityForResult(Intent intent, int requestCode) {
         startActivityForResult(intent, requestCode, Animation.SLIDE_RIGHT);
     }
-
     public void startActivityForResult(Intent intent, int requestCode, Animation nimation) {
             super.startActivityForResult(intent, requestCode);
         startAnimation(nimation);
     }
-
-
     private void startAnimation(Animation nimation) {
         switch (nimation) {
             case FADE:
@@ -316,14 +243,9 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
             toast.show();
             closeProgressDialog();
         }
-
-
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-
         switch (requestCode) {
             case REQUESTCODE_PICK:
                 if (data == null || data.getData() == null) {
@@ -334,19 +256,6 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
                     startPhotoZoom(data.getData());
                     return;
                 }
-                //获取照片信息
-//                try {
-//                    String img_path = JRUriUtils.uriToPath(this,data.getData());
-//                    ExifInterface exifInterface=new ExifInterface(img_path);
-//                    String FDateTime = exifInterface.getAttribute(ExifInterface.TAG_DATETIME);
-//                    JRLogUtils.e("BaseActivity","拍摄时间="+FDateTime);
-//                    String jingdu = exifInterface.getAttribute(ExifInterface.TAG_GPS_LONGITUDE);
-//                    String weidu = exifInterface.getAttribute(ExifInterface.TAG_GPS_LATITUDE);
-//                    JRLogUtils.e("BaseActivity","位置信息：经度="+jingdu+"   维度="+weidu);
-//                }catch (Exception e){
-//                    e.printStackTrace();
-//                }
-
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), data.getData());
                     bitmap =    JRBitmapUtils.compressByBitmapSize(bitmap);
@@ -383,8 +292,6 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
             default:
                 break;
         }
-
-
         super.onActivityResult(requestCode, resultCode, data);
     }
     //格式化图片
@@ -404,24 +311,30 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
     /*
 * 添加图片
 */
-    public static final int REQUESTCODE_PICK = 1;
-    public static final int REQUESTCODE_CAMERA = 3;
-    private static final int REQUESTCODE_CUTTING = 2;
+    public static final int REQUESTCODE_PICK = 9001;
+    public static final int REQUESTCODE_CAMERA = 9003;
+    private static final int REQUESTCODE_CUTTING = 9004;
 
-    String path = Environment.getExternalStorageDirectory().toString() + "/aaaa";
+    String path = JRFileUtils.getRootAppDirctory(JrApp.getContext());
 
     public static Uri iamgeUri;
 
     /**
      * 弹出 照片选择器
      * @param isCut 获取照片后 是否 截取图片
+     * @param bitmap 当前控件上的图片 没有可以传null
      */
-    public void addPictrues(boolean isCut) {
+    public void addPictrues(boolean isCut,final Bitmap bitmap) {
         this.isCut =isCut;
-
+        String[] items=null;
+        if(bitmap == null){
+            items= new String[]{"从相册选择", "拍照", "取消"};
+        }else {
+            items= new String[]{"从相册选择", "拍照","查看图片", "取消"};
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("上传群组图片");
-        builder.setItems(new String[]{"从相册选择", "拍照", "取消"},
+        builder.setItems(items,
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
@@ -434,16 +347,24 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
                                 break;
                             case 1:
                                 Intent imageCaptureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                                //文件夹aaaa
 
-                                File path1 = new File(path);
-                                if (!path1.exists()) {
-                                    path1.mkdirs();
+                                if(JRFileUtils.isSDAvailable()){
+                                    File path1 = new File(path);
+                                    File file = new File(path1, System.currentTimeMillis() + ".jpg");
+                                    iamgeUri = Uri.fromFile(file);
+                                    imageCaptureIntent.putExtra(MediaStore.EXTRA_OUTPUT, iamgeUri);
+                                    startActivityForResult(imageCaptureIntent, REQUESTCODE_CAMERA);
+                                }else {
+                                    showMessage(getString(R.string.func_no_sd_card));
                                 }
-                                File file = new File(path1, System.currentTimeMillis() + ".jpg");
-                                iamgeUri = Uri.fromFile(file);
-                                imageCaptureIntent.putExtra(MediaStore.EXTRA_OUTPUT, iamgeUri);
-                                startActivityForResult(imageCaptureIntent, REQUESTCODE_CAMERA);
+
+                                break;
+                            case 2:
+                                if(bitmap!=null){ //打开图片
+                                    ImageViewPageActivity.bitmap = bitmap;
+                                    Intent intent=new Intent(activity, ImageViewPageActivity.class);
+                                    startActivity(intent);
+                                }
                                 break;
                             default:
                                 break;
@@ -484,12 +405,149 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
                 offLine();
             }
         }
+
+        @Override
+        public void versionUpdate(String message, String url, String version, long fileSize) {
+            if(isActive){
+                update(message,url,version,fileSize,false);
+            }
+        }
     };
+
+    /**
+     * 创建版本更新广播
+     * @return
+     */
+    DownloadReceiver updateDownloadReceiver;
+    DownloadReceiver initRersionUpdatedownloadReceiver(){
+        updateDownloadReceiver = new DownloadReceiver() {
+            @Override
+            public void downloadBefore(String state, String url) {
+                DownProgressDialog.setProgress(0);
+            }
+            @Override
+            public void downloading(String state, String url, int progress) {
+                DownProgressDialog.setProgress(progress);
+            }
+            @Override
+            public void downloadASuccess(String state, String url,String local) {
+                DownProgressDialog.dismiss();
+                JRAppUtils.installApk(BaseActivity.this,local);
+            }
+            @Override
+            public void downloadAFail(String state, String url) {
+                DownProgressDialog.dismiss();
+                showMessage(state+":"+url);
+            }
+        };
+       return updateDownloadReceiver;
+    }
+
+
+    /**
+     * 没有网络
+     */
+    public void noNetwork() {
+
+        showAlertDialog(getString(R.string.func_tip_setting_net), "是否去设置网络链接", getString(R.string.func_confirm), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = null;
+                // 先判断当前系统版本
+                if(Build.VERSION.SDK_INT > 10){  // 3.0以上
+                    intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+                }else{
+                    intent = new Intent();
+                    intent.setClassName("com.android.settings", "com.android.settings.WirelessSettings");
+                }
+                startActivity(intent);
+            }
+        }, getString(R.string.general_cancel), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+    }
+
+    /**
+     * 离线
+     */
+    public void offLine() {
+
+        showAlertDialog(getString(R.string.func_hint), "您的账号已在其他设备上登录", getString(R.string.func_login_again), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                login_again();
+            }
+        }, getString(R.string.func_sign_out), new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                closeProgram();
+            }
+        });
+    }
+
+    /**
+     *
+     * @param message 更新信息
+     * @param url  下载地址
+     * @param version 版本号
+     * @param fileSize apk大小
+     * @param background 不弹出更新对话框 在wifi状态下 偷偷下载 安装包 现在好后再提示
+     */
+    public void update(final String message,final String url,final String version,final long fileSize,boolean background){
+      final   DownloadService downloadService = new DownloadService();
+        if(background){
+            //如果当前是wifi网络 并且没有现在安装包
+            if(JRNetworkUtils.isWifi(this)&&downloadService.isDownloaded(version,".apk",fileSize)!=null){
+                downloadService.downloader(0,url,version,".apk");
+                return;
+            }
+
+
+        }
+        showAlertDialog("版本更新:" + version, message, "现在更新", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String path = downloadService.isDownloaded(version,".apk",fileSize);
+                if(path!=null){
+                    JRAppUtils.installApk(BaseActivity.this,path);
+                }else {
+                    String receiverAction = "com.jr.version.update";
+                    IntentFilter intentFilter = new IntentFilter();
+                    intentFilter.addAction(receiverAction);
+                    registerReceiver(initRersionUpdatedownloadReceiver(),intentFilter);//注册下载广播
+                    downloadService.setReceiverActivity(receiverAction);
+                    downloadService.downloader(0,url,version,".apk");
+                    DownProgressDialog.show(BaseActivity.this,"正在下载");
+                }
+
+            }
+        },"取消",null);
+    }
+
+    /**
+     * 重新登录 可在子类 重写
+     */
+    public  void login_again(){
+        if(OwnCache.getInstance().getLoginPage()!=null){
+            startActivityForResult(new Intent(this, OwnCache.getInstance().getLoginPage()), LOGIN_REQUESTCODE);
+        }
+    };
+    /**
+     * 关闭程序 可在子类重写
+     */
+    public  void closeProgram(){};
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         //取消注册的广播
         unregisterReceiver(networkReceiver);
+        if(updateDownloadReceiver!=null){
+            unregisterReceiver(updateDownloadReceiver);
+        }
+
     }
 }

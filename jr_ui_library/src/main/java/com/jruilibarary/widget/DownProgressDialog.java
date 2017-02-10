@@ -29,7 +29,7 @@ public class DownProgressDialog {
         mProgress = (ProgressBar)v.findViewById(R.id.progress);
 
         builder.setView(v);
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("后台下载", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();

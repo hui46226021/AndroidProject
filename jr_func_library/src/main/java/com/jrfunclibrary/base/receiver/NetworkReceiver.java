@@ -23,6 +23,13 @@ public abstract class NetworkReceiver extends BroadcastReceiver {
             case BaseConstant.NetworkConstant.NOT_SESSION:
                 dropped();
                 break;
+            case BaseConstant.NetworkConstant.NEET_VERSION_UPDATE:
+                String message = intent.getStringExtra(BaseConstant.UpdateConstant.UPDATE_MESSAGE);
+                String url = intent.getStringExtra(BaseConstant.UpdateConstant.UPDATE_URL);
+                String version = intent.getStringExtra(BaseConstant.UpdateConstant.UPDATE_VERSION);
+                long size = intent.getLongExtra(BaseConstant.UpdateConstant.UPDATE_FILESIZE,0);
+                versionUpdate(message,url,version,size);
+                break;
         }
     }
 
@@ -34,5 +41,9 @@ public abstract class NetworkReceiver extends BroadcastReceiver {
      * 掉线了
      */
     public abstract  void  dropped();
+    /**
+     * 版本更新
+     */
+    public abstract  void  versionUpdate(String message,String url,String version,long fileSize);
 
 }

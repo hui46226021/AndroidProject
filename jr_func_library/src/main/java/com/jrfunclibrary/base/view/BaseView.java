@@ -22,12 +22,5 @@ public interface BaseView {
      * @param message
      */
     public void showMessage(String message);
-    /**
-     * 没有网络
-     */
-    public void noNetwork();
-    /**
-     * 离线
-     */
-    public void offLine();
+
 }

@@ -26,10 +26,11 @@ import com.sh.shprojectdemo.presenter.HomePresenter;
 import com.sh.shprojectdemo.ui.LayerListViewActivity;
 import com.sh.shprojectdemo.ui.LetterListViewActivity;
 import com.sh.shprojectdemo.ui.SettingActivity;
+import com.sh.shprojectdemo.ui.ShVideoActivity;
 import com.sh.shprojectdemo.ui.TabLayout2Activity;
 import com.sh.shprojectdemo.ui.TabLayoutActivity;
 import com.sh.shprojectdemo.ui.UserListActivity;
-import com.sh.shprojectdemo.ui.VideoActivity;
+//import com.sh.shprojectdemo.ui.ShVideoActivity;
 import com.sh.shprojectdemo.ui.VideoRecordDemoActivity;
 import com.sh.shprojectdemo.view.HomeView;
 
@@ -158,7 +159,7 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
                 startActivity( new Intent(getActivity(), VideoRecordDemoActivity.class));
                 break;
             case R.id.video_paly:
-                startActivity( new Intent(getActivity(), VideoActivity.class));
+                startActivity( new Intent(getActivity(), ShVideoActivity.class));
                 break;
             case R.id.layerListView:
                 startActivity( new Intent(getActivity(), LayerListViewActivity.class));

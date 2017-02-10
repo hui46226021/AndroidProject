@@ -3,7 +3,7 @@ package com.jereibaselibrary.cache;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 
 
 /**
@@ -27,7 +27,7 @@ public class SharedPreferencesTool {
 
     public static SharedPreferencesTool newInstance() {
         if(instance==null){
-        instance = new SharedPreferencesTool(JRBaseApplication.getContext());
+        instance = new SharedPreferencesTool(JrApp.getContext());
         }
         return instance;
     }

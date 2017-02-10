@@ -27,7 +27,7 @@
         <activity android:name=".ui.TabLayout2Activity" />
         <activity android:name=".ui.VideoRecordDemoActivity" />
         <activity
-            android:name=".ui.VideoActivity"
+            android:name=".ui.ShVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".ui.LayerListViewActivity"></activity>
     </application>

@@ -3,12 +3,13 @@ package com.jrfunclibrary.fileupload.presenter;
 import android.graphics.Bitmap;
 import android.view.View;
 
-import com.jereibaselibrary.constant.SystemConfig;
+import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.image.JRBitmapUtils;
 import com.jereibaselibrary.tools.JRLogUtils;
 import com.jrfunclibrary.fileupload.FileUpload;
 import com.jrfunclibrary.fileupload.view.ImageUpLoadView;
 import com.jrfunclibrary.model.AttachmentModel;
+import com.sh.zsh.jrfunclibrary.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -39,10 +40,13 @@ public class UploadImagePresenter {
          */
         File file= null;
         try {
-            file = JRBitmapUtils.saveFile(bitmap, "image" + ".png","LJ");
+            file = JRBitmapUtils.saveFile(bitmap, "image" + ".png");
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        if(file ==null){
+            imageUpLoadView.uploadImageFail(v, JrApp.getContext().getString(R.string.func_no_sd_card));
         }
 
         /**
@@ -80,9 +84,9 @@ public class UploadImagePresenter {
                 imageUpLoadView.uploadImageSuccess(bitmap,v,attachmentModel);
             }
             @Override
-            public void uploadFileFail() {
+            public void uploadFileFail(String resultStr) {
                 imageUpLoadView.closeProgress();
-                imageUpLoadView.uploadImageFail(v);
+                imageUpLoadView.uploadImageFail(v,resultStr);
             }
         });
     }

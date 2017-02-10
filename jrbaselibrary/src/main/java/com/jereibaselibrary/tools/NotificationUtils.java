@@ -4,7 +4,7 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.support.v4.app.NotificationCompat;
 
-import com.jereibaselibrary.application.JRBaseApplication;
+import com.jereibaselibrary.application.JrApp;
 
 /**
  * Created by zhush on 2017/2/3.
@@ -27,7 +27,7 @@ public class NotificationUtils {
         this.icon = icon;
     }
 
-    NotificationManager mNotificationManager = (NotificationManager) JRBaseApplication.getContext().getSystemService(JRBaseApplication.getContext().NOTIFICATION_SERVICE);
+    NotificationManager mNotificationManager = (NotificationManager) JrApp.getContext().getSystemService(JrApp.getContext().NOTIFICATION_SERVICE);
 
     /**
      * 弹出一个通知
@@ -38,7 +38,7 @@ public class NotificationUtils {
      */
     public void addNotification(int notificatId, String titel,String content,boolean ongoing) {
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(JRBaseApplication.getContext());
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(JrApp.getContext());
         mBuilder.setContentTitle(titel)//设置通知栏标题
                 .setContentText(content) //
                 .setWhen(System.currentTimeMillis())//通知产生的时间，会在通知信息里显示，一般是系统获取到的时间
@@ -63,12 +63,12 @@ public class NotificationUtils {
      */
     public void addProgressNotification(int notificatId, int progress, String titel, String content) {
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(JRBaseApplication.getContext());
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(JrApp.getContext());
         mBuilder.setContentTitle(titel)//设置通知栏标题
                 .setContentText(content) //<span style="font-family: Arial;">/设置通知栏显示内容</span>
                 //        .setContentIntent(acticity.getDefalutIntent(Notification.FLAG_AUTO_CANCEL)) //设置通知栏点击意图
                 //  .setNumber(number) //设置通知集合的数量
-//                .setTicker(content + JRBaseApplication.getContext().getString(R.string.start_download)) //通知首次出现在通知栏，带上升动画效果的
+//                .setTicker(content + JrApp.getContext().getString(R.string.start_download)) //通知首次出现在通知栏，带上升动画效果的
                 .setWhen(System.currentTimeMillis())//通知产生的时间，会在通知信息里显示，一般是系统获取到的时间
                 .setPriority(Notification.PRIORITY_DEFAULT) //设置该通知优先级
 //              .setAutoCancel(true)//设置这个标志当用户单击面板就可以让通知将自动取消

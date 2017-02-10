@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.jruilibarary.utils.UIUtils;
+
 import com.sh.zsh.jr_ui_library.R;
 
 import org.w3c.dom.Text;

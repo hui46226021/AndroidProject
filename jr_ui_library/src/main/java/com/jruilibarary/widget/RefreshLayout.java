@@ -21,7 +21,7 @@ import com.sh.zsh.jr_ui_library.R;
  * E-mail zhush@jerei.com
  */
 public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnScrollListener {
-
+    private float mInitialDownY;
     private int mTouchSlop; //滑动到最下面时的上拉操作
     private ListView mListView;
     private OnLoadListener mOnLoadListener; //上拉加载监听
@@ -38,8 +38,11 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
     public RefreshLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         //表示触发事件的最小距离
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+//        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        mTouchSlop =300;
         mListViewFooter = LayoutInflater.from(context).inflate(R.layout.refresh_layout, null, false);
+
+
     }
 
     @Override
@@ -58,6 +61,26 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
             }
         }
     }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+
+        final int action = ev.getAction();
+        switch (action) {
+            case MotionEvent.ACTION_DOWN:
+                mInitialDownY = ev.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                final float yDiff = ev.getY() - mInitialDownY;
+                Log.e("yDiff",yDiff+"");
+                Log.e("mTouchSlop",mTouchSlop+"");
+                if (yDiff < mTouchSlop) {
+                    return false;
+                }
+        }
+        return super.onInterceptTouchEvent(ev);
+    }
+
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -92,8 +115,8 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
     }
     //判断是否是上拉操作
     private boolean isPullUp() {
-        Log.e("滑动距离="+(mYDown - mLastY)+"","最小距离="+ (mTouchSlop+400));
-        return (mYDown - mLastY) >= mTouchSlop+300;
+        Log.e("滑动距离="+(mYDown - mLastY)+"","最小距离="+ (mTouchSlop));
+        return (mYDown - mLastY) >= mTouchSlop;
     }
 
     //加载操作
@@ -149,4 +172,5 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
         }
 
     }
+
 }

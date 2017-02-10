@@ -50,6 +50,7 @@ public class LineFromView extends LinearLayout {
     LinearLayout timeLinearLayout;
     TextView dataText; //日期
     ImageView rightArrow; //右侧箭头
+    String text;
 
     IOSSwitchButton switch_button;
 
@@ -86,6 +87,7 @@ public class LineFromView extends LinearLayout {
             isBotomLine = ta.getBoolean(R.styleable.LineFromView_linefromview_bottomLine, true);
             canClick = ta.getBoolean(R.styleable.LineFromView_linefromview_can_click, false);
             must = ta.getBoolean(R.styleable.LineFromView_linefromview_must, false);
+            text= ta.getString(R.styleable.LineFromView_linefromview_must);
 
 
             int type = ta.getInt(R.styleable.LineFromView_linefromview_type, 1);
@@ -170,7 +172,7 @@ public class LineFromView extends LinearLayout {
                 tvOptions.setVisibility(GONE);
                 timeLinearLayout.setVisibility(GONE);
                 switch_button.setVisibility(GONE);
-
+                tvContent.setText(text);
                 break;
             case editText:
                 tvContent.setVisibility(GONE);

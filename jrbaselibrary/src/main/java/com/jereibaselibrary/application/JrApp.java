@@ -1,21 +1,19 @@
 package com.jereibaselibrary.application;
 
-import android.app.Application;
-import android.content.Context;
+import android.support.multidex.MultiDexApplication;
 
 import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.db.litepal.LitePal;
-import com.jereibaselibrary.db.litepal.LitePalApplication;
 import com.jereibaselibrary.tools.JRExceptionHandler;
 import com.liulishuo.filedownloader.FileDownloader;
 
 /**
  * Created by zhush on 2017/1/14.
  * E-mail zhush@jerei.com
- * PS
+ * PS Application 基类
  */
-public class JRBaseApplication extends Application {
-    static JRBaseApplication context;
+public class JrApp extends MultiDexApplication {
+    static JrApp context;
     //在 Application 里引用 保证 不会被回收  最多临时缓存30个对象
     private OwnCache ownCache = new OwnCache(30);
     public void onCreate() {
@@ -33,7 +31,7 @@ public class JRBaseApplication extends Application {
      * 获取全局 context
      * @return
      */
-    public static JRBaseApplication getContext(){
+    public static JrApp getContext(){
         return context;
     }
 

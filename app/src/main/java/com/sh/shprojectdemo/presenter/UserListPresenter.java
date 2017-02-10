@@ -55,11 +55,8 @@ public class UserListPresenter {
 
             @Override
             public void failed(String message, int errorCode) {
-                if(errorCode== BaseConstant.NetworkConstant.NOT_NETOWRK){
-                    refreshLayoutView.noNetwork();
-                }else {
+
                     refreshLayoutView.getDataFail(message);
-                }
 
             }
         });

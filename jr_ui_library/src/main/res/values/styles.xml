@@ -54,6 +54,8 @@
         <attr name="linefromview_can_click" format="boolean" />
         <!--必须填写-->
         <attr name="linefromview_must" format="boolean" />
+        <!--显示的内容-->
+        <attr name="linefromview_text" format="string" />
     </declare-styleable>
 
 

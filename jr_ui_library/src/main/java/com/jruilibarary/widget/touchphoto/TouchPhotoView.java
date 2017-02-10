@@ -72,6 +72,7 @@ public class TouchPhotoView extends ImageView implements IPhotoView {
 
 	@Override
 	public RectF getDisplayRect() {
+
 		return mAttacher.getDisplayRect();
 	}
 

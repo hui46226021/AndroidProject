@@ -21,6 +21,6 @@ public interface ImageUpLoadView extends BaseView {
     /**
      * 上传图片失败
      */
-    public void uploadImageFail(View v);
+    public void uploadImageFail(View v,String errorMessage);
 
 }

@@ -99,12 +99,4 @@ public class BaseFragment extends Fragment implements BaseView {
         setToastMessage(message,Toast.LENGTH_LONG);
     }
 
-    @Override
-    public void noNetwork() {
-
-    }
-    @Override
-    public void offLine() {
-
-    }
 }

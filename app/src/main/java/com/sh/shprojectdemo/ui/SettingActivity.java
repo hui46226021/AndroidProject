@@ -87,7 +87,8 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
         headImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                addPictrues(true);
+
+                addPictrues(true,getImageBitmap(headImage));
             }
         });
         ArrayList<ViewData> companys = new ArrayList<>();
@@ -110,6 +111,20 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
         });
         company.setpvOptionsList(companys);
     }
+
+    /**
+     * 获取ImageView上的图片
+     * @param view
+     * @return
+     */
+    public Bitmap getImageBitmap(ImageView view){
+        Bitmap bitmap = null;
+        view.setDrawingCacheEnabled(true);
+        bitmap =  Bitmap.createBitmap(headImage.getDrawingCache());
+        view.setDrawingCacheEnabled(false);
+        return bitmap;
+    }
+
     void initData(){
         User user = TemporaryCache.getUserSession();
         objectToForm(user);
@@ -137,7 +152,7 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
     }
 
     @Override
-    public void uploadImageFail(View v) {
+    public void uploadImageFail(View v,String message) {
         showMessage("上传失败");
     }
 }
