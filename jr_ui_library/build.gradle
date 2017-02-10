@@ -36,5 +36,23 @@ dependencies {
     compile 'com.zsh.code:dragindicator:2.0.1'
     //时间选择器
     compile 'com.sh.zsh.code:pickerview:2.1.2'
-    compile files('libs/pinyin4j-2.5.0.jar')
+    compile 'com.belerweb:pinyin4j:2.5.0'
+}
+
+
+
+apply plugin: 'com.github.dcendents.android-maven'
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+//解决编码问题
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
 }
