@@ -1,7 +1,6 @@
 package com.sh.shprojectdemo.ui.fragment;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.jereibaselibrary.image.JRBitmapUtils;
 import com.jereibaselibrary.image.JRSetImage;
 import com.jrfunclibrary.activity.ImageViewPageActivity;
 import com.jrfunclibrary.base.fragment.LazyFragment;
@@ -24,7 +22,6 @@ import com.jruilibarary.widget.spinner.SpinnerModel;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.presenter.HomePresenter;
 import com.sh.shprojectdemo.ui.LayerListViewActivity;
-import com.sh.shprojectdemo.ui.LetterListViewActivity;
 import com.sh.shprojectdemo.ui.SettingActivity;
 import com.sh.shprojectdemo.ui.ShVideoActivity;
 import com.sh.shprojectdemo.ui.TabLayout2Activity;
