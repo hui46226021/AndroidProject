@@ -21,7 +21,7 @@ android 快速开发框架
 * 6:工具类
 * 7:数据绑定 （butterknife,Data binding） http://www.jianshu.com/p/b1df61a4df77
 * 8:数据加密 （DES,MD5,RSA）
-* 9:依赖注入IOC （自定义）
+* 9:依赖注入IOC
 
 ###jrUIlibrary   UI控件  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
 * TemplateTitleBar     顶部标题栏控件
