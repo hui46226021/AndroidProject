@@ -49,6 +49,8 @@ dependencies {
 //下载
     compile 'com.liulishuo.filedownloader:library:0.1.2'
     compile 'com.android.support:multidex:1.0.0'
+
+
 }
 //apply plugin: 'com.github.dcendents.android-maven'
 //task javadoc(type: Javadoc) {

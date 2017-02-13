@@ -1,6 +1,5 @@
 package com.sh.shprojectdemo.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.jereibaselibrary.cache.AppFileCache;
 import com.jrfunclibrary.base.activity.BaseActivity;
 import com.jruilibarary.widget.TabRadioView;
 import com.sh.shprojectdemo.R;
@@ -36,6 +36,7 @@ public class MainActivity extends BaseActivity {
     TabRadioView tabRadioView;
     @InjectView(R.id.navigation_view)
     NavigationView navigationView;
+
     User user;
 
     @Override
@@ -50,10 +51,19 @@ public class MainActivity extends BaseActivity {
             return;
         }
         initView();
+
+
+
+
     }
     void initView() {
         initBottomNavig();
         initRightNavig();
+
+        AppFileCache.instance().putCache("hahaha","hahaha");
+        AppFileCache.instance().putCache("hahaha2",123);
+        AppFileCache.instance().putCache("hahaha3",true);
+        AppFileCache.instance().putCache("hahaha4",1.2);
     }
 
     /**

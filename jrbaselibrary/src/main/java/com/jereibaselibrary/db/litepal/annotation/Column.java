@@ -22,7 +22,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Used for adding constraints to a column. Note that this annotation won't affect id column.
+ * Used for adding constraints to a column. Note that this annotation won't affectcolumn.
  *
  * @author Tony Green
  * @since 1.3

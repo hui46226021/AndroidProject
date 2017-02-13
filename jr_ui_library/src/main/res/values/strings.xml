@@ -2,4 +2,5 @@
     <string name="app_name">JR_UI_Library</string>
     <string name="search_hint">搜索</string>
     <string name="general_cancel">取消</string>
+    <string name="chat_up_finger">手指上滑，取消发送</string>
 </resources>

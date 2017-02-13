@@ -1,5 +1,5 @@
 # ShProjectDemo
-android 快速开发框架
+android 开发框架
 
 ## Android项目依赖框架
 * jrbaselibrary   基础框架
@@ -13,7 +13,7 @@ android 快速开发框架
 ##框架详细
 ###jrbaselibrary   基础框架  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
 封装 基础数据操作
-* 1:缓存  （DiskLruCache，LruCache，SharedPreferences） http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral
+* 1:缓存  （DiskLruCache，LruCache，SharedPreferences,本地文件缓存） http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral
 * 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
 * 3:数据库操作(litepal)   http://www.jianshu.com/p/557682e0a9f0
 * 4:json解析

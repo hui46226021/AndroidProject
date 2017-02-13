@@ -29,7 +29,8 @@
         <activity
             android:name=".ui.ShVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
-        <activity android:name=".ui.LayerListViewActivity"></activity>
+        <activity android:name=".ui.LayerListViewActivity" />
+        <activity android:name=".ui.AudioRecordActivity"></activity>
     </application>
 
 </manifest>

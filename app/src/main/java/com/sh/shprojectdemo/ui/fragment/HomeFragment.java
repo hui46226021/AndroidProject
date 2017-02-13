@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.jereibaselibrary.cache.AppFileCache;
 import com.jereibaselibrary.image.JRSetImage;
 import com.jrfunclibrary.activity.ImageViewPageActivity;
 import com.jrfunclibrary.base.fragment.LazyFragment;
@@ -21,7 +22,9 @@ import com.jruilibarary.widget.spinner.SpinnerDialog;
 import com.jruilibarary.widget.spinner.SpinnerModel;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.presenter.HomePresenter;
+import com.sh.shprojectdemo.ui.AudioRecordActivity;
 import com.sh.shprojectdemo.ui.LayerListViewActivity;
+import com.sh.shprojectdemo.ui.LetterListViewActivity;
 import com.sh.shprojectdemo.ui.SettingActivity;
 import com.sh.shprojectdemo.ui.ShVideoActivity;
 import com.sh.shprojectdemo.ui.TabLayout2Activity;
@@ -123,7 +126,7 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
     }
 
     @OnClick({R.id.sideslipListView,R.id.tabLayout,R.id.tabLayout2,R.id.spinnerDialog,R.id.image_look,
-            R.id.video_record,R.id.video_paly,R.id.layerListView,R.id.drop_test})
+            R.id.video_record,R.id.video_paly,R.id.layerListView,R.id.drop_test,R.id.audio_record})
     void pageOnClick(View v) {
         switch (v.getId()){
             case R.id.sideslipListView:
@@ -152,6 +155,9 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
 //                ImageViewPageActivity.bitmap = JRBitmapUtils.id2Bitmap(getResources(),R.drawable.guide01);
                 startActivity(intent);
                 break;
+            case R.id.audio_record:
+                startActivity( new Intent(getActivity(), AudioRecordActivity.class));
+                break;
             case R.id.video_record:
                 startActivity( new Intent(getActivity(), VideoRecordDemoActivity.class));
                 break;
@@ -164,8 +170,6 @@ public class HomeFragment extends LazyFragment implements HomeView , SpinnerDial
             case R.id.drop_test:
                 homePresenter.dropTest();
                 break;
-
-
         }
 
     }
