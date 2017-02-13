@@ -13,13 +13,13 @@ android 快速开发框架
 ##框架详细
 ###jrbaselibrary   基础框架  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
 封装 基础数据操作
-* 1:缓存  （DiskLruCache，LruCache，SharedPreferences）
+* 1:缓存  （DiskLruCache，LruCache，SharedPreferences） http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral
 * 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
-* 3:数据库操作(litepal)
+* 3:数据库操作(litepal)   http://www.jianshu.com/p/557682e0a9f0
 * 4:json解析
-* 5:网络图片加载,图片处理  (glide)
+* 5:网络图片加载,图片处理  (glide) http://blog.csdn.net/fancylovejava/article/details/44747759
 * 6:工具类
-* 7:数据绑定 （butterknife,Data binding）
+* 7:数据绑定 （butterknife,Data binding） http://www.jianshu.com/p/b1df61a4df77
 * 8:数据加密 （DES,MD5,RSA）
 * 9:依赖注入IOC （自定义）
 
