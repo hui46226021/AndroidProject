@@ -37,54 +37,44 @@ android 开发框架
 * IOSSwitchButton      仿IOS SwitchButton
 * SideslipListView     仿IOS 可左滑listView
 * DragIndicatorView    消息提示小红点（仿QQ可拖动）
+* UISearchView         搜索框
+* LetterListView       按字母分组listView
+* TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
+* MyProgressDialog     等待Dialog
+* CycleView            自动滚动banner 图
+* SpinnerDialog        底部弹出菜单
+* TabLayout            viewPage 关联 tab（官方）
+http://www.jianshu.com/p/2b2bb6be83a8
+* RefreshLayout        上拉刷新组件（官方）
+* Navigation View      抽屉导航（官方）
+* JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
+https://github.com/lzyzsd/JsBridge
+* formUtiks            表单映射工具
+https://github.com/hui46226021/ShFormUtils
+* TabRadioView            底部Tab菜单 带红点提示
+* LayerListView           带Tab层级listview
 
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog.gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView.gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SideslipListView.gif)
-* UISearchView         搜索框
-* LetterListView       按字母分组listView
 
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LetterListView.gif)
-* TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
-
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TouchPhotoView.gif)
-* MyProgressDialog     等待Dialog
-* CycleView            自动滚动banner 图
-
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/CycleView.gif)
-* SpinnerDialog        底部弹出菜单
-
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SpinnerDialog.gif)
-* TabLayout            viewPage 关联 tab（官方）
-http://www.jianshu.com/p/2b2bb6be83a8
 
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout1.gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout2.gif)
-
-* RefreshLayout        上拉刷新组件（官方）
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/RefreshLayout.gif)
-* Navigation View      抽屉导航（官方）
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/Navigation.gif)
-* JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
-https://github.com/lzyzsd/JsBridge
-* formUtiks            表单映射工具
-https://github.com/hui46226021/ShFormUtils
+
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/formUtiks.gif)
-* TabRadioView            底部Tab菜单 带红点提示
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabRadioView.gif)
-* LayerListView           带Tab层级listview
-
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LayerListView.gif)
 
 
