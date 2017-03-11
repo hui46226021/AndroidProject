@@ -6,7 +6,7 @@ import com.jereibaselibrary.tools.JRDataResult;
 
 /**
  * Created by zhush on 2016/9/27.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  */
 public interface HandleResponse {
     /**

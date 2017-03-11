@@ -11,13 +11,10 @@ import com.jruilibrary.form.check.FormCheckInterface;
 import com.jruilibrary.form.form.FormInit;
 import com.jruilibrary.form.form.FormUtls;
 
-import java.util.List;
-import java.util.Map;
-
 
 /**
  * Created by zhush on 2016/10/8.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  */
 public class BaseFormActivity extends BaseActivity implements FormSubmitView, FormCheckInterface {
 

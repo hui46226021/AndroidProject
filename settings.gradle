@@ -1,1 +1,1 @@
-include ':app', ':jrbaselibrary', ':jr_ui_library', ':jr_func_library'
+include ':app', ':jrbaselibrary', ':jr_ui_library', ':jr_func_library', ':umeng_sdk'

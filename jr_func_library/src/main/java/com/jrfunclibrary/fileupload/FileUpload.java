@@ -25,7 +25,7 @@ import okhttp3.Cookie;
 
 /**
  * Created by zhush on 2016/10/9.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  */
 public class FileUpload {
     private static final String TAG = "uploadFile";

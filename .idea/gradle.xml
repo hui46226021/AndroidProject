@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/jr_func_library" />
             <option value="$PROJECT_DIR$/jr_ui_library" />
             <option value="$PROJECT_DIR$/jrbaselibrary" />
+            <option value="$PROJECT_DIR$/umeng_sdk" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

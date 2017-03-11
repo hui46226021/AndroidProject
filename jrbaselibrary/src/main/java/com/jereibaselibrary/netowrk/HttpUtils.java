@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by zhush on 2017/1/18.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS okhttp封装
  *
  * addHeader             添加单次请求消息头

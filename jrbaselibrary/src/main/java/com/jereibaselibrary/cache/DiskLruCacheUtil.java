@@ -10,7 +10,7 @@ import java.io.OutputStream;
 import java.security.MessageDigest;
 /**
  * Created by zhush on 2016/11/28
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  硬盘缓存  工具
  *  将文件存储为2禁止文件
  */

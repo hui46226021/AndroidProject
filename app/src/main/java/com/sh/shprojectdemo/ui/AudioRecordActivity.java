@@ -5,26 +5,14 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.jerei.im.timchat.model.Message;
-import com.jerei.im.timchat.model.VoiceMessage;
 
 
 import com.jereibaselibrary.tools.JRMediaUtil;
 import com.jereibaselibrary.tools.JRRecorderUtil;
-import com.jruilibarary.widget.VoiceSendingView;
+import com.jruilibrary.widget.VoiceSendingView;
 import com.sh.shprojectdemo.R;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Calendar;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class AudioRecordActivity extends AppCompatActivity {
     private VoiceSendingView voiceSendingView;
@@ -73,7 +61,7 @@ public class AudioRecordActivity extends AppCompatActivity {
         voiceSendingView.setVisibility(View.GONE);
         recorder.stopRecording();
         if (recorder.getTimeInterval() < 1) {
-            Toast.makeText(this, getResources().getString(com.jerei.im.timchat.R.string.chat_audio_too_short), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "時間太短", Toast.LENGTH_SHORT).show();
         }
         path = recorder.getFilePath();
         audioPath.setText( path);

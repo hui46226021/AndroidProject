@@ -8,7 +8,7 @@ import com.jereibaselibrary.application.JrApp;
 
 /**
  * Created by zhush on 2017/2/3.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  *
  * addNotification   弹出一个通知

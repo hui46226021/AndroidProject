@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jruilibrary.widget.SquareLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+
+
+    >
+        <android.support.v7.widget.CardView
+            android:layout_margin="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/white"
+            android:elevation="7dp"
+            app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/tv_goods"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="16dp"
+            android:translationZ="16dp"
+            android:layout_marginTop="12dp"
+           android:layout_margin="3dp"
+            android:textSize="13dp"
+           />
+</android.support.v7.widget.CardView>
+
+</com.jruilibrary.widget.SquareLayout>

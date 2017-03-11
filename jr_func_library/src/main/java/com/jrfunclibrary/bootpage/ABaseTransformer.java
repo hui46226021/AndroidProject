@@ -5,7 +5,7 @@ import android.view.View;
 
 /**
  * Created by zhush on 2017/1/24.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public abstract class ABaseTransformer implements ViewPager.PageTransformer {

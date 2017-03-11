@@ -42,7 +42,7 @@ import java.util.UUID;
 
 /**
  * Created by zhush on 2017/1/13
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  *
  getAndroidID 获取AndroidID

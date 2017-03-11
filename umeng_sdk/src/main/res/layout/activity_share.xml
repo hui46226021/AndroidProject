@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="bottom"
+    android:id="@+id/rootLayout"
+    android:background="@color/umeng_socialize_comments_bg"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:gravity="bottom|center"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+
+
+
+            <ImageView
+                android:background="@drawable/bg_share_button"
+                android:visibility="gone"
+                android:layout_margin="15dp"
+                android:id="@+id/wxhy"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:elevation="5dp"
+                android:src="@drawable/share_wechat_session"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:background="@drawable/bg_share_button"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/wxhy"
+                android:id="@+id/wxpyq"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/share_wechat_timeline"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:background="@drawable/bg_share_button"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/wxpyq"
+                android:id="@+id/xlwb"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/share_sina_weibo"
+                android:scaleType="fitXY" />
+
+
+
+            <ImageView
+                android:background="@drawable/bg_share_button"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:layout_below="@+id/wxhy"
+                android:id="@+id/qqhy"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/share_qq"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:background="@drawable/bg_share_button"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/wxhy"
+                android:layout_below="@+id/wxpyq"
+                android:id="@+id/qqkj"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/share_qq_zone"
+                android:scaleType="fitXY" />
+            <ImageView
+                android:background="@drawable/bg_share_button"
+                android:elevation="5dp"
+                android:visibility="gone"
+                android:layout_toRightOf="@+id/wxpyq"
+                android:layout_below="@+id/xlwb"
+                android:id="@+id/qqwb"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/share_qq_weibo"
+                android:scaleType="fitXY" />
+
+
+
+    </RelativeLayout>
+
+    <ImageButton
+
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:background="@null"
+        android:scaleType="fitXY"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/share_cancel"
+        android:id="@+id/cancel"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+</LinearLayout>

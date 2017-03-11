@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 
 import com.jrfunclibrary.base.view.RefreshLayoutView;
-import com.jruilibarary.widget.RefreshLayout;
+import com.jruilibrary.widget.RefreshLayout;
 import com.sh.zsh.jrfunclibrary.R;
 
 import java.util.Timer;
@@ -18,7 +18,7 @@ import java.util.TimerTask;
 
 /**
  * Created by zhush on 2016/11/15.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS 列表页面 基类 主要是 初始化 listView 和绑定时事件
  */
 public class BaseListViewActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener,

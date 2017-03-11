@@ -13,7 +13,7 @@ import java.util.Map;
 
 /**
  * Created by zhush on 2017/2/13.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS APP 本地设置缓存  应用删除后  不会随应用一起删除
  * instance 获取 AppFileCache 实例
  * putCache  存入本地数据 （String Integer Double Boolean Long）

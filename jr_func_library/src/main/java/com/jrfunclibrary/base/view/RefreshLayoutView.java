@@ -2,7 +2,7 @@ package com.jrfunclibrary.base.view;
 
 /**
  * Created by zhush on 2016/11/15.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS 可刷新列表视图
  */
 public interface RefreshLayoutView extends BaseView{

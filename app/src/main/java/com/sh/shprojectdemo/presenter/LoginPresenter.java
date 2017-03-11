@@ -10,7 +10,7 @@ import com.sh.shprojectdemo.view.LoginView;
 
 /**
  * Created by zhush on 2017/1/24.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class LoginPresenter {

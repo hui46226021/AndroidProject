@@ -6,8 +6,8 @@
     android:orientation="vertical"
     tools:context="com.sh.shprojectdemo.ui.fragment.HomeFragment">
 
-    <com.jruilibarary.widget.TemplateTitleBar
-
+    <com.jruilibrary.widget.TemplateTitleBar
+        android:elevation="8dp"
         android:id="@+id/template"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +15,7 @@
         app:textColors="@color/white"
         app:titleText="首页" />
 
-    <com.jruilibarary.widget.cycleview.widget.CycleView
+    <com.jruilibrary.widget.cycleview.widget.CycleView
         android:id="@+id/cycleView"
         android:layout_width="match_parent"
         android:layout_height="220dp"
@@ -23,100 +23,24 @@
         app:myshape="oval"
         app:myunselected_color="#33000000"
         app:scaleType="centerCrop" />
-    <com.jruilibarary.widget.RefreshLayout
+
+    <com.jruilibrary.widget.RefreshLayout
         android:id="@+id/refreshlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
+
+        <GridView
+            android:padding="10dp"
+            android:background="@color/white"
+            android:id="@+id/gridview_home"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:text="SideslipListView "
-                android:id="@+id/sideslipListView"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="TabLayout "
-                android:id="@+id/tabLayout"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="TabLayout2"
-                android:id="@+id/tabLayout2"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:horizontalSpacing="1px"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="1px"/>
 
-            <Button
-                android:text="spinnerDialog"
-                android:id="@+id/spinnerDialog"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="图片查看器"
-                android:id="@+id/image_look"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="音频录制播放"
-                android:id="@+id/audio_record"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="视频录制压缩"
-                android:id="@+id/video_record"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="视频播放"
-                android:id="@+id/video_paly"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="layerListView"
-                android:id="@+id/layerListView"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-            <Button
-                android:text="测试掉线"
-                android:id="@+id/drop_test"
-                android:layout_marginTop="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
 
-    </ScrollView>
-    </com.jruilibarary.widget.RefreshLayout>
+    </com.jruilibrary.widget.RefreshLayout>
 </LinearLayout>

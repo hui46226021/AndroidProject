@@ -14,7 +14,7 @@ import com.sh.zsh.jrfunclibrary.R;
 
 /**
  * Created by zhush on 2016/11/2.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * 下载工具
  */
 

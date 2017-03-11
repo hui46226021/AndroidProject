@@ -9,13 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
-import com.jereibaselibrary.cache.AppFileCache;
 import com.jrfunclibrary.base.activity.BaseActivity;
-import com.jruilibarary.widget.TabRadioView;
+import com.jruilibrary.widget.TabRadioView;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
-import com.sh.shprojectdemo.im.MyConversationFragment;
+
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.ui.fragment.DataBindingFragment;
 import com.sh.shprojectdemo.ui.fragment.HomeFragment;
@@ -27,8 +27,8 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 public class MainActivity extends BaseActivity {
-
-
+    @InjectView(R.id.activity_main)
+    LinearLayout activityMain;
     @InjectView(R.id.id_fragment_title)
     FrameLayout idFragmentTitle;
 
@@ -59,11 +59,6 @@ public class MainActivity extends BaseActivity {
     void initView() {
         initBottomNavig();
         initRightNavig();
-
-        AppFileCache.instance().putCache("hahaha","hahaha");
-        AppFileCache.instance().putCache("hahaha2",123);
-        AppFileCache.instance().putCache("hahaha3",true);
-        AppFileCache.instance().putCache("hahaha4",1.2);
     }
 
     /**
@@ -74,8 +69,9 @@ public class MainActivity extends BaseActivity {
         int[] images = new int[]{R.drawable.bg_tab_selector_home1, R.drawable.bg_tab_selector_home2, R.drawable.bg_tab_selector_home2};
         tabRadioView.setTabTexts(title, R.drawable.bg_radiobutton_selector_home_page, images);
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(HomeFragment.newInstance());
-        fragments.add(new MyConversationFragment());
+        fragments.add(HomeFragment.newInstance(activityMain));
+//        fragments.add(new MyConversationFragment());
+        fragments.add(DataBindingFragment.newInstance(2));
         fragments.add(DataBindingFragment.newInstance(1));
 
         tabRadioView.setFragmentList(fragments, R.id.id_fragment_title);

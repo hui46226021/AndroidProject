@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 
 import com.jrfunclibrary.base.activity.BaseActivity;
-import com.jruilibarary.widget.UISearchView;
-import com.jruilibarary.widget.letterlist.LetterListView;
-import com.jruilibarary.widget.letterlist.LetterModle;
-import com.jruilibarary.widget.letterlist.LetterUtil;
+import com.jruilibrary.widget.UISearchView;
+import com.jruilibrary.widget.letterlist.LetterListView;
+import com.jruilibrary.widget.letterlist.LetterModle;
+import com.jruilibrary.widget.letterlist.LetterUtil;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.adapter.LetterAdapter;
 import com.sh.shprojectdemo.model.City;

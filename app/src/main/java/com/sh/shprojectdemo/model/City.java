@@ -1,10 +1,10 @@
 package com.sh.shprojectdemo.model;
 
-import com.jruilibarary.widget.letterlist.LetterModle;
+import com.jruilibrary.widget.letterlist.LetterModle;
 
 /**
  * Created by zhush on 2017/1/20.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class City extends LetterModle{

@@ -6,7 +6,7 @@ import com.sh.shprojectdemo.model.User;
 
 /**
  * Created by zhush on 2017/1/24.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public interface LoginView extends BaseView{

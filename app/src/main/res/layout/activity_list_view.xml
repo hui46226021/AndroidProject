@@ -9,26 +9,28 @@
     android:layout_height="match_parent"
 
     tools:context="com.sh.shprojectdemo.ui.UserListActivity">
-    <com.jruilibarary.widget.TemplateTitleBar
+    <com.jruilibrary.widget.TemplateTitleBar
         android:id="@+id/template"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleText="列表"
         app:canBack="true"
         app:textColors="@color/white"
+        android:elevation="8dp"
         android:background="@color/colorPrimary"
-        ></com.jruilibarary.widget.TemplateTitleBar>
-    <com.jruilibarary.widget.RefreshLayout
+        ></com.jruilibrary.widget.TemplateTitleBar>
+    <com.jruilibrary.widget.RefreshLayout
 
         android:id="@+id/refreshlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.jruilibarary.widget.SideslipListView
+
+        <com.jruilibrary.widget.SideslipListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="@color/ui_black"
-            android:dividerHeight="1px"></com.jruilibarary.widget.SideslipListView>
-    </com.jruilibarary.widget.RefreshLayout>
+            android:dividerHeight="1px"></com.jruilibrary.widget.SideslipListView>
+    </com.jruilibrary.widget.RefreshLayout>
 
 </LinearLayout>

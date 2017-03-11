@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.jereibaselibrary.image.JRSetImage;
-import com.jruilibarary.widget.RoundCornerImageView;
+import com.jruilibrary.widget.RoundCornerImageView;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.model.User;
 import com.xinlan.dragindicator.DragIndicatorView;
@@ -20,7 +20,7 @@ import butterknife.InjectView;
 
 /**
  * Created by zhush on 2017/1/20.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class TestAdapter extends BaseAdapter {

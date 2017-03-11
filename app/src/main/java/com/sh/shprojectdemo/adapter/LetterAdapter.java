@@ -1,19 +1,15 @@
 package com.sh.shprojectdemo.adapter;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.jruilibarary.widget.RoundCornerImageView;
-import com.jruilibarary.widget.letterlist.LetterBaseListAdapter;
-import com.jruilibarary.widget.letterlist.LetterModle;
+import com.jruilibrary.widget.letterlist.LetterBaseListAdapter;
+import com.jruilibrary.widget.letterlist.LetterModle;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.model.City;
-import com.xinlan.dragindicator.DragIndicatorView;
 
 import java.util.List;
 
@@ -22,7 +18,7 @@ import butterknife.InjectView;
 
 /**
  * Created by zhush on 2017/1/20.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class LetterAdapter extends LetterBaseListAdapter {

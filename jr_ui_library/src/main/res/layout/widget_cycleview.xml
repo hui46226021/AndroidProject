@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.jruilibarary.widget.cycleview.Indicator.PagerIndicator
+        <com.jruilibrary.widget.cycleview.Indicator.PagerIndicator
             android:id="@+id/pagerIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

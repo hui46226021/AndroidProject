@@ -10,7 +10,11 @@
 
 
 
-
+    <!-- 自定义loading dialog -->
+    <style name="toobar_text" >
+        <item name="android:textColor">@color/ui_white</item>
+        <item name="android:drawableLeft">@drawable/avatar</item>
+    </style>
 
     <style name="lineFromView" >
         <item name="android:layout_width">match_parent</item>

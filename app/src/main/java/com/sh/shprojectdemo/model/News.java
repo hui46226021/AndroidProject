@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  * Created by zhush on 2017/1/14.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class News extends DataSupport {

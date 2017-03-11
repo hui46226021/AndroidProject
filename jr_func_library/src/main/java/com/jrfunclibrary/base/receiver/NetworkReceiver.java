@@ -9,7 +9,7 @@ import com.jrfunclibrary.fileupload.DownloadService;
 
 /**
  * Created by zhush on 2017/2/3.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  接受网络状态广播
  */
 public abstract class NetworkReceiver extends BroadcastReceiver {

@@ -7,17 +7,18 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.sh.shprojectdemo.ui.LoginActivity">
-    <com.jruilibarary.widget.TemplateTitleBar
+    <com.jruilibrary.widget.TemplateTitleBar
         android:id="@+id/template"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleText="登陆"
         app:canBack="true"
+        android:elevation="8dp"
         app:textColors="@color/white"
         android:background="@color/colorPrimary"
-        ></com.jruilibarary.widget.TemplateTitleBar>
+        ></com.jruilibrary.widget.TemplateTitleBar>
 
-    <com.jruilibarary.widget.CircleImageView
+    <com.jruilibrary.widget.CircleImageView
         android:layout_marginTop="50dp"
         android:id="@+id/image"
         android:layout_margin="30dp"
@@ -25,7 +26,7 @@
         android:layout_width="100dp"
         app:border_width="3dp"
         app:border_color="@color/colorPrimary"
-        android:layout_height="100dp"></com.jruilibarary.widget.CircleImageView>
+        android:layout_height="100dp"></com.jruilibrary.widget.CircleImageView>
 
     <android.support.design.widget.TextInputLayout
 

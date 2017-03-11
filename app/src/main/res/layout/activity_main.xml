@@ -22,14 +22,17 @@
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp">
+        
+
 
     </FrameLayout>
 
 
-    <com.jruilibarary.widget.TabRadioView
+    <com.jruilibrary.widget.TabRadioView
         android:id="@+id/tabRadioView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:elevation="8dp"
+        android:layout_height="50dp"/>
 </LinearLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/navigation_view"
@@ -37,6 +40,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:fitsSystemWindows="true"
+
         app:headerLayout="@layout/header_layout"
         app:menu="@menu/nav_menu"/>
 </android.support.v4.widget.DrawerLayout>

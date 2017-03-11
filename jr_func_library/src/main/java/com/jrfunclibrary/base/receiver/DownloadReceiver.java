@@ -8,7 +8,7 @@ import com.jrfunclibrary.fileupload.DownloadService;
 
 /**
  * Created by zhush on 2017/2/3.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  接受下载广播
  */
 public abstract class DownloadReceiver extends BroadcastReceiver {

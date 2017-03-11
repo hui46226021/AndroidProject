@@ -8,7 +8,7 @@ import com.jereibaselibrary.application.JrApp;
 
 /**
  * Created by zhush on 2016/11/28
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  SharedPreferences 数据存储 封装初始化  插入和删除
  * （建议在 主项目里 继承此类 增加特定对象的 set get 方法）
  */

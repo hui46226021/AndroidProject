@@ -2,7 +2,6 @@ package com.jrfunclibrary.base.activity;
 
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -16,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
@@ -32,9 +32,9 @@ import com.jrfunclibrary.base.receiver.DownloadReceiver;
 import com.jrfunclibrary.base.receiver.NetworkReceiver;
 import com.jrfunclibrary.base.view.BaseView;
 import com.jrfunclibrary.fileupload.DownloadService;
-import com.jruilibarary.widget.DownProgressDialog;
-import com.jruilibarary.widget.IOSAlertDialog;
-import com.jruilibarary.widget.MyProgressDialog;
+import com.jruilibrary.widget.DownProgressDialog;
+import com.jruilibrary.widget.IOSAlertDialog;
+import com.jruilibrary.widget.MyProgressDialog;
 import com.sh.zsh.jrfunclibrary.R;
 
 import java.io.File;
@@ -47,6 +47,8 @@ import java.io.IOException;
  */
 public  class BaseActivity extends AppCompatActivity implements BaseView {
 
+    public static int touchX;
+    public static int touchY;
     private Activity activity;
     boolean isCut;//是否图像 截取
     boolean isActive;//当前activity是否活跃
@@ -82,6 +84,8 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
      * @return
      */
     public boolean onTouchEvent(MotionEvent event) {
+        touchX=   (int) event.getX();
+        touchY=   (int) event.getY();
         if (null != this.getCurrentFocus()) {
             /**
              * 点击空白位置 隐藏软键盘
@@ -91,6 +95,14 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         }
         return super.onTouchEvent(event);
     }
+
+
+    public boolean dispatchTouchEvent(MotionEvent event){
+        touchX=   (int) event.getX();
+        touchY=   (int) event.getY();
+       return super.dispatchTouchEvent(event);
+    }
+
 
     @Override
     public void showProgress(String message) {

@@ -28,9 +28,13 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
+
+
     //google 官方兼容控件
     //    recyclerview
     //    compile 'com.android.support:recyclerview-v7:24.2.1'
+    //cardview
+    compile 'com.android.support:cardview-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     //数量提示小红点  和拖动
     compile 'com.zsh.code:dragindicator:2.0.1'

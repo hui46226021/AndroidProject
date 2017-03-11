@@ -17,16 +17,12 @@ import android.widget.TextView;
 
 import com.jereibaselibrary.image.JRSetImage;
 import com.jrfunclibrary.base.activity.BaseActivity;
-import com.jruilibarary.widget.touchphoto.TouchPhotoView;
+import com.jruilibrary.widget.touchphoto.TouchPhotoView;
 import com.sh.zsh.jrfunclibrary.R;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
 
 
 /**

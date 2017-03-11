@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * Created by zhush on 2016/10/8.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * 表单映射注解
  *
  * name 需要映射的字段

@@ -1,5 +1,6 @@
 package com.jereibaselibrary.image;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -8,11 +9,14 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.Log;
+import android.view.Display;
+import android.view.View;
 
 import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.tools.JRFileUtils;
@@ -36,6 +40,8 @@ import java.io.IOException;
  *  saveFile                          保存图片到本地
  *  watermarkBitmap                    水印
  *  id2Bitmap                         id 转bitmap
+ *  getCacheBitmapFromView             获取一个 View 的缓存视图
+ *  myShot                             获取屏幕截图
  */
 public class JRBitmapUtils {
     /**
@@ -491,5 +497,72 @@ public class JRBitmapUtils {
      */
     public static Bitmap id2Bitmap(Resources   res,int id){
         return  BitmapFactory. decodeResource ( res, id);
+    }
+
+    /**
+     * 获取一个 View 的缓存视图
+     *
+     * @param view
+     * @return
+     */
+    public static Bitmap getCacheBitmapFromView(View view) {
+        final boolean drawingCacheEnabled = true;
+        view.setDrawingCacheEnabled(drawingCacheEnabled);
+        view.buildDrawingCache(drawingCacheEnabled);
+        final Bitmap drawingCache = view.getDrawingCache();
+        Bitmap bitmap;
+        if (drawingCache != null) {
+            bitmap = Bitmap.createBitmap(drawingCache);
+            view.setDrawingCacheEnabled(false);
+        } else {
+            bitmap = null;
+        }
+        return bitmap;
+    }
+
+    /**
+     * 获取屏幕截图
+     * @param activity
+     * @param state  是否带状态栏
+     * @return
+     */
+    public static Bitmap myShot(Activity activity,boolean state) {
+        // 获取windows中最顶层的view
+        View view = activity.getWindow().getDecorView();
+        view.buildDrawingCache();
+
+        // 获取状态栏高度
+        Rect rect = new Rect();
+        view.getWindowVisibleDisplayFrame(rect);
+        int statusBarHeights = rect.top;
+        Display display = activity.getWindowManager().getDefaultDisplay();
+
+        // 获取屏幕宽和高
+        int widths = display.getWidth();
+        int heights = display.getHeight();
+
+        // 允许当前窗口保存缓存信息
+        view.setDrawingCacheEnabled(true);
+
+        Bitmap bmp = null;
+        if(state){
+            final Bitmap drawingCache = view.getDrawingCache();
+
+            if (drawingCache != null) {
+                bmp = Bitmap.createBitmap(drawingCache);
+
+            }
+        }else {
+            // 去掉状态栏
+            bmp = Bitmap.createBitmap(view.getDrawingCache(), 0,
+                    statusBarHeights, widths, heights - statusBarHeights);
+        }
+
+
+        // 允许当前窗口保存缓存信息
+        view.setDrawingCacheEnabled(false);
+
+
+        return bmp;
     }
 }

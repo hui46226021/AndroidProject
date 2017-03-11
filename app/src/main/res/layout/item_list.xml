@@ -16,7 +16,7 @@
 
 
 
-        <com.jruilibarary.widget.RoundCornerImageView
+        <com.jruilibrary.widget.RoundCornerImageView
             android:id="@+id/avatar"
             android:layout_width="45dp"
             android:scaleType="centerCrop"

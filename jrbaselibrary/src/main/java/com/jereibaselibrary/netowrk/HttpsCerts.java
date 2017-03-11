@@ -22,7 +22,7 @@ import okhttp3.OkHttpClient;
 
 /**
  * Created by zhush on 2017/1/25.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  添加https 证书
  */
 public class HttpsCerts {

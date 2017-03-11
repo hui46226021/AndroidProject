@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 /**
  * Created by zhush on 2017/1/12.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class AllCacheUtils {

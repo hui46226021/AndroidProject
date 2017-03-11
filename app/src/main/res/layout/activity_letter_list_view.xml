@@ -8,25 +8,26 @@
     android:layout_height="match_parent"
 
     tools:context="com.sh.shprojectdemo.ui.LetterListViewActivity">
-    <com.jruilibarary.widget.TemplateTitleBar
+    <com.jruilibrary.widget.TemplateTitleBar
         android:id="@+id/template"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:titleText="地区选择"
         app:canBack="true"
         app:textColors="@color/white"
+        android:elevation="8dp"
         android:background="@color/colorPrimary"
-        ></com.jruilibarary.widget.TemplateTitleBar>
+        ></com.jruilibrary.widget.TemplateTitleBar>
 
-    <com.jruilibarary.widget.UISearchView
+    <com.jruilibrary.widget.UISearchView
         android:id="@+id/search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    </com.jruilibarary.widget.UISearchView>
-    <com.jruilibarary.widget.letterlist.LetterListView
+    </com.jruilibrary.widget.UISearchView>
+    <com.jruilibrary.widget.letterlist.LetterListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        ></com.jruilibarary.widget.letterlist.LetterListView>
+        ></com.jruilibrary.widget.letterlist.LetterListView>
 </LinearLayout>

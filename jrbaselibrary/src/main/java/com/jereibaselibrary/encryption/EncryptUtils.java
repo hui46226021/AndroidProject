@@ -5,7 +5,7 @@ import java.security.interfaces.RSAPublicKey;
 
 /**
  * Created by zhush on 2017/1/23.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  加密工具
  *
  * desEncrypt  Des加密

@@ -7,7 +7,7 @@ import com.jereibaselibrary.application.JrApp;
 
 /**
  * Created by zhush on 2016/11/28
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  全局缓存临时缓存
  * 最大缓存数量20个（建议在 主项目里 继承此类 增加特定对象的 put get 方法）
  */

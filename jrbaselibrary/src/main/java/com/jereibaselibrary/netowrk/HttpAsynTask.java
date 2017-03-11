@@ -20,7 +20,7 @@ import java.util.List;
  * 异步请求 通用组件
  * 主要为了  解析json的过程 也在 子线程中执行  因为反射 性能特别差
  * Created by zhush on 2016/9/27.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  */
 public class HttpAsynTask extends AsyncTask<Void, Integer, JRDataResult> {
     HttpUtils client;

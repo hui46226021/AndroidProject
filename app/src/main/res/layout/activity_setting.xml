@@ -7,8 +7,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.sh.shprojectdemo.ui.SettingActivity">
-    <com.jruilibarary.widget.TemplateTitleBar
+    <com.jruilibrary.widget.TemplateTitleBar
         android:id="@+id/template"
+        android:elevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -29,31 +30,31 @@
                 android:layout_height="100dp" />
 
 
-            <com.jruilibarary.widget.lineformview.LineFromView
+            <com.jruilibrary.widget.lineformview.LineFromView
                 app:linefromview_type="editText"
                 style="@style/lineFromView"
                 android:id="@+id/name"
                 app:linefromview_must="true"
                 app:linefromview_tital="姓名：" />
-            <com.jruilibarary.widget.lineformview.LineFromView
+            <com.jruilibrary.widget.lineformview.LineFromView
                 app:linefromview_type="spinner"
                 style="@style/lineFromView"
                 android:id="@+id/company"
                 app:linefromview_must="true"
                 app:linefromview_tital="公司：" />
-            <com.jruilibarary.widget.lineformview.LineFromView
+            <com.jruilibrary.widget.lineformview.LineFromView
                 app:linefromview_type="spinner"
                 style="@style/lineFromView"
                 android:id="@+id/department"
                 app:linefromview_must="true"
                 app:linefromview_tital="部门：" />
-            <com.jruilibarary.widget.lineformview.LineFromView
+            <com.jruilibrary.widget.lineformview.LineFromView
                 app:linefromview_type="time"
                 style="@style/lineFromView"
                 android:id="@+id/birthday"
                 app:linefromview_must="true"
                 app:linefromview_tital="出生日期：" />
-            <com.jruilibarary.widget.lineformview.LineFromView
+            <com.jruilibrary.widget.lineformview.LineFromView
                 app:linefromview_type="switchButton"
                 style="@style/lineFromView"
                 android:id="@+id/sex"

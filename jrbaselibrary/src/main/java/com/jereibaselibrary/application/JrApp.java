@@ -9,7 +9,7 @@ import com.liulishuo.filedownloader.FileDownloader;
 
 /**
  * Created by zhush on 2017/1/14.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS Application 基类
  */
 public class JrApp extends MultiDexApplication {

@@ -9,7 +9,7 @@ import com.jrfunclibrary.model.AttachmentModel;
 
 /**
  * Created by zhush on 2016/10/8.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * 图片上传视图
  */
 public interface ImageUpLoadView extends BaseView {

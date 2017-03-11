@@ -11,7 +11,7 @@ import java.io.IOException;
 
 /**
  * Created by zhush on 2017/2/13
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  媒体播放工具
  */
 

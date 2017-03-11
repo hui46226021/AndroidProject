@@ -12,7 +12,7 @@ import com.sh.shprojectdemo.model.VersionModel;
 
 /**
  * Created by zhush on 2017/2/10.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS 版本更新逻辑
  */
 public class VersionUpatePresenter {

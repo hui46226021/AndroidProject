@@ -6,7 +6,7 @@ import android.graphics.Bitmap;
 
 /**
  * Created by zhush on 2016/10/24.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * 附件实体
  */
 

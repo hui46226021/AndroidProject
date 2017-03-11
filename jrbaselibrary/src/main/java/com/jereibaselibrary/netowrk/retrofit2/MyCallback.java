@@ -9,7 +9,7 @@ import retrofit2.Response;
 
 /**
  * Created by zhush on 2017/1/19.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public abstract class MyCallback<T extends BaseCallModel> implements Callback<T> {

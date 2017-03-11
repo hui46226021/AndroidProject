@@ -30,7 +30,8 @@
             android:name=".ui.ShVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".ui.LayerListViewActivity" />
-        <activity android:name=".ui.AudioRecordActivity"></activity>
+        <activity android:name=".ui.AudioRecordActivity" />
+        <activity android:name=".ui.MaterialDesignActivity"></activity>
     </application>
 
 </manifest>

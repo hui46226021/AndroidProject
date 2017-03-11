@@ -2,7 +2,7 @@ package com.sh.shprojectdemo.model;
 
 /**
  * Created by zhush on 2017/2/3.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class VersionModel {

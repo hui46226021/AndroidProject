@@ -96,12 +96,12 @@
         </LinearLayout>
 
 
-        <com.jruilibarary.widget.IOSSwitchButton
+        <com.jruilibrary.widget.IOSSwitchButton
             android:layout_gravity="right|center"
             android:id="@+id/line_switch_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"></com.jruilibarary.widget.IOSSwitchButton>
+            android:layout_marginRight="16dp"></com.jruilibrary.widget.IOSSwitchButton>
 
         <ImageView
             android:id="@+id/rightArrow"

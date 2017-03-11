@@ -48,7 +48,7 @@ import java.util.zip.GZIPOutputStream;
 
 /**
  * Created by zhush on 2017/1/13
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  closeIO 关闭IO流
  isFileExist 文件是否存在

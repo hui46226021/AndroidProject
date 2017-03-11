@@ -11,7 +11,7 @@ import android.provider.MediaStore;
 
 /**
  * Created by zhush on 2016/12/21.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  *  uriToPath    uri 转 路径
  */

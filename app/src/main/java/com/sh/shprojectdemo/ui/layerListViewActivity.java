@@ -1,13 +1,12 @@
 package com.sh.shprojectdemo.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.jrfunclibrary.base.activity.BaseActivity;
-import com.jruilibarary.widget.layerListView.LayerListView;
-import com.jruilibarary.widget.layerListView.TreeListViewAdapter;
-import com.jruilibarary.widget.layerListView.model.Node;
+import com.jruilibrary.widget.layerListView.LayerListView;
+import com.jruilibrary.widget.layerListView.TreeListViewAdapter;
+import com.jruilibrary.widget.layerListView.model.Node;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.model.FileBean;
 

@@ -2,11 +2,9 @@ package com.sh.shprojectdemo.ui;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.jereibaselibrary.image.JRBitmapUtils;
 import com.jereibaselibrary.image.JRSetImage;
@@ -14,10 +12,9 @@ import com.jrfunclibrary.base.activity.BaseFormActivity;
 import com.jrfunclibrary.fileupload.presenter.UploadImagePresenter;
 import com.jrfunclibrary.fileupload.view.ImageUpLoadView;
 import com.jrfunclibrary.model.AttachmentModel;
-import com.jruilibarary.widget.CircleImageView;
-import com.jruilibarary.widget.TemplateTitleBar;
-import com.jruilibarary.widget.lineformview.LineFromView;
-import com.jruilibarary.widget.lineformview.ViewData;
+import com.jruilibrary.widget.TemplateTitleBar;
+import com.jruilibrary.widget.lineformview.LineFromView;
+import com.jruilibrary.widget.lineformview.ViewData;
 import com.jruilibrary.form.annotation.FormInjection;
 
 import com.sh.shprojectdemo.R;
@@ -31,7 +28,7 @@ import butterknife.InjectView;
 
 /**
  * Created by zhush on 2017/2/3
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS  设置页面
  */
 

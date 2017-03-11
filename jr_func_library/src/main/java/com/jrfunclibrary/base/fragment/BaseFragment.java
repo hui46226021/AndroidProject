@@ -1,15 +1,15 @@
 package com.jrfunclibrary.base.fragment;
 
 import android.content.Intent;
-import android.os.Build;
 import android.support.v4.app.Fragment;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
 import com.jrfunclibrary.base.activity.BaseActivity;
 import com.jrfunclibrary.base.view.BaseView;
-import com.jruilibarary.widget.IOSAlertDialog;
-import com.jruilibarary.widget.MyProgressDialog;
+import com.jruilibrary.widget.IOSAlertDialog;
+import com.jruilibrary.widget.MyProgressDialog;
 import com.sh.zsh.jrfunclibrary.R;
 
 
@@ -17,6 +17,9 @@ import com.sh.zsh.jrfunclibrary.R;
  * Created by Administrator on 2016/9/14.
  */
 public class BaseFragment extends Fragment implements BaseView {
+
+
+
     /**
      * 显示进度对话框
      */

@@ -2,7 +2,7 @@ package com.jereibaselibrary.netowrk.retrofit2;
 
 /**
  * Created by zhush on 2017/1/19.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class BaseCallModel <T>{

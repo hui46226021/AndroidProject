@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+                android:background="@color/umeng_socialize_comments_bg"
+              android:layout_height="match_parent">
+
+
+
+    <GridView
+        android:background="@color/umeng_socialize_comments_bg"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:horizontalSpacing="0px"
+        android:numColumns="4"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0px"/>
+
+
+    <ImageView
+        android:id="@+id/split_line2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_gravity="bottom"
+
+        android:background="@color/umeng_socialize_text_time" />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_margin="10dp"
+        android:text="取消"
+        android:textSize="17sp"
+        android:textColor="#101010"
+        android:background="@null"
+        />
+
+</LinearLayout>

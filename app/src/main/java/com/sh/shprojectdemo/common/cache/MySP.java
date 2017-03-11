@@ -6,7 +6,7 @@ import com.jereibaselibrary.cache.SharedPreferencesTool;
 
 /**
  * Created by zhush on 2017/2/10.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  */
 public class MySP extends SharedPreferencesTool {

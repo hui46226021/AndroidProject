@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by zhush on 2016/11/28.
- * E-mail zhush@jerei.com
+ * E-mail 405086805@qq.com
  * PS
  * replaceLowerCase    大写变小写，并且字母前面加下划线
  * insertXHX            大写字母前面加下划线
