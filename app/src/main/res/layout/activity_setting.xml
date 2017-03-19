@@ -15,75 +15,100 @@
         android:background="@color/colorPrimary"
         app:textColors="@color/white"
         app:titleText="设置" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
+                android:visibility="gone"
                 android:layout_margin="40dp"
                 android:layout_gravity="center"
                 android:layout_width="100dp"
                 android:id="@+id/headImage"
                 android:layout_height="100dp" />
 
-
-            <com.jruilibrary.widget.lineformview.LineFromView
-                app:linefromview_type="editText"
-                style="@style/lineFromView"
-                android:id="@+id/name"
-                app:linefromview_must="true"
-                app:linefromview_tital="姓名：" />
-            <com.jruilibrary.widget.lineformview.LineFromView
-                app:linefromview_type="spinner"
-                style="@style/lineFromView"
-                android:id="@+id/company"
-                app:linefromview_must="true"
-                app:linefromview_tital="公司：" />
-            <com.jruilibrary.widget.lineformview.LineFromView
-                app:linefromview_type="spinner"
-                style="@style/lineFromView"
-                android:id="@+id/department"
-                app:linefromview_must="true"
-                app:linefromview_tital="部门：" />
-            <com.jruilibrary.widget.lineformview.LineFromView
-                app:linefromview_type="time"
-                style="@style/lineFromView"
-                android:id="@+id/birthday"
-                app:linefromview_must="true"
-                app:linefromview_tital="出生日期：" />
-            <com.jruilibrary.widget.lineformview.LineFromView
-                app:linefromview_type="switchButton"
-                style="@style/lineFromView"
-                android:id="@+id/sex"
-                app:linefromview_must="true"
-                app:linefromview_tital="男性：" />
-            <LinearLayout
+            <com.sh.zsh.code.layout.ShFormLayout
+                 app:less_form_row_height="50dp"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/white"
-                android:orientation="horizontal">
-
+                android:layout_height="wrap_content">
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_margin="18dp"
-                    android:textSize="@dimen/form_text_size"
-                    android:text="签名" />
+                    app:less_form_group_titel="true"
+                    android:text="基本信息"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    app:less_form_title="姓名"
+                    app:less_form_name="name"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:less_form_must="true"
+                   />
 
                 <EditText
-                    android:id="@+id/sign"
-                    android:gravity="top"
+                    app:less_form_title="电话"
+                    app:less_form_check_type="phone"
+                    app:less_form_name="phone"
+                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="16dp"
-                    android:padding="5dp"
-                    android:textSize="@dimen/form_text_size"
-                    android:background="@drawable/bg_text_factoryaudit"
-                    android:hint="多行输入" />
-            </LinearLayout>
+                    app:less_form_must="true"
+                    />
+                <com.sh.zsh.code.layout.view.FormSpinner
+                    android:id="@+id/company"
+                    app:less_form_title="公司"
+                    app:less_form_name="company"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:less_form_must="true" />
+                <com.sh.zsh.code.layout.view.FormSpinner
+                    android:id="@+id/department"
+                    app:less_form_title="部门"
+                    app:less_form_name="department"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:less_form_must="true" />
+
+                <com.sh.zsh.code.layout.view.FormTimeView
+                    app:less_form_title="出生日期"
+                    app:less_form_name="birthday"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:less_form_must="true" />
+
+                <CheckBox
+                    app:less_form_title="男性："
+                    app:less_form_name="sex"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    app:less_form_must="true" />
+
+                <LinearLayout
+                    app:less_form_group_top_layout="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="18dp"
+                        android:textSize="@dimen/form_text_size"
+                        android:text="签名" />
+
+                    <EditText
+                        android:id="@+id/sign"
+                        android:gravity="top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:padding="5dp"
+                        android:textSize="@dimen/form_text_size"
+                        android:background="@drawable/bg_text_factoryaudit"
+                        android:hint="多行输入" />
+                </LinearLayout>
+            </com.sh.zsh.code.layout.ShFormLayout>
+
+
         </LinearLayout>
-    </ScrollView>
+
 </LinearLayout>

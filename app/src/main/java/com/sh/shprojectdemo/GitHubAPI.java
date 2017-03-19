@@ -8,6 +8,8 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
+import static com.jereibaselibrary.netowrk.HttpAsynTask.POST;
+
 /**
  * Created by zhush on 2017/1/19.
  * E-mail 405086805@qq.com

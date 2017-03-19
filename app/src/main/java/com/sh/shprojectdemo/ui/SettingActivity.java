@@ -13,13 +13,12 @@ import com.jrfunclibrary.fileupload.presenter.UploadImagePresenter;
 import com.jrfunclibrary.fileupload.view.ImageUpLoadView;
 import com.jrfunclibrary.model.AttachmentModel;
 import com.jruilibrary.widget.TemplateTitleBar;
-import com.jruilibrary.widget.lineformview.LineFromView;
-import com.jruilibrary.widget.lineformview.ViewData;
-import com.jruilibrary.form.annotation.FormInjection;
-
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
 import com.sh.shprojectdemo.model.User;
+import com.sh.zsh.code.annotation.FormInjection;
+import com.sh.zsh.code.layout.model.ViewData;
+import com.sh.zsh.code.layout.view.FormSpinner;
 
 import java.util.ArrayList;
 
@@ -32,34 +31,26 @@ import butterknife.InjectView;
  * PS  设置页面
  */
 
-public class SettingActivity extends BaseFormActivity implements ImageUpLoadView{
+public class SettingActivity extends BaseFormActivity implements ImageUpLoadView {
 
     @InjectView(R.id.template)
     TemplateTitleBar template;
     @InjectView(R.id.headImage)
     ImageView headImage;
-    @FormInjection(name = "name",message = "姓名")
-    @InjectView(R.id.name)
-    LineFromView name;
-    @FormInjection(name = "company")
-    @InjectView(R.id.company)
-    LineFromView company;
-    @FormInjection(name = "department")
-    @InjectView(R.id.department)
-    LineFromView department;
-    @FormInjection(name = "birthday")
-    @InjectView(R.id.birthday)
-    LineFromView birthday;
-    @FormInjection(name = "sex")
-    @InjectView(R.id.sex)
-    LineFromView sex;
-    @FormInjection(name = "sign",isNull = true)
+
+
+    @FormInjection(name = "sign", isNull = true)
     @InjectView(R.id.sign)
     EditText sign;
 
     UploadImagePresenter uploadImagePresenter;
 
-    public   String imageUrl;
+    public String imageUrl;
+    @InjectView(R.id.company)
+    FormSpinner company;
+    @InjectView(R.id.department)
+    FormSpinner department;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +62,7 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
         initData();
     }
 
-    void intView(){
+    void intView() {
 
         template.setMoreTextContextAction("提交", new View.OnClickListener() {
             @Override
@@ -85,61 +76,63 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
             @Override
             public void onClick(View view) {
 
-                addPictrues(true,getImageBitmap(headImage));
+                addPictrues(true, getImageBitmap(headImage));
             }
         });
         ArrayList<ViewData> companys = new ArrayList<>();
-        companys.add( new ViewData("百度",1));
-        companys.add( new ViewData("阿里",2));
-        company.setSelectedListener(new LineFromView.SelectedListener() {
+        companys.add(new ViewData("百度", 1));
+        companys.add(new ViewData("阿里", 2));
+        company.setSelectedListener(new FormSpinner.SelectedListener() {
             @Override
-            public void pvOptions(String key, Object value) {
+            public void pvOptions(String key, Object value, Object pvOptionsSelectValueObject) {
                 ArrayList<ViewData> departments = new ArrayList<>();
-                if(((int)value)==1){
-                    departments.add( new ViewData("地图",11));
-                    departments.add( new ViewData("买假药",12));
+                if (((int) value) == 1) {
+                    departments.add(new ViewData("地图", 11));
+                    departments.add(new ViewData("买假药", 12));
                 }
-                if(((int)value)==2){
-                    departments.add( new ViewData("淘宝",21));
-                    departments.add( new ViewData("天猫",22));
+                if (((int) value) == 2) {
+                    departments.add(new ViewData("淘宝", 21));
+                    departments.add(new ViewData("天猫", 22));
                 }
                 department.setpvOptionsList(departments);
             }
+
         });
         company.setpvOptionsList(companys);
     }
 
     /**
      * 获取ImageView上的图片
+     *
      * @param view
      * @return
      */
-    public Bitmap getImageBitmap(ImageView view){
+    public Bitmap getImageBitmap(ImageView view) {
         Bitmap bitmap = null;
         view.setDrawingCacheEnabled(true);
-        bitmap =  Bitmap.createBitmap(headImage.getDrawingCache());
+        bitmap = Bitmap.createBitmap(headImage.getDrawingCache());
         view.setDrawingCacheEnabled(false);
         return bitmap;
     }
 
-    void initData(){
+    void initData() {
         User user = TemporaryCache.getUserSession();
         objectToForm(user);
     }
 
-    void submit(){
+    void submit() {
         User user = (User) formToObjectAndCheck(User.class);
-        if(user!=null){
+        if (user != null) {
             user.setHeadImage(imageUrl);
         }
-        showMessage("提交成功  "+user.toString());
+        showMessage("提交成功  " + user.toString());
     }
 
     @Override
     public void getPhonePhoto(Bitmap bitmap) {
 
-        bitmap=  JRBitmapUtils.watermarkBitmap(bitmap,null,"水印") ;
-        uploadImagePresenter.uploadImage(bitmap,headImage);
+        bitmap = JRBitmapUtils.watermarkBitmap(bitmap, null, "水印");
+        uploadImagePresenter.uploadImage(bitmap, headImage);
     }
 
     @Override
@@ -149,7 +142,7 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
     }
 
     @Override
-    public void uploadImageFail(View v,String message) {
+    public void uploadImageFail(View v, String message) {
         showMessage("上传失败");
     }
 }

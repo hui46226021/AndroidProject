@@ -39,8 +39,10 @@ dependencies {
     //数量提示小红点  和拖动
     compile 'com.zsh.code:dragindicator:2.0.1'
     //时间选择器
-    compile 'com.sh.zsh.code:pickerview:2.1.2'
+//    compile 'com.sh.zsh.code:pickerview:2.1.2'
     compile 'com.belerweb:pinyin4j:2.5.0'
+    // 表单映射 框架 https://github.com/hui46226021/ShFormUtils
+    compile 'com.sh.zsh.code:shform:3.2.2'
 }
 
 

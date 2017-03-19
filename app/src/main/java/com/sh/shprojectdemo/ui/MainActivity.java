@@ -16,6 +16,7 @@ import com.jruilibrary.widget.TabRadioView;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
 
+import com.sh.shprojectdemo.im.MyConversationFragment;
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.ui.fragment.DataBindingFragment;
 import com.sh.shprojectdemo.ui.fragment.HomeFragment;
@@ -70,8 +71,8 @@ public class MainActivity extends BaseActivity {
         tabRadioView.setTabTexts(title, R.drawable.bg_radiobutton_selector_home_page, images);
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(HomeFragment.newInstance(activityMain));
-//        fragments.add(new MyConversationFragment());
-        fragments.add(DataBindingFragment.newInstance(2));
+        fragments.add(new MyConversationFragment());
+//        fragments.add(DataBindingFragment.newInstance(2));
         fragments.add(DataBindingFragment.newInstance(1));
 
         tabRadioView.setFragmentList(fragments, R.id.id_fragment_title);

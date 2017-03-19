@@ -15,6 +15,7 @@ import com.jruilibrary.widget.TemplateTitleBar;
 import com.sh.shprojectdemo.R;
 
 //import com.sh.shprojectdemo.im.IMHelper;
+import com.sh.shprojectdemo.im.IMHelper;
 import com.sh.shprojectdemo.model.User;
 import com.sh.shprojectdemo.presenter.LoginPresenter;
 import com.sh.shprojectdemo.view.LoginView;
@@ -70,7 +71,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         String image="http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
         String nickName = "呵呵";
         String id ="zsh";
-//        IMHelper.newIMHelper(this).manualLogin(id,imSig,image,nickName,"铁岭");
+        IMHelper.newIMHelper(this).manualLogin(id,imSig,image,nickName,"铁岭");
     }
     @Override
     public void loginSuccess(User user) {

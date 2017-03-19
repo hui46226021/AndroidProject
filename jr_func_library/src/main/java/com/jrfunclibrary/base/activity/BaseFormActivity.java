@@ -7,9 +7,9 @@ import android.view.View;
 
 
 import com.jrfunclibrary.base.view.FormSubmitView;
-import com.jruilibrary.form.check.FormCheckInterface;
-import com.jruilibrary.form.form.FormInit;
-import com.jruilibrary.form.form.FormUtls;
+import com.sh.zsh.code.check.FormCheckInterface;
+import com.sh.zsh.code.form.FormInit;
+import com.sh.zsh.code.form.FormUtls;
 
 
 /**
@@ -71,10 +71,7 @@ public class BaseFormActivity extends BaseActivity implements FormSubmitView, Fo
      * @param v
      * @param message
      */
-    @Override
-    public void formCheckNullCall(View v, String message) {
-            showMessage(message);
-    }
+
 
     /**
      * 通用回调 ，如果不满足需求 在子类里修改即可
