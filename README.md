@@ -23,36 +23,35 @@ android 开发框架
 * 8:数据加密 （DES,MD5,RSA）
 * 9:依赖注入IOC
 
-###jrUIlibrary   UI控件  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
-* TemplateTitleBar     顶部标题栏控件
+### jrUIlibrary   UI控件  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
+* [TemplateTitleBar](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/LoginActivity.java)     顶部标题栏控件
 * NoScrollListview     不可滑动的listView
 * NoScrollGridView     不可滑动的GridView
-* SquareLayout         宽度和高度一样layout
-* LineFromView         表单行控件（封装各种控件）
-* CircleImageView      圆型ImageView
-* RoundCornerImageView 带圆角圆型ImageView
-* IOSAlertDialog       仿IOS alert
-* TimePickerView       仿IOS 仿IOS 时间选择器
-* OptionsPickerView    仿IOS 选择器（最多可以3级联动）
-* IOSSwitchButton      仿IOS SwitchButton
-* SideslipListView     仿IOS 可左滑listView
-* DragIndicatorView    消息提示小红点（仿QQ可拖动）
-* UISearchView         搜索框
-* LetterListView       按字母分组listView
-* TouchPhotoView       图片查看器 （可放滑动/双击放大缩小）
-* MyProgressDialog     等待Dialog
-* CycleView            自动滚动banner 图
-* SpinnerDialog        底部弹出菜单
+* [SquareLayout](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/adapter/SystemGridViewAdapter.java)         宽度和高度一样layout
+* [CircleImageView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/LoginActivity.java)      圆型ImageView
+* [RoundCornerImageView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/res/layout/item_list.xml) 带圆角圆型ImageView
+* [IOSAlertDialog](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)       仿IOS alert
+* [TimePickerView ](http://zhush.xyz/2017/03/17/Android-PickerView/)      仿IOS 仿IOS 时间选择器
+* [OptionsPickerView](http://zhush.xyz/2017/03/17/Android-PickerView/)    仿IOS 选择器（最多可以3级联动）
+* [IOSSwitchButton](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_ui_library/src/main/java/com/jruilibrary/widget/IOSSwitchButton.java)      仿IOS SwitchButton
+* [SideslipListView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/UserListActivity.java)     仿IOS 可左滑listView
+* [DragIndicatorView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/adapter/TestAdapter.java)    消息提示小红点（仿QQ可拖动）
+* [UISearchView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/LetterListViewActivity.java)         搜索框
+* [LetterListView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/LetterListViewActivity.java)       按字母分组listView
+* [TouchPhotoView](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/activity/ImageViewPageActivity.java)       图片查看器 （可放滑动/双击放大缩小）
+* [MyProgressDialog](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)     等待Dialog
+* [CycleView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)            自动滚动banner 图
+* [SpinnerDialog](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)        底部弹出菜单
 * TabLayout            viewPage 关联 tab（官方）
 http://www.jianshu.com/p/2b2bb6be83a8
-* RefreshLayout        上拉刷新组件（官方）
-* Navigation View      抽屉导航（官方）
+* [RefreshLayout](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/UserListActivity.java)        上拉刷新组件（官方）
+* [Navigation View ]((https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java))     抽屉导航（官方）
 * JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
 https://github.com/lzyzsd/JsBridge
-* formUtiks            表单映射工具
+* [formUtiks](http://zhush.xyz/2017/03/17/ShFormLayout/)            表单映射工具 重点 重点 重点
 https://github.com/hui46226021/ShFormUtils
-* TabRadioView            底部Tab菜单 带红点提示
-* LayerListView           带Tab层级listview
+* [TabRadioView ](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MainActivity.java)           底部Tab菜单 带红点提示
+* [LayerListView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/layerListViewActivity.java)           带Tab层级listview
 
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog.gif)
