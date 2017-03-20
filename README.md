@@ -10,8 +10,8 @@ android 开发框架
 ## 依赖关系
 
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/1.png)
-##框架详细
-###jrbaselibrary   基础框架  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
+## 框架详细
+### jrbaselibrary   基础框架  [API下载](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
 封装 基础数据操作
 * 1:缓存  （DiskLruCache，LruCache，SharedPreferences,本地文件缓存） http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral
 * 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
@@ -23,7 +23,7 @@ android 开发框架
 * 8:数据加密 （DES,MD5,RSA）
 * 9:依赖注入IOC
 
-### jrUIlibrary   UI控件  [API下载] (https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
+### jrUIlibrary   UI控件  [API下载](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
 * [TemplateTitleBar](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/LoginActivity.java)     顶部标题栏控件
 * NoScrollListview     不可滑动的listView
 * NoScrollGridView     不可滑动的GridView
@@ -42,32 +42,29 @@ android 开发框架
 * [MyProgressDialog](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)     等待Dialog
 * [CycleView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)            自动滚动banner 图
 * [SpinnerDialog](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)        底部弹出菜单
-* TabLayout            viewPage 关联 tab（官方）
-http://www.jianshu.com/p/2b2bb6be83a8
+* [TabLayout](http://www.jianshu.com/p/2b2bb6be83a8)            viewPage 关联 tab（官方）
 * [RefreshLayout](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/UserListActivity.java)        上拉刷新组件（官方）
 * [Navigation View ]((https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java))     抽屉导航（官方）
-* JsBridge             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
-https://github.com/lzyzsd/JsBridge
+* [JsBridge](https://github.com/lzyzsd/JsBridge)             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
 * [formUtiks](http://zhush.xyz/2017/03/17/ShFormLayout/)            表单映射工具 重点 重点 重点
-https://github.com/hui46226021/ShFormUtils
 * [TabRadioView ](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MainActivity.java)           底部Tab菜单 带红点提示
 * [LayerListView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/layerListViewActivity.java)           带Tab层级listview
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SideslipListView.gif)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)](http://zhush.xyz/2017/03/17/Android-PickerView/)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView.gif)](http://zhush.xyz/2017/03/17/Android-PickerView/)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SideslipListView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/adapter/TestAdapter.java)
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LetterListView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TouchPhotoView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/CycleView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SpinnerDialog.gif)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LetterListView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/LetterListViewActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TouchPhotoView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/activity/ImageViewPageActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/CycleView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SpinnerDialog.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout1.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout2.gif)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout1.gif)]((http://www.jianshu.com/p/2b2bb6be83a8) )
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout2.gif)]((http://www.jianshu.com/p/2b2bb6be83a8) )
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/RefreshLayout.gif)
 ![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/Navigation.gif)
 
