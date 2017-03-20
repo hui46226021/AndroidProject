@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+
+    >
+
+
+    <com.sh.zsh.code.baidumap_sdk.view.JrMapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clickable="true" >
+    </com.sh.zsh.code.baidumap_sdk.view.JrMapView>
+    <Button
+        android:id="@+id/go"
+        android:text="到这里去"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_radar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+
+    <com.sh.zsh.code.baidumap_sdk.view.JrMapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+
+            android:id="@+id/normal"
+            android:text="正常定位"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+
+            android:id="@+id/following"
+            android:text="跟随"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+
+            android:id="@+id/compass"
+            android:text="罗盘"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <Button
+        android:layout_gravity="bottom"
+        android:id="@+id/up"
+        android:text="上传自己的位置"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_gravity="bottom|end"
+        android:id="@+id/search"
+        android:text="搜索附近人"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</FrameLayout>

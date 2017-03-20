@@ -1,14 +1,10 @@
 package com.sh.shprojectdemo.ui.fragment;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +29,7 @@ import com.sh.shprojectdemo.presenter.HomePresenter;
 import com.sh.shprojectdemo.ui.AudioRecordActivity;
 import com.sh.shprojectdemo.ui.LayerListViewActivity;
 import com.sh.shprojectdemo.ui.LetterListViewActivity;
+import com.sh.shprojectdemo.ui.MapHomeActivity;
 import com.sh.shprojectdemo.ui.MaterialDesignActivity;
 import com.sh.shprojectdemo.ui.SettingActivity;
 
@@ -190,6 +187,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
         menuModels.add("测试掉线");
         menuModels.add("第三方分享");
         menuModels.add("M D风格控件");
+        menuModels.add("Baidu 地图");
         SystemGridViewAdapter systemGridViewAdapter = new SystemGridViewAdapter(getActivity(), menuModels);
         gridviewHome.setAdapter(systemGridViewAdapter);
         gridviewHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -239,12 +237,18 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
                         homePresenter.dropTest();
                         break;
                     case 10:
-
+                        /**
+                         * 使用该种模糊效果 请确定 在app的build.gradle 的 defaultConfig 下设置了    renderscriptTargetApi 18    renderscriptSupportModeEnabled true
+                         */
                         ShareActivity.share(rootView,getActivity(),null,"测试分享","https://www.baidu.co,","测试分享");
                         break;
                     case 11:
 
                         JRActivityUtils.getInstance().activityAnim(getActivity(), JRBitmapUtils.myShot(getActivity(),true), BaseActivity.touchX,BaseActivity.touchY,new Intent(new Intent(getActivity(), MaterialDesignActivity.class)));
+                        break;
+                    case 12:
+
+                        startActivity(new Intent(getActivity(), MapHomeActivity.class));
                         break;
 
                 }

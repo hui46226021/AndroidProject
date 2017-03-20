@@ -7,6 +7,7 @@ import com.jereibaselibrary.application.JrApp;
 //import com.sh.shprojectdemo.im.IMHelper;
 import com.sh.shprojectdemo.im.IMHelper;
 import com.sh.shprojectdemo.ui.LoginActivity;
+import com.sh.zsh.code.baidumap_sdk.BaiduMapHelper;
 import com.sh.zsh.code.umeng_sdk.UMShareHelper;
 
 
@@ -22,13 +23,20 @@ public class MyApplication extends JrApp {
         super.onCreate();
         //崩溃日志输出
 //        exceptionLogOut();
-        //初始话IM
-        IMHelper.initIM(this);
+
         //设置离线后 默认调转到的 页面
         setLoginPage(LoginActivity.class);
 
 
         //注册第三方分享 登录 支付
         UMShareHelper.init(this);
+
+        /**
+         * 初始化百度地图
+         */
+        BaiduMapHelper.init(this);
+
+        //初始话IM
+        IMHelper.initIM(this);
     }
 }

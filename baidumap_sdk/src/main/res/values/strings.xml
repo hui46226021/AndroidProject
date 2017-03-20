@@ -1,0 +1,8 @@
+<resources>
+    <!--百度地图-->
+    <string name="app_key">5UTdNM4uTWfuC0iLVHxnUAXxKVQQhsKq</string>
+    <!--导航语音播报-->
+    <string name="app_code">EC9CF2CCF0CF3FF86C17C607679962DE</string>
+
+
+</resources>

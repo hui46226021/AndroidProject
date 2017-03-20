@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'baidukey'
+            keyPassword 'baidukey'
+            storeFile file('D:/github/ShBaiduMapSDK/key.jks')
+            storePassword 'baidukey'
+        }
+    }
     compileSdkVersion 24
     buildToolsVersion "25.0.0"
     defaultConfig {
@@ -11,6 +19,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        ndk{
+            moduleName "libgenius_blur"
+            ldLibs "log"
+            abiFilters "armeabi"
+        }
     }
     buildTypes {
         release {
@@ -34,15 +48,13 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:support-v4:24.2.1'
     testCompile 'junit:junit:4.12'
     compile 'com.sh.zsh.code:JrImLibrary:2.0.4'
-
-
     compile project(path: ':umeng_sdk')
     compile project(path: ':jrbaselibrary')
     compile project(path: ':jr_ui_library')
     compile project(path: ':jr_func_library')
+    compile project(path: ':baidumap_sdk')
 }

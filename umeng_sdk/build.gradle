@@ -11,7 +11,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        renderscriptTargetApi 18
+//
+//        renderscriptSupportModeEnabled true
 
+        ndk{
+            moduleName "libgenius_blur"
+            ldLibs "log"
+            abiFilters "armeabi"
+        }
     }
     buildTypes {
         release {
@@ -37,6 +45,6 @@ dependencies {
     compile files('libs/umeng_social_net.jar')
     compile files('libs/umeng_social_tool.jar')
 
-//    compile 'com.sh.zsh.code:shvideoplayer:1.0.1'
+
     compile 'net.qiujuer.genius:blur:2.0.0-beta4'
 }

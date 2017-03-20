@@ -26,6 +26,11 @@
         <activity android:name=".ui.TabLayoutActivity" />
         <activity android:name=".ui.TabLayout2Activity" />
         <activity android:name=".ui.VideoRecordDemoActivity" />
+        <activity android:name=".ui.MapHomeActivity" />
+        <activity android:name=".ui.RadarActivity" />
+        <activity android:name=".ui.NavigationActivity" />
+        <activity android:name=".ui.BNDemoGuideActivity" />
+        <activity android:name=".ui.MapActivity" />
         <activity
             android:name=".ui.ShVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />

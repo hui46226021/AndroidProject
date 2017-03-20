@@ -13,14 +13,14 @@ android 开发框架
 ## 框架详细
 ### jrbaselibrary   基础框架  [API下载](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
 封装 基础数据操作
-* 1:缓存  （DiskLruCache，LruCache，SharedPreferences,本地文件缓存） http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral
-* 2:网络操作 (Retrofit 2.0,okhttp,兼容自有https证书）
-* 3:数据库操作(litepal)   http://www.jianshu.com/p/557682e0a9f0
-* 4:json解析
-* 5:网络图片加载,图片处理  (glide) http://blog.csdn.net/fancylovejava/article/details/44747759
-* 6:工具类
-* 7:数据绑定 （butterknife,Data binding） http://www.jianshu.com/p/b1df61a4df77
-* 8:数据加密 （DES,MD5,RSA）
+* 1:缓存  （[DiskLruCache]( http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral)，LruCache，SharedPreferences,本地文件缓存）
+* 2:网络操作 ([Retrofit 2.0](http://zhush.xyz/2017/01/01/Retrofit2.0/),okhttp,兼容自有https证书）
+* 3:[数据库操作](http://www.jianshu.com/p/557682e0a9f0)(litepal)
+* 4:[json解析](http://zhush.xyz/2017/03/18/JSON%E8%A7%A3%E6%9E%90/)
+* 5:[网络图片加载,图片处理](http://blog.csdn.net/fancylovejava/article/details/44747759)  (glide)
+* 6:[工具类](https://github.com/hui46226021/ShProjectDemo/tree/master/jrbaselibrary/src/main/java/com/jereibaselibrary/tools)
+* 7:数据绑定 （butterknife,[Data binding](http://www.jianshu.com/p/b1df61a4df77))）
+* 8:[数据加密 （DES,MD5,RSA）](https://github.com/hui46226021/ShProjectDemo/blob/master/jrbaselibrary/src/main/java/com/jereibaselibrary/encryption/EncryptUtils.java)
 * 9:依赖注入IOC
 
 ### jrUIlibrary   UI控件  [API下载](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrui.rar)
@@ -44,7 +44,7 @@ android 开发框架
 * [SpinnerDialog](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)        底部弹出菜单
 * [TabLayout](http://www.jianshu.com/p/2b2bb6be83a8)            viewPage 关联 tab（官方）
 * [RefreshLayout](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/UserListActivity.java)        上拉刷新组件（官方）
-* [Navigation View ]((https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java))     抽屉导航（官方）
+* [Navigation View](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)     抽屉导航（官方）
 * [JsBridge](https://github.com/lzyzsd/JsBridge)             H5原生交互webview（在其基础上 加入 屏蔽alert web 缓存 进度条 url监听）
 * [formUtiks](http://zhush.xyz/2017/03/17/ShFormLayout/)            表单映射工具 重点 重点 重点
 * [TabRadioView ](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MainActivity.java)           底部Tab菜单 带红点提示
@@ -63,18 +63,18 @@ android 开发框架
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/SpinnerDialog.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)
 
 
-[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout1.gif)]((http://www.jianshu.com/p/2b2bb6be83a8) )
-[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout2.gif)]((http://www.jianshu.com/p/2b2bb6be83a8) )
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/RefreshLayout.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/Navigation.gif)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout1.gif)](http://www.jianshu.com/p/2b2bb6be83a8)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabLayout2.gif)](http://www.jianshu.com/p/2b2bb6be83a8)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/RefreshLayout.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/UserListActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/Navigation.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/fragment/HomeFragment.java)
 
 
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/formUtiks.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabRadioView.gif)
-![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LayerListView.gif)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/formUtiks.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/SettingActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabRadioView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MainActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LayerListView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/layerListViewActivity.java)
 
 
-###jrFunclibrary   封装通用功能（与业务逻辑无关）
+### jrFunclibrary   封装通用功能（与业务逻辑无关）
 * 版本检查更新
 * 图片选择/拍摄上传  （包含压缩 水印）
 * 音频录制

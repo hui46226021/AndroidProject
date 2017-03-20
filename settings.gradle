@@ -1,1 +1,1 @@
-include ':app', ':jrbaselibrary', ':jr_ui_library', ':jr_func_library', ':umeng_sdk'
+include ':app', ':jrbaselibrary', ':jr_ui_library', ':jr_func_library', ':umeng_sdk', ':baidumap_sdk'
