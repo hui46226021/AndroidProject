@@ -25,7 +25,7 @@
         <activity android:name=".ui.SettingActivity" />
         <activity android:name=".ui.TabLayoutActivity" />
         <activity android:name=".ui.TabLayout2Activity" />
-        <activity android:name=".ui.VideoRecordDemoActivity" />
+        <activity android:name=".ui.VideoRecordActivity" />
         <activity android:name=".ui.MapHomeActivity" />
         <activity android:name=".ui.RadarActivity" />
         <activity android:name=".ui.NavigationActivity" />

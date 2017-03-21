@@ -36,7 +36,7 @@ import butterknife.InjectView;
  * E-mail 405086805@qq.com
  * PS  視頻 压缩DEMO
  */
-public class VideoRecordDemoActivity extends AppCompatActivity implements VideoInputDialog.VideoCall {
+public class VideoRecordActivity extends AppCompatActivity implements VideoInputDialog.VideoCall {
 
 
     static String TAG = "MainActivity";
@@ -79,13 +79,13 @@ public class VideoRecordDemoActivity extends AppCompatActivity implements VideoI
             @Override
             public void onClick(View view) {
                 //显示视频录制控件
-                VideoInputDialog.show(getSupportFragmentManager(), VideoRecordDemoActivity.this, VideoInputDialog.Q720, VideoRecordDemoActivity.this);
+                VideoInputDialog.show(getSupportFragmentManager(), VideoRecordActivity.this, VideoInputDialog.Q720, VideoRecordActivity.this);
             }
         });
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                VideoInputActivity.startActivityForResult(VideoRecordDemoActivity.this, REQUEST_CODE_FOR_RECORD_VIDEO, VideoInputActivity.Q720);
+                VideoInputActivity.startActivityForResult(VideoRecordActivity.this, REQUEST_CODE_FOR_RECORD_VIDEO, VideoInputActivity.Q720);
             }
         });
         /**
@@ -111,7 +111,7 @@ public class VideoRecordDemoActivity extends AppCompatActivity implements VideoI
                 /**
                  * 压缩视频
                  */
-                CompressorUtils compressorUtils = new CompressorUtils(path, currentOutputVideoPath, VideoRecordDemoActivity.this);
+                CompressorUtils compressorUtils = new CompressorUtils(path, currentOutputVideoPath, VideoRecordActivity.this);
                 compressorUtils.execCommand(new CompressListener() {
                     @Override
                     public void onExecSuccess(String message) {

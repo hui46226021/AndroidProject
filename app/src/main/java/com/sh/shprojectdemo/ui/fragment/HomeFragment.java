@@ -33,10 +33,12 @@ import com.sh.shprojectdemo.ui.MapHomeActivity;
 import com.sh.shprojectdemo.ui.MaterialDesignActivity;
 import com.sh.shprojectdemo.ui.SettingActivity;
 
+import com.sh.shprojectdemo.ui.ShVideoActivity;
 import com.sh.shprojectdemo.ui.TabLayout2Activity;
 import com.sh.shprojectdemo.ui.TabLayoutActivity;
 import com.sh.shprojectdemo.ui.UserListActivity;
 
+import com.sh.shprojectdemo.ui.VideoRecordActivity;
 import com.sh.shprojectdemo.view.HomeView;
 import com.sh.zsh.code.umeng_sdk.ShareActivity;
 
@@ -225,10 +227,10 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
                         startActivity(new Intent(getActivity(), AudioRecordActivity.class));
                         break;
                     case 6:
-     //                   startActivity(new Intent(getActivity(), VideoRecordDemoActivity.class));
+                        startActivity(new Intent(getActivity(), VideoRecordActivity.class));
                         break;
                     case 7:
-//                        startActivity(new Intent(getActivity(), ShVideoActivity.class));
+                        startActivity(new Intent(getActivity(), ShVideoActivity.class));
                         break;
                     case 8:
                         startActivity(new Intent(getActivity(), LayerListViewActivity.class));
