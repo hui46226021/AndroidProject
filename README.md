@@ -94,15 +94,15 @@ android 开发框架
 
 
 [![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/2.gif)]()
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/videorecording1.png)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/videorecording2.png)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/videorecording3.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/videorecording1.png)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/videorecording2.png)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/videorecording3.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
 
 
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/baidumap.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/baidu_navigation.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/fenxiang.png)]()
-[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/donghua.gif)]()
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/baidumap.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/baidu_navigation.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/fenxiang.png)]()
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/donghua.gif)]()
 
 
 
