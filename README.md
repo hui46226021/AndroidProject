@@ -101,7 +101,7 @@ android 开发框架
 
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/baidumap.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/baidu_navigation.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
-[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/fenxiang.png)]()
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/fenxiang.gif)]()
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/donghua.gif)]()
 
 
