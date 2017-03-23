@@ -1,5 +1,5 @@
-# ShProjectDemo
-android 开发框架
+# ProjectDemo
+android 开发框架  项目结构采用MVP 架构
 
 ## Android项目依赖框架
 * jrbaselibrary   基础框架
@@ -55,9 +55,9 @@ android 开发框架
 * [版本检查更新](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/WelcomeActivity.java)
 * 图片选择/拍摄上传  （包含压缩 水印）
 * [音频录制](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/AudioRecordActivity.java)
-* [视频录制  压缩](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
-* [视频播放](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/ShVideoActivity.java)
-* pdf阅读
+* [视频录制  压缩](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)（模块化可分离）
+* [视频播放](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/ShVideoActivity.java)（模块化可分离）
+* pdf阅读 （模块化可分离）
 * 二维码扫描 生成
 * 文件下载
 * [启动页](https://github.com/hui46226021/AndroidProject/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/bootpage/BootActivity.java)
