@@ -13,7 +13,7 @@ android 开发框架
 ## 框架详细
 ### jrbaselibrary   基础框架  [API下载](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/jrbase.rar)
 封装 基础数据操作
-* 1:缓存  （[DiskLruCache]( http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral)，LruCache，SharedPreferences,本地文件缓存）
+* 1:缓存  （[DiskLruCache]( http://blog.csdn.net/guolin_blog/article/details/28863651?utm_source=tuicool&utm_medium=referral)，LruCache，[SharedPreferences](https://github.com/hui46226021/AndroidProject/blob/master/jrbaselibrary/src/main/java/com/jereibaselibrary/cache/SharedPreferencesTool.java),[本地文件缓存](https://github.com/hui46226021/AndroidProject/blob/master/jrbaselibrary/src/main/java/com/jereibaselibrary/cache/AppFileCache.java)）
 * 2:网络操作 ([Retrofit 2.0](http://zhush.xyz/2017/01/01/Retrofit2.0/),okhttp,兼容自有https证书）
 * 3:[数据库操作](http://www.jianshu.com/p/557682e0a9f0)(litepal)
 * 4:[json解析](http://zhush.xyz/2017/03/18/JSON%E8%A7%A3%E6%9E%90/)
@@ -51,6 +51,23 @@ android 开发框架
 * [LayerListView](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/layerListViewActivity.java)           带Tab层级listview
 
 
+### jrFunclibrary   封装通用功能（与业务逻辑无关）
+* [版本检查更新](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/WelcomeActivity.java)
+* 图片选择/拍摄上传  （包含压缩 水印）
+* [音频录制](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/AudioRecordActivity.java)
+* [视频录制  压缩](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
+* [视频播放](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/ShVideoActivity.java)
+* pdf阅读
+* 二维码扫描 生成
+* 文件下载
+* [启动页](https://github.com/hui46226021/AndroidProject/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/bootpage/BootActivity.java)
+* [基础 页面视图](https://github.com/hui46226021/AndroidProject/tree/master/jr_func_library/src/main/java/com/jrfunclibrary/base)
+* 图形解锁
+* [掉线提醒](https://github.com/hui46226021/AndroidProject/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)
+
+
+## 图片预览 点击图片可跳转到 相应代码
+
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/IOSAlertDialog.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/OptionsPickerView.gif)](http://zhush.xyz/2017/03/17/Android-PickerView/)
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TimePickerView.gif)](http://zhush.xyz/2017/03/17/Android-PickerView/)
@@ -72,23 +89,33 @@ android 开发框架
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/formUtiks.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/SettingActivity.java)
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/TabRadioView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MainActivity.java)
 [![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/LayerListView.gif)](https://github.com/hui46226021/ShProjectDemo/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/layerListViewActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/audio_recording.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/AudioRecordActivity.java)
 
 
-### jrFunclibrary   封装通用功能（与业务逻辑无关）
-* 版本检查更新
-* 图片选择/拍摄上传  （包含压缩 水印）
-* 音频录制
-* 视频录制  压缩
-* 视频播放
-* pdf阅读
-* 二维码扫描 生成
-* 文件下载
-* 启动页
-* 基础 页面视图
-* 图形解锁
-* 掉线提醒
+
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/2.gif)]()
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/videorecording1.png)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/videorecording2.png)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/videorecording3.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/VideoRecordActivity.java)
 
 
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/baidumap.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/baidu_navigation.gif)](https://github.com/hui46226021/AndroidProject/blob/master/app/src/main/java/com/sh/shprojectdemo/ui/MapHomeActivity.java)
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/fenxiang.png)]()
+[![](https://raw.githubusercontent.com/hui46226021/ShPhotoSelector/master/donghua.gif)]()
+
+
+
+
+# 相关连接
+* 项目架构采用MVP [http://blog.csdn.net/lmj623565791/article/details/46596109](http://blog.csdn.net/lmj623565791/article/details/46596109)
+* 百度地图封装 [https://github.com/hui46226021/ShBaiduMapSDK](https://github.com/hui46226021/ShBaiduMapSDK)
+* 第三方登录分享 [https://github.com/hui46226021/ShUmengSdk](https://github.com/hui46226021/ShUmengSdk)
+* 腾讯IM封装 [https://github.com/hui46226021/ShIMLibrary](https://github.com/hui46226021/ShIMLibrary)
+* 极光推送封装 [https://github.com/hui46226021/ShJpushSdk](https://github.com/hui46226021/ShJpushSdk)
+* 视频播放器 [https://github.com/hui46226021/ShVideoPlay](https://github.com/hui46226021/ShVideoPlay)
+* 视频录制压缩 [https://github.com/hui46226021/ShVideoDemo](https://github.com/hui46226021/ShVideoDemo)
+* 阿里巴巴Java开发手册 [阿里巴巴Java开发手册](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/阿里巴巴Java开发手册.pdf)
 
 
 
