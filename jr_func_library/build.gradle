@@ -34,4 +34,6 @@ dependencies {
     compile 'com.sh.shvideo:shvideolibrary:1.5.0'
     //视频播放   https://github.com/hui46226021/ShVideoPlay
     compile 'com.sh.zsh.code:shvideoplayer:1.0.2'
+    //二维码扫描
+    compile 'com.sh.zsh.code:shqrlibrary:1.0.4'
 }

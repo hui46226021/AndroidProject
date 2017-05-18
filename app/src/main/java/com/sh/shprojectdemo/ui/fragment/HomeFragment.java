@@ -40,6 +40,7 @@ import com.sh.shprojectdemo.ui.UserListActivity;
 
 import com.sh.shprojectdemo.ui.VideoRecordActivity;
 import com.sh.shprojectdemo.view.HomeView;
+import com.sh.zsh.code.shqrlibrary.zxing.ui.CaptureActivity;
 import com.sh.zsh.code.umeng_sdk.ShareActivity;
 
 import java.util.ArrayList;
@@ -55,13 +56,12 @@ import butterknife.InjectView;
 
 public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialog.SelectedCall {
 
-
+    final int SM = 1001;
     @InjectView(R.id.template)
     TemplateTitleBar template;
     @InjectView(R.id.cycleView)
     CycleView cycleView;
-    @InjectView(R.id.cycleView2)
-    CycleView cycleView2;
+
 
     HomePresenter homePresenter;
     @InjectView(R.id.refreshlayout)
@@ -171,18 +171,6 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
 
         String[] urls2 = new String[]{"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492511323&di=e62bedb329f60b0af1f0ab7081a1ab7c&imgtype=jpg&er=1&src=http%3A%2F%2Fimg03.tooopen.com%2Fimages%2F20131102%2Fsy_45237377439.jpg"
                 ,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1924463045,1738546004&fm=21&gp=0.jpg"  };
-
-        cycleView2.setItems(urls2, getChildFragmentManager(), new CycleView.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Log.d("liao", position + "");
-            }
-
-            @Override
-            public void onLoadImage(ImageView imageView, String url) {
-                JRSetImage.setNetWorkImage(getActivity(), url, imageView,R.drawable.nopicture);
-            }
-        });
     }
 
     @Override
@@ -206,6 +194,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
         menuModels.add("第三方分享");
         menuModels.add("M D风格控件");
         menuModels.add("Baidu 地图");
+        menuModels.add("二维码扫描");
         SystemGridViewAdapter systemGridViewAdapter = new SystemGridViewAdapter(getActivity(), menuModels);
         gridviewHome.setAdapter(systemGridViewAdapter);
         gridviewHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -267,6 +256,10 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
                     case 12:
 
                         startActivity(new Intent(getActivity(), MapHomeActivity.class));
+                        break;
+                    case 13:
+
+                        startActivityForResult(new Intent(getActivity(), CaptureActivity.class), SM);
                         break;
 
                 }

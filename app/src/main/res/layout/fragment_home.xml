@@ -23,14 +23,7 @@
         app:myshape="oval"
         app:myunselected_color="#33000000"
         app:scaleType="centerCrop" />
-    <com.jruilibrary.widget.cycleview.widget.CycleView
-        android:id="@+id/cycleView2"
-        android:layout_width="match_parent"
-        android:layout_height="220dp"
-        app:myselected_color="#ffffff"
-        app:myshape="oval"
-        app:myunselected_color="#33000000"
-        app:scaleType="centerCrop" />
+
     <com.jruilibrary.widget.RefreshLayout
         android:id="@+id/refreshlayout"
         android:layout_width="match_parent"

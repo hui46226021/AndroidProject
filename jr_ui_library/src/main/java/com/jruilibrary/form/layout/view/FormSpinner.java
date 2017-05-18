@@ -27,6 +27,8 @@ public class FormSpinner extends TextView{
     String titel;
     ArrayList<ViewData> options1Items ;
     private SelectedListener selectedListener; //选中监听
+
+    private  String commCode;
     public FormSpinner(Context context) {
         super(context);
         pvOptions = new OptionsPickerView(context);
@@ -123,5 +125,13 @@ public class FormSpinner extends TextView{
     }
     public Object getSelectValueObject(){
         return pvOptionsSelectValueObject;
+    }
+
+    public String getCommCode() {
+        return commCode;
+    }
+
+    public void setCommCode(String commCode) {
+        this.commCode = commCode;
     }
 }

@@ -38,6 +38,7 @@ import com.jrfunclibrary.base.view.BaseView;
 import com.jrfunclibrary.fileupload.DownloadService;
 import com.jrfunclibrary.model.CommCode;
 import com.jruilibrary.form.layout.model.ViewData;
+import com.jruilibrary.form.layout.view.FormSpinner;
 import com.jruilibrary.widget.DownProgressDialog;
 import com.jruilibrary.widget.IOSAlertDialog;
 import com.jruilibrary.widget.MyProgressDialog;
@@ -591,11 +592,11 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
 
     }
 
-    public void getCommCode(final List<FormSpinnerView> list){
+    public void getCommCode(final List<FormSpinner> list){
 
-       final HashMap<String,FormSpinnerView> map = new HashMap<>();
+       final HashMap<String,FormSpinner> map = new HashMap<>();
         StringBuilder sb = new StringBuilder();
-        for(FormSpinnerView formSpinnerView:list){
+        for(FormSpinner formSpinnerView:list){
             sb.append(formSpinnerView.getCommCode()+"|");
             map.put(formSpinnerView.getCommCode(),formSpinnerView);
         }
@@ -608,7 +609,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
             public void success(Map<String ,List<CommCode>> dataResult) {
                 Set<String> setKey = dataResult.keySet();
                 for(String key:setKey){
-                    FormSpinnerView formSpinnerView= map.get(key);
+                    FormSpinner formSpinnerView= map.get(key);
                    List<CommCode> commCodes= dataResult.get(key);
                     ArrayList<ViewData> arrayList = new ArrayList<ViewData>();
                     for(CommCode commCode:commCodes){

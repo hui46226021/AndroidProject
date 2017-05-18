@@ -115,6 +115,8 @@ android 开发框架  项目结构采用MVP 架构
 * 极光推送封装 [https://github.com/hui46226021/ShJpushSdk](https://github.com/hui46226021/ShJpushSdk)
 * 视频播放器 [https://github.com/hui46226021/ShVideoPlay](https://github.com/hui46226021/ShVideoPlay)
 * 视频录制压缩 [https://github.com/hui46226021/ShVideoDemo](https://github.com/hui46226021/ShVideoDemo)
+* 二维码扫描 [https://github.com/hui46226021/ShQrCode)
+* 图片选择器 [https://github.com/hui46226021/ShPhotoSelector)
 * 阿里巴巴Java开发手册 [阿里巴巴Java开发手册](https://raw.githubusercontent.com/hui46226021/ShProjectDemo/master/tu/doc/阿里巴巴Java开发手册.pdf)
 
 
