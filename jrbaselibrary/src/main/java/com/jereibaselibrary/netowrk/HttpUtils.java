@@ -4,20 +4,29 @@ import android.util.Log;
 
 
 import com.jereibaselibrary.application.JrApp;
+import com.jereibaselibrary.constant.BaseConstant;
 import com.jereibaselibrary.constant.SystemConfig;
 import com.jereibaselibrary.netowrk.cookie.CookieJarImpl;
 import com.jereibaselibrary.netowrk.cookie.PersistentCookieStore;
 import com.jereibaselibrary.tools.JRLogUtils;
 import com.sh.shjson.JSONUtil;
 
+import org.json.JSONTokener;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Method;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.Cookie;
+import okhttp3.CookieJar;
 import okhttp3.FormBody;
+import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -56,9 +65,9 @@ public class HttpUtils {
     static {
         //设置超时
         builder = new OkHttpClient.Builder()
-                .connectTimeout(15, TimeUnit.SECONDS)
-                .writeTimeout(20, TimeUnit.SECONDS)
-                .readTimeout(20, TimeUnit.SECONDS)
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .writeTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
         .addInterceptor(new Interceptor() {
             @Override public Response intercept(Interceptor.Chain chain) throws IOException {
                 Request originalRequest = chain.request();
@@ -76,10 +85,11 @@ public class HttpUtils {
         CookieJarImpl cookieJarImpl = new CookieJarImpl(new PersistentCookieStore(JrApp.getContext()));
         builder.cookieJar(cookieJarImpl);
         //获取Client 实例
+
         mOkHttpClient=builder.build();
-////        /**
-////         * 添加证书
-////         */
+//        /**
+//         * 添加证书
+//         */
 //        HttpsCerts.addCerts(JrApp.getContext());
 //        mOkHttpClient=  HttpsCerts.createOkhttp(builder).build();
     }
@@ -119,7 +129,7 @@ public class HttpUtils {
                 responseStr=responseStr+":"+response.code();
             }
 
-            JRLogUtils.d("responseStr",responseStr);
+            JRLogUtils.json("responseStr",responseStr);
     } catch (Exception e) {
         e.printStackTrace();
     }
@@ -144,7 +154,7 @@ public class HttpUtils {
                 responseStr=responseStr+":"+response.code();
             }
 
-            JRLogUtils.d("responseStr",responseStr);
+            JRLogUtils.json("responseStr",responseStr);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -157,6 +167,9 @@ public class HttpUtils {
      * @param value
      */
     public void putParam(String name, Object value) {
+        if(value ==null){
+            return;
+        }
         if(formBodyBuilder==null){
             formBodyBuilder = new FormBody.Builder();
         }
@@ -273,10 +286,10 @@ public class HttpUtils {
      * @param <T>
      * @return
      */
-    public <T> T getObject(Class<T> clazz,Class clazz2, String name) {
+    public <T> T getObject(Class<T> clazz,String name,Class clazz2) {
         try {
             JSONUtil jsonUtil = new JSONUtil(responseStr);
-            T t = jsonUtil.getObject(clazz,clazz2, name);
+            T t = jsonUtil.getObject(clazz, name,clazz2);
             return t;
         } catch (Exception e) {
             Log.w("json", e.getMessage(), e);
@@ -293,7 +306,7 @@ public class HttpUtils {
      */
     public <T> List<T> getList(Class<T> clazz, String name) {
         try {
-            JSONUtil jsonUtil = new JSONUtil(responseStr);
+   JSONUtil jsonUtil = new JSONUtil(responseStr);
             List<T> list = jsonUtil.getList(clazz, name);
             return list;
         } catch (Exception e) {
@@ -309,15 +322,14 @@ public class HttpUtils {
      * @param <T>
      * @return
      */
-    public <T> List<T> getList(Class<T> clazz, Class clazz2,String name) {
-        try {
+    public <T> List<T> getList(Class<T> clazz, String name, Class ...class2) {
+
+
             JSONUtil jsonUtil = new JSONUtil(responseStr);
-            List<T> list = jsonUtil.getList(clazz,clazz2, name);
+            List<T> list = jsonUtil.getList(clazz, name,class2);
             return list;
-        } catch (Exception e) {
-            Log.w("json", e.getMessage(), e);
-        }
-        return Collections.emptyList();
+
+
     }
 
 
@@ -333,7 +345,16 @@ public class HttpUtils {
      */
     public boolean hasErrors(){
 
-        return !getObject(boolean.class,"success");
+//        if(!responseStr.contains("actionErrors")){
+//            return true;
+//        }
+//
+//        if(getList(String.class,"actionErrors").size()>0){
+//            return true;
+//        }else {
+//            return false;
+//            }
+        return !getObject(Boolean.class,"success");
     }
 
     /**
@@ -341,6 +362,12 @@ public class HttpUtils {
      * @return
      */
     public String getMessageString(){
+//        List<String > list = getList(String.class,"actionErrors");
+//        if(list.size()==0){
+//            return "系统错误00001";
+//        }
+//        return list.toString();
+
         return getObject(String.class,"message");
     }
 
@@ -349,7 +376,13 @@ public class HttpUtils {
      * @return
      */
     public int getResultCode(){
-        return getObject(Integer.class,"errorCode");
+
+        try {
+            return getObject(Integer.class,"errorCode");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return BaseConstant.NetworkConstant.CODE_FAILURE;
+        }
     }
 
     static Retrofit retrofit;

@@ -28,7 +28,7 @@
                 android:id="@+id/headImage"
                 android:layout_height="100dp" />
 
-            <com.sh.zsh.code.layout.ShFormLayout
+            <com.jruilibrary.form.layout.ShFormLayout
                  app:less_form_row_height="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -106,7 +106,7 @@
                         android:background="@drawable/bg_text_factoryaudit"
                         android:hint="多行输入" />
                 </LinearLayout>
-            </com.sh.zsh.code.layout.ShFormLayout>
+            </com.jruilibrary.form.layout.ShFormLayout>
 
 
         </LinearLayout>

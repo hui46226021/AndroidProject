@@ -2,9 +2,11 @@ package com.sh.shprojectdemo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -12,6 +14,7 @@ import com.jereibaselibrary.image.JRSetImage;
 import com.jrfunclibrary.base.activity.BaseActivity;
 import com.jruilibrary.widget.CircleImageView;
 import com.jruilibrary.widget.TemplateTitleBar;
+import com.jruilibrary.widget.cycleview.widget.CycleView;
 import com.sh.shprojectdemo.R;
 
 //import com.sh.shprojectdemo.im.IMHelper;
@@ -41,6 +44,8 @@ public class LoginActivity extends BaseActivity implements LoginView {
     @InjectView(R.id.button)
     Button button;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,11 @@ public class LoginActivity extends BaseActivity implements LoginView {
         ButterKnife.inject(this);
         loginPresenter = new LoginPresenter(this);
         initView();
+
+
+
+
+
     }
 
     void initView() {
@@ -58,7 +68,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
             }
         });
         String url = "http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
-        JRSetImage.setNetWorkImage(this, url, image);
+        JRSetImage.setNetWorkImage(this, url, image,R.drawable.nopicture);
     }
 
     @OnClick(R.id.button)

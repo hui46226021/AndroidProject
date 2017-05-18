@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:form="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="#f4f4f4">
+
+    <LinearLayout
+        android:id="@+id/startTime"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:background="@drawable/bg_date_slot"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rl"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <com.sh.zsh.code.layout.view.FormTimeView
+            form:less_time_is_time="year_month_day"
+            android:id="@+id/startTime_text"
+            android:textSize="17sp"
+            android:text="2017-3-21"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <ImageView
+
+        android:layout_margin="5dp"
+        android:background="@color/text_gray1"
+        android:layout_width="10dp"
+        android:layout_height="2px" />
+    <LinearLayout
+
+        android:id="@+id/endTime"
+        android:gravity="center"
+        android:background="@drawable/bg_date_slot"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rl"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+        <com.sh.zsh.code.layout.view.FormTimeView
+            form:less_time_is_time="year_month_day"
+            android:id="@+id/endTime_text"
+            android:textSize="17sp"
+            android:text="2017-3-21"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="2dp"
+            android:visibility="invisible"
+            android:id="@+id/line_must"
+            android:text="*"
+            android:layout_marginLeft="10dp"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/form_must"
+            android:textSize="20sp"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/line_tital"
+            android:text="标题"
+            android:layout_marginLeft="1dp"
+            android:layout_width="115dp"
+            android:layout_height="match_parent"
+            android:textColor="@color/form_text"
+            android:textSize="@dimen/form_text_size"
+            android:gravity="center_vertical"/>
+    <RelativeLayout
+        android:layout_marginRight="15dp"
+        android:gravity="end"
+        android:layout_gravity="center"
+        android:id="@+id/content_view"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"></RelativeLayout>
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/rightArrow"
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_right"/>
+
+    </LinearLayout>
+
+    <View
+        android:visibility="invisible"
+        android:id="@+id/bottomLine"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/form_split_line" />
+</LinearLayout>

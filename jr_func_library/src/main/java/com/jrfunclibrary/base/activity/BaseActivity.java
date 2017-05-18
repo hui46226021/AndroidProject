@@ -20,25 +20,47 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 
+import com.google.gson.JsonObject;
 import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.constant.BaseConstant;
 import com.jereibaselibrary.image.JRBitmapUtils;
+import com.jereibaselibrary.netowrk.HttpAsynTask;
+import com.jereibaselibrary.netowrk.HttpUtils;
+import com.jereibaselibrary.netowrk.listen.HandleResponse;
+import com.jereibaselibrary.netowrk.listen.RequestCall;
 import com.jereibaselibrary.tools.JRAppUtils;
+import com.jereibaselibrary.tools.JRDataResult;
 import com.jereibaselibrary.tools.JRFileUtils;
 import com.jereibaselibrary.tools.JRNetworkUtils;
 import com.jrfunclibrary.activity.ImageViewPageActivity;
 import com.jrfunclibrary.base.receiver.DownloadReceiver;
 import com.jrfunclibrary.base.receiver.NetworkReceiver;
 import com.jrfunclibrary.base.view.BaseView;
+import com.jrfunclibrary.base.view.FormSubmitView;
 import com.jrfunclibrary.fileupload.DownloadService;
+import com.jrfunclibrary.model.CommCode;
+import com.jruilibrary.form.layout.model.ViewData;
 import com.jruilibrary.widget.DownProgressDialog;
+import com.jruilibrary.widget.FormSpinnerView;
 import com.jruilibrary.widget.IOSAlertDialog;
 import com.jruilibrary.widget.MyProgressDialog;
+
 import com.sh.zsh.jrfunclibrary.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 
 /**
@@ -53,6 +75,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
     boolean isCut;//是否图像 截取
     boolean isActive;//当前activity是否活跃
     protected int LOGIN_REQUESTCODE = 10001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,7 +140,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
     @Override
     public void showMessage(String message) {
         closeProgressDialog();
-        setToastMessage(message,Toast.LENGTH_LONG);
+        setToastMessage(message,Toast.LENGTH_SHORT);
     }
     /**
      * Activity之间相互切换的动画枚举
@@ -211,6 +234,9 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
      * 显示进度对话框
      */
     public void showProgressDialog(String message,boolean cancelable) {
+        if(TextUtils.isEmpty(message)){
+            message = getString(R.string.func_load_ing);
+        }
         MyProgressDialog.show(this, message,cancelable);
     }
 
@@ -487,7 +513,7 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
      */
     public void offLine() {
 
-        showAlertDialog(getString(R.string.func_hint), "您的账号已在其他设备上登录", getString(R.string.func_login_again), new View.OnClickListener() {
+        showAlertDialog(getString(R.string.func_hint), "您的账号已掉线", getString(R.string.func_login_again), new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 login_again();
@@ -562,4 +588,69 @@ public  class BaseActivity extends AppCompatActivity implements BaseView {
         }
 
     }
+
+    /**
+     * 查詢明細
+     * @param objcet
+     */
+    public void getDetails(Object objcet){
+
+    }
+
+    public void getCommCode(final List<FormSpinnerView> list){
+
+       final HashMap<String,FormSpinnerView> map = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        for(FormSpinnerView formSpinnerView:list){
+            sb.append(formSpinnerView.getCommCode()+"|");
+            map.put(formSpinnerView.getCommCode(),formSpinnerView);
+        }
+
+        HttpAsynTask httpAsynTask = new HttpAsynTask("/basedata/baseCodeMap4P.action");
+        httpAsynTask.putParam("codeType",sb.toString());
+        httpAsynTask.setHttpRequestCall(new RequestCall<Map<String ,List<CommCode>>>() {
+
+            @Override
+            public void success(Map<String ,List<CommCode>> dataResult) {
+                Set<String> setKey = dataResult.keySet();
+                for(String key:setKey){
+                    FormSpinnerView formSpinnerView= map.get(key);
+                   List<CommCode> commCodes= dataResult.get(key);
+                    ArrayList<ViewData> arrayList = new ArrayList<ViewData>();
+                    for(CommCode commCode:commCodes){
+                        arrayList.add(new ViewData(commCode.getText(),commCode.getValue()));
+                    }
+                    formSpinnerView.setpvOptionsList(arrayList);
+                }
+            }
+
+            @Override
+            public void failed(String message, int errorCode) {
+
+            }
+        });
+        httpAsynTask.setHandleResponse(new HandleResponse() {
+            @Override
+            public JRDataResult putResponse(JRDataResult dataControlResult, HttpUtils client) {
+                Map<String,List<CommCode>> comMap = new HashMap<String, List<CommCode>>();
+              String respons=  client.getResponseStr();
+                try {
+                    JSONObject jsonObject = new JSONObject(respons);
+                    JSONObject map = (JSONObject) jsonObject.get("map");
+                    Iterator<String> keyIter= map.keys();
+
+                    while (keyIter.hasNext()) {
+                       String key = keyIter.next();
+                        comMap.put(key,client.getList(CommCode.class,"map."+key));
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                dataControlResult.setResultObject(comMap);
+                return dataControlResult;
+            }
+        });
+        httpAsynTask.execute();
+    }
+
 }

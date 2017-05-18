@@ -7,9 +7,9 @@ import android.view.View;
 
 
 import com.jrfunclibrary.base.view.FormSubmitView;
-import com.sh.zsh.code.check.FormCheckInterface;
-import com.sh.zsh.code.form.FormInit;
-import com.sh.zsh.code.form.FormUtls;
+import com.jruilibrary.form.check.FormCheckInterface;
+import com.jruilibrary.form.form.FormInit;
+import com.jruilibrary.form.form.FormUtls;
 
 
 /**
@@ -21,6 +21,7 @@ public class BaseFormActivity extends BaseActivity implements FormSubmitView, Fo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FormInit.deleteInjection(this);
         super.onCreate(savedInstanceState);
 
     }

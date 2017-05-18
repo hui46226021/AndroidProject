@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="48dp"
+    android:layout_height="50dp"
 
    >
     <LinearLayout
@@ -13,10 +13,11 @@
         android:layout_centerVertical="true"
         android:orientation="horizontal">
         <ImageView
+            android:padding="7dp"
             android:id="@+id/img_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ui_jt_icon"/>
+            android:src="@drawable/ui_go_back"/>
         <TextView
             android:layout_marginLeft="10dp"
             android:id="@+id/txt_back"
@@ -24,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="16sp"
-            android:textColor="@color/ui_black"/>
+            android:textColor="@color/ui_white"/>
     </LinearLayout>
     <ImageView
         android:visibility="gone"
@@ -44,7 +45,7 @@
         android:singleLine="true"
         android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/ui_black"/>
+        android:textColor="@color/ui_white"/>
     <LinearLayout
         android:id="@+id/btn_more"
         android:layout_width="wrap_content"
@@ -54,20 +55,22 @@
 
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_marginLeft="16dp"
-            android:visibility="gone"
-            android:id="@+id/img_more2"
-            android:scaleType="fitXY"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
+
         <TextView
             android:id="@+id/txt_more2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="17sp"
-            android:textColor="@color/ui_black"/>
+            android:textColor="@color/ui_white"/>
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:visibility="gone"
+            android:id="@+id/img_more2"
+            android:scaleType="fitXY"
+            android:padding="12dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp" />
     </LinearLayout>
 
 </RelativeLayout>

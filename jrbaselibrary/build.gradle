@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
     buildToolsVersion "25.0.0"
 
     defaultConfig {
@@ -31,14 +31,14 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     testCompile 'junit:junit:4.12'
     //注解 butterknife
     compile 'com.jakewharton:butterknife:6.1.0'
     //图片
     compile 'com.github.bumptech.glide:glide:3.7.0'
     //解析JSON
-    compile 'com.sh.zsh.code:shjson:1.2.2'
+    compile 'com.sh.zsh.code:shjson:1.2.4'
     //okhttp3
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'org.jsoup:jsoup:1.9.2'
@@ -46,11 +46,10 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.0.2'
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
-//下载
+    //下载
     compile 'com.liulishuo.filedownloader:library:0.1.2'
     compile 'com.android.support:multidex:1.0.0'
-
-
+    compile files('libs/volley.jar')
 }
 //apply plugin: 'com.github.dcendents.android-maven'
 //task javadoc(type: Javadoc) {

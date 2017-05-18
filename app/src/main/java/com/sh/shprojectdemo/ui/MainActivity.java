@@ -73,7 +73,7 @@ public class MainActivity extends BaseActivity {
         fragments.add(HomeFragment.newInstance(activityMain));
         fragments.add(new MyConversationFragment());
 //        fragments.add(DataBindingFragment.newInstance(2));
-        fragments.add(DataBindingFragment.newInstance(1));
+        fragments.add(DataBindingFragment.newInstance(10));
 
         tabRadioView.setFragmentList(fragments, R.id.id_fragment_title);
         tabRadioView.setCount(new int[]{0, 19, 2});

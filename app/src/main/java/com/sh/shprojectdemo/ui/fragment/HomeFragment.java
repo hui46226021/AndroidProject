@@ -60,7 +60,8 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
     TemplateTitleBar template;
     @InjectView(R.id.cycleView)
     CycleView cycleView;
-
+    @InjectView(R.id.cycleView2)
+    CycleView cycleView2;
 
     HomePresenter homePresenter;
     @InjectView(R.id.refreshlayout)
@@ -83,7 +84,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+            View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.inject(this, view);
         homePresenter = new HomePresenter(this);
         homePresenter.initViewData();
@@ -156,7 +157,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
 
     @Override
     public void getImages(String[] imgs) {
-        cycleView.setItems(imgs, getActivity().getSupportFragmentManager(), new CycleView.OnItemClickListener() {
+        cycleView.setItems(imgs, getChildFragmentManager(), new CycleView.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
                 Log.d("liao", position + "");
@@ -164,7 +165,22 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
 
             @Override
             public void onLoadImage(ImageView imageView, String url) {
-                JRSetImage.setNetWorkImage(getActivity(), url, imageView);
+                JRSetImage.setNetWorkImage(getActivity(), url, imageView,R.drawable.nopicture);
+            }
+        });
+
+        String[] urls2 = new String[]{"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492511323&di=e62bedb329f60b0af1f0ab7081a1ab7c&imgtype=jpg&er=1&src=http%3A%2F%2Fimg03.tooopen.com%2Fimages%2F20131102%2Fsy_45237377439.jpg"
+                ,"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1924463045,1738546004&fm=21&gp=0.jpg"  };
+
+        cycleView2.setItems(urls2, getChildFragmentManager(), new CycleView.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Log.d("liao", position + "");
+            }
+
+            @Override
+            public void onLoadImage(ImageView imageView, String url) {
+                JRSetImage.setNetWorkImage(getActivity(), url, imageView,R.drawable.nopicture);
             }
         });
     }

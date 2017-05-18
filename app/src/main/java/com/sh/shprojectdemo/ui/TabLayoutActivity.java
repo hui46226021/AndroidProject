@@ -22,6 +22,10 @@ public class TabLayoutActivity extends AppCompatActivity {
     TabLayout tabLayout;
     @InjectView(R.id.view_pager)
     ViewPager viewPager;
+    @InjectView(R.id.tab_layout2)
+    TabLayout tabLayout2;
+    @InjectView(R.id.view_pager2)
+    ViewPager viewPager2;
     private FragmentAdapter fragmentAdapter;
     List<Fragment> fragments = new ArrayList<>();
     private List<String> titles= new ArrayList<>();
@@ -59,5 +63,28 @@ public class TabLayoutActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         viewPager.setOffscreenPageLimit(0);
         viewPager.setAdapter(fragmentAdapter);
+
+
+        List<Fragment> fragments2 = new ArrayList<>();
+         List<String> titles2= new ArrayList<>();
+
+        fragments2.add(DataBindingFragment.newInstance(10));
+        fragments2.add(DataBindingFragment.newInstance(20));
+        fragments2.add(DataBindingFragment.newInstance(30));
+        fragments2.add(DataBindingFragment.newInstance(40));
+        fragments2.add(DataBindingFragment.newInstance(50));
+
+        titles2.add("一个");
+        titles2.add("二个");
+        titles2.add("三个");
+        titles2.add("四个");
+        titles2.add("五个");
+
+
+        FragmentAdapter  fragmentAdapter2 = new FragmentAdapter(getSupportFragmentManager(), fragments2, titles2);
+        tabLayout2.setTabsFromPagerAdapter(fragmentAdapter2);
+        tabLayout2.setupWithViewPager(viewPager2);
+        viewPager2.setOffscreenPageLimit(0);
+        viewPager2.setAdapter(fragmentAdapter2);
     }
 }

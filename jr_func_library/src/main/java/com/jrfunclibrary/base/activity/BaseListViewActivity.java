@@ -38,7 +38,7 @@ public class BaseListViewActivity extends BaseActivity implements SwipeRefreshLa
          listview.setOnItemClickListener(this);
          swiperefreshlayout.setOnRefreshListener(this);
          swiperefreshlayout.setOnLoadListener(this);
-//         swiperefreshlayout.setColorSchemeColors(ContextCompat.getColor(this, R.color.actionsheet_blue));
+         swiperefreshlayout.setColorSchemeColors(ContextCompat.getColor(this, R.color.top_tab_color));
 
        new Timer().schedule(new TimerTask() {//延时250毫秒刷新
            @Override
@@ -87,6 +87,8 @@ public class BaseListViewActivity extends BaseActivity implements SwipeRefreshLa
     //获取数据成功
     @Override
     public void getDataSuccess(Object object) {
+
+
         //关闭动画
         swiperefreshlayout.setRefreshing(false);
         baseAdapter.notifyDataSetChanged();

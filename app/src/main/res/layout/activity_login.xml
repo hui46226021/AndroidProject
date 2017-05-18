@@ -18,15 +18,15 @@
         android:background="@color/colorPrimary"
         ></com.jruilibrary.widget.TemplateTitleBar>
 
-    <com.jruilibrary.widget.CircleImageView
-        android:layout_marginTop="50dp"
+  <com.jruilibrary.widget.CircleImageView
         android:id="@+id/image"
-        android:layout_margin="30dp"
-        android:layout_gravity="center"
         android:layout_width="100dp"
-        app:border_width="3dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:layout_marginTop="50dp"
         app:border_color="@color/colorPrimary"
-        android:layout_height="100dp"></com.jruilibrary.widget.CircleImageView>
+        app:border_width="3dp"></com.jruilibrary.widget.CircleImageView>
 
     <android.support.design.widget.TextInputLayout
 

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.android.volley.toolbox.NetworkImageView;
 import com.jereibaselibrary.image.JRSetImage;
 import com.jruilibrary.widget.RoundCornerImageView;
 import com.sh.shprojectdemo.R;
@@ -58,7 +59,7 @@ public class TestAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         User user = (User) getItem(i);
-        JRSetImage.setNetWorkImage(context,user.getHeadImage(),holder.avatar);
+        JRSetImage.setNetWorkListViewImage(context,user.getHeadImage(),holder.avatar,R.drawable.nopicture);
         holder.count.setVisibility(View.VISIBLE);
         holder.count.setText(user.getUserId()+"");
         holder.name.setText(user.getName());
@@ -89,7 +90,7 @@ public class TestAdapter extends BaseAdapter {
 
     static class ViewHolder {
         @InjectView(R.id.avatar)
-        RoundCornerImageView avatar;
+        NetworkImageView avatar;
         @InjectView(R.id.count)
         DragIndicatorView count;
         @InjectView(R.id.name)

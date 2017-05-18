@@ -16,7 +16,7 @@
 
 
 
-        <com.jruilibrary.widget.RoundCornerImageView
+        <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/avatar"
             android:layout_width="45dp"
             android:scaleType="centerCrop"

@@ -12,13 +12,14 @@ import com.jrfunclibrary.base.activity.BaseFormActivity;
 import com.jrfunclibrary.fileupload.presenter.UploadImagePresenter;
 import com.jrfunclibrary.fileupload.view.ImageUpLoadView;
 import com.jrfunclibrary.model.AttachmentModel;
+import com.jruilibrary.form.annotation.FormInjection;
+import com.jruilibrary.form.layout.model.ViewData;
+import com.jruilibrary.form.layout.view.FormSpinner;
 import com.jruilibrary.widget.TemplateTitleBar;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.common.cache.TemporaryCache;
 import com.sh.shprojectdemo.model.User;
-import com.sh.zsh.code.annotation.FormInjection;
-import com.sh.zsh.code.layout.model.ViewData;
-import com.sh.zsh.code.layout.view.FormSpinner;
+
 
 import java.util.ArrayList;
 
@@ -71,7 +72,7 @@ public class SettingActivity extends BaseFormActivity implements ImageUpLoadView
             }
         });
         String url = "http://ww2.sinaimg.cn/bmiddle/43a39d58gw1ebqjvjr5onj20ea0e1ach";
-        JRSetImage.setNetWorkImage(this, url, headImage);
+        JRSetImage.setNetWorkImage(this, url, headImage,R.drawable.nopicture);
         headImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
