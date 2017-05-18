@@ -38,28 +38,28 @@ public class ShFormLayout extends LinearLayout{
             e.printStackTrace();
         }
         formLinear = (LinearLayout) findViewById(R.id.form_linear);
-        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.less_from_view, 0, 0);
-        rowHeight =ta.getDimension(R.styleable.less_from_view_less_form_row_height,(int) getContext().getResources().getDimension(R.dimen.form_row_height));
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.ShFormLayout, 0, 0);
+        rowHeight =ta.getDimension(R.styleable.ShFormLayout_less_form_row_height,(int) getContext().getResources().getDimension(R.dimen.form_row_height));
     }
     AtrrContainer atrrContainer;
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         LayoutParams lp=   super.generateLayoutParams(attrs);
-        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.less_from_view, 0, 0);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.ShFormLayout, 0, 0);
          atrrContainer = new AtrrContainer();
 
         try {
-            atrrContainer.setLessFormTitle(ta.getString(R.styleable.less_from_view_less_form_title));
-            atrrContainer.setLessFormName(ta.getString(R.styleable.less_from_view_less_form_name));
-            atrrContainer.setLessFormBottomLine(ta.getBoolean(R.styleable.less_from_view_less_form_bottomLine,true));
-            atrrContainer.setLessFormTitleImage(ta.getInt(R.styleable.less_from_view_less_form_title_image,0));
-            atrrContainer.setLessFormCanClick(ta.getBoolean(R.styleable.less_from_view_less_form_can_click,false));
-            atrrContainer.setLessFormMust(ta.getBoolean(R.styleable.less_from_view_less_form_must,false));
-            atrrContainer.setLessFormTitle(ta.getString(R.styleable.less_from_view_less_form_title));
-            atrrContainer.setLessFormCheckType(ta.getInt(R.styleable.less_from_view_less_form_check_type,0));
-            atrrContainer.setLessFormIsNull(ta.getBoolean(R.styleable.less_from_view_less_form_is_null,false));
-            atrrContainer.setLessFormGroupTitel(ta.getBoolean(R.styleable.less_from_view_less_form_group_titel,false));
-            atrrContainer.setLessFormGroupTopLayout(ta.getBoolean(R.styleable.less_from_view_less_form_group_top_layout,false));
+            atrrContainer.setLessFormTitle(ta.getString(R.styleable.ShFormLayout_less_form_title));
+            atrrContainer.setLessFormName(ta.getString(R.styleable.ShFormLayout_less_form_name));
+            atrrContainer.setLessFormBottomLine(ta.getBoolean(R.styleable.ShFormLayout_less_form_bottomLine,true));
+            atrrContainer.setLessFormTitleImage(ta.getInt(R.styleable.ShFormLayout_less_form_title_image,0));
+            atrrContainer.setLessFormCanClick(ta.getBoolean(R.styleable.ShFormLayout_less_form_can_click,false));
+            atrrContainer.setLessFormMust(ta.getBoolean(R.styleable.ShFormLayout_less_form_must,false));
+            atrrContainer.setLessFormTitle(ta.getString(R.styleable.ShFormLayout_less_form_title));
+            atrrContainer.setLessFormCheckType(ta.getInt(R.styleable.ShFormLayout_less_form_check_type,0));
+            atrrContainer.setLessFormIsNull(ta.getBoolean(R.styleable.ShFormLayout_less_form_is_null,false));
+            atrrContainer.setLessFormGroupTitel(ta.getBoolean(R.styleable.ShFormLayout_less_form_group_titel,false));
+            atrrContainer.setLessFormGroupTopLayout(ta.getBoolean(R.styleable.ShFormLayout_less_form_group_top_layout,false));
         } catch (Exception e) {
             e.printStackTrace();
         }

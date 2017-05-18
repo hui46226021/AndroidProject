@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 标题模板自定义属性 -->
-    <declare-styleable name="TemplateTitle">
+    <declare-styleable name="TemplateTitleBar">
         <!-- 标题文案 -->
         <attr name="titleText" format="string" />
         <!-- 是否有back按钮 -->
@@ -103,7 +103,7 @@
     </declare-styleable>
 
 
-    <declare-styleable name="less_from_view">
+    <declare-styleable name="ShFormLayout">
         <!-- 名称 -->
         <attr name="less_form_title" format="string" />
         <!--是否显示底部横线-->
@@ -139,6 +139,12 @@
         <attr name="less_form_group_titel" format="boolean" />
         <!--是否是表单组 头布局-->
         <attr name="less_form_group_top_layout" format="boolean" />
+
+
+    </declare-styleable>
+
+
+    <declare-styleable name="FormTimeView">
         <!--时间控件是否精确到时分秒-->
         <attr name="less_time_is_time" >
             <flag name = "all" value = "1" />
@@ -148,9 +154,10 @@
             <flag name = "year_month" value = "5" />
         </attr>
 
+    </declare-styleable>
+    <declare-styleable name="FormSpinner">
         <!--默认选中第一项-->
         <attr name="less_form_spi_sel" format="integer" />
-
 
     </declare-styleable>
 </resources>

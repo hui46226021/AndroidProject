@@ -16,7 +16,7 @@
         android:elevation="8dp"
         app:textColors="@color/white"
         android:background="@color/colorPrimary"
-        ></com.jruilibrary.widget.TemplateTitleBar>
+        />
 
   <com.jruilibrary.widget.CircleImageView
         android:id="@+id/image"
@@ -26,7 +26,7 @@
         android:layout_margin="30dp"
         android:layout_marginTop="50dp"
         app:border_color="@color/colorPrimary"
-        app:border_width="3dp"></com.jruilibrary.widget.CircleImageView>
+        app:border_width="3dp"/>
 
     <android.support.design.widget.TextInputLayout
 

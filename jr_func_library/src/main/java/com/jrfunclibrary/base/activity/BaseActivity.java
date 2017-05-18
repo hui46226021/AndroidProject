@@ -15,12 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 
-import com.google.gson.JsonObject;
 import com.jereibaselibrary.application.JrApp;
 import com.jereibaselibrary.cache.OwnCache;
 import com.jereibaselibrary.constant.BaseConstant;
@@ -37,12 +35,10 @@ import com.jrfunclibrary.activity.ImageViewPageActivity;
 import com.jrfunclibrary.base.receiver.DownloadReceiver;
 import com.jrfunclibrary.base.receiver.NetworkReceiver;
 import com.jrfunclibrary.base.view.BaseView;
-import com.jrfunclibrary.base.view.FormSubmitView;
 import com.jrfunclibrary.fileupload.DownloadService;
 import com.jrfunclibrary.model.CommCode;
 import com.jruilibrary.form.layout.model.ViewData;
 import com.jruilibrary.widget.DownProgressDialog;
-import com.jruilibrary.widget.FormSpinnerView;
 import com.jruilibrary.widget.IOSAlertDialog;
 import com.jruilibrary.widget.MyProgressDialog;
 
@@ -59,8 +55,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
 
 /**

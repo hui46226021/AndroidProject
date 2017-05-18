@@ -40,8 +40,8 @@ public class FormSpinner extends TextView{
     int selectIndex;
     public FormSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
-        TypedArray ta = getContext().obtainStyledAttributes(attrs,  R.styleable.less_from_view, 0, 0);
-        selectIndex = ta.getInt( R.styleable.less_from_view_less_form_spi_sel,999);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs,  R.styleable.FormSpinner, 0, 0);
+        selectIndex = ta.getInt( R.styleable.FormSpinner_less_form_spi_sel,999);
         pvOptions = new OptionsPickerView(context);
 
         setOnClickListener(new OnClickListener() {

@@ -35,8 +35,8 @@ public class FormTimeView extends TextView{
     public FormTimeView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        TypedArray ta = getContext().obtainStyledAttributes(attrs,  R.styleable.less_from_view, 0, 0);
-        isTime = ta.getInt( R.styleable.less_from_view_less_time_is_time,1);
+        TypedArray ta = getContext().obtainStyledAttributes(attrs,  R.styleable.FormTimeView, 0, 0);
+        isTime = ta.getInt( R.styleable.FormTimeView_less_time_is_time,1);
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
