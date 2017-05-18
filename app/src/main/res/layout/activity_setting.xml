@@ -54,14 +54,14 @@
                     android:layout_width="match_parent"
                     app:less_form_must="true"
                     />
-                <com.sh.zsh.code.layout.view.FormSpinner
+                <com.jruilibrary.form.layout.view.FormSpinner
                     android:id="@+id/company"
                     app:less_form_title="公司"
                     app:less_form_name="company"
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     app:less_form_must="true" />
-                <com.sh.zsh.code.layout.view.FormSpinner
+                <com.jruilibrary.form.layout.view.FormSpinner
                     android:id="@+id/department"
                     app:less_form_title="部门"
                     app:less_form_name="department"
@@ -69,7 +69,7 @@
                     android:layout_width="match_parent"
                     app:less_form_must="true" />
 
-                <com.sh.zsh.code.layout.view.FormTimeView
+                <com.jruilibrary.form.layout.view.FormTimeView
                     app:less_form_title="出生日期"
                     app:less_form_name="birthday"
                     android:layout_height="wrap_content"
