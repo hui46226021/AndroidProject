@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "message": "查询成功",
+  "errorCode": 0,
+  "map": {
+    "CD000040": [
+      {
+        "codeString": null,
+        "value": 100003914,
+        "text": "通知",
+        "isUse": 1,
+        "codeValue": null
+      },
+      {
+        "codeString": null,
+        "value": 100009928,
+        "text": "通报",
+        "isUse": 1,
+        "codeValue": null
+      },
+      {
+        "codeString": null,
+        "value": 100009929,
+        "text": "促销政策",
+        "isUse": 1,
+        "codeValue": null
+      }
+    ]
+  }
+}
