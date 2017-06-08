@@ -75,6 +75,14 @@
                     android:layout_height="wrap_content"
                     android:layout_width="match_parent"
                     app:less_form_must="true" />
+                <com.jrfunclibrary.base.comm.FormCommSpinner
+                    app:less_form_title="通用代码"
+                    app:less_form_name="commCode"
+                    app:comm_code="CD000040"
+                    app:is_cache="true"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent" />
+
 
                 <CheckBox
                     app:less_form_title="男性："

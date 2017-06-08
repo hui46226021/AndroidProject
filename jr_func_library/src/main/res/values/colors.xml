@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="top_tab_color">#e70012</color>
+
+    <declare-styleable name="FormCommSpinner">
+        <!--通用代码-->
+        <attr name="comm_code" format="string" />
+        <!--是否缓存-->
+        <attr name="is_cache" format="boolean" />
+    </declare-styleable>
 </resources>

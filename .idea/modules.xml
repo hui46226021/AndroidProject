@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ShAndroidProject.iml" filepath="$PROJECT_DIR$/ShAndroidProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShProjectDemo.iml" filepath="$PROJECT_DIR$/ShProjectDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/baidumap_sdk/baidumap_sdk.iml" filepath="$PROJECT_DIR$/baidumap_sdk/baidumap_sdk.iml" />

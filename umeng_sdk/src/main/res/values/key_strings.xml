@@ -1,0 +1,16 @@
+<resources>
+    <!--//友盟-->
+    <string name="umeng_appkey">XXXX</string>
+    <!--微信-->
+    <string name="wexin_app_id">XXXX</string>
+    <string name="wexin_app_secret">XXXX</string>
+    <!--微博-->
+    <string name="weibo_app_key">XXXX</string>
+    <string name="weibo_app_secret">XXXX</string>
+    <!--QQ-->
+    <string name="qq_appkey">XXXX</string>
+    <string name="qq_appid">XXXX</string>
+
+
+
+</resources>

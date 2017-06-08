@@ -36,7 +36,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity android:name=".ui.LayerListViewActivity" />
         <activity android:name=".ui.AudioRecordActivity" />
-        <activity android:name=".ui.MaterialDesignActivity"></activity>
+        <activity android:name=".ui.MaterialDesignActivity" />
+        <activity android:name=".ui.KActivity"></activity>
     </application>
 
 </manifest>

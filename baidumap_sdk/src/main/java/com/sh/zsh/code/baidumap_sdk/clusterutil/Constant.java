@@ -9,3 +9,4 @@ public class Constant {
     //聚合密度
     public static int DENSITY = 100;
 }
+                                                  
