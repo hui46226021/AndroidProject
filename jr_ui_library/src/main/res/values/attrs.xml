@@ -158,6 +158,7 @@
     <declare-styleable name="FormSpinner">
         <!--默认选中第一项-->
         <attr name="less_form_spi_sel" format="integer" />
-
     </declare-styleable>
+
+
 </resources>

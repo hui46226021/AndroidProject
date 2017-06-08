@@ -10,7 +10,7 @@ import java.io.Serializable;
  * PS
  */
 public class User extends DataSupport implements Serializable{
-    private String name;
+    public String name;
     private int userId;
     private int company;
     private int department;
