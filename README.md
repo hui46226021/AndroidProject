@@ -81,7 +81,7 @@ android 开发框架  项目结构采用MVP 架构
 * [基础 页面视图](https://github.com/hui46226021/AndroidProject/tree/master/jr_func_library/src/main/java/com/jrfunclibrary/base)
 * 图形解锁
 * [掉线提醒](https://github.com/hui46226021/AndroidProject/blob/master/jr_func_library/src/main/java/com/jrfunclibrary/base/activity/BaseActivity.java)
-
+* 通用代码
 
 ## 图片预览 点击图片可跳转到 相应代码
 
