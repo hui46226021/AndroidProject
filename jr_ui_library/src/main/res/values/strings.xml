@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">JR_UI_Library</string>
+
+    <string name="chat_up_finger">手指上滑，取消发送</string>
+
     <string name="search_hint">搜索</string>
     <string name="general_cancel">取消</string>
-    <string name="chat_up_finger">手指上滑，取消发送</string>
+    <string name="ui_start">开始</string>
+    <string name="ui_end">结束</string>
+    <string name="ui_more">更多</string>
+    <string name="ui_all">全部</string>
+    <string name="ui_loading_data">正在加载数据...</string>
+    <string name="ui_wait">请等待..</string>
+    <string name="ui_login">登录</string>
+    <string name="ui_logout">退出登录</string>
+    <string name="ui_sgin">签到</string>
+    <string name="ui_sgout">签退</string>
+    <string name="ui_name">姓名</string>
+    <string name="ui_go_back">返回</string>
+    <string name="ui_key_word">请输入关键字进行搜索</string>
+    <string name="ui_account">账号</string>
+    <string name="ui_pwd">密码</string>
+    <string name="ui_code">验证码</string>
 </resources>

@@ -40,7 +40,7 @@ import javax.xml.transform.stream.StreamSource;
  */
 public class JRLogUtils {
     public static String TAG = "ghost";
-    public static boolean LOG_DEBUG = false;
+    public static boolean LOG_DEBUG = true;
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
     private static final int VERBOSE = 2;
     private static final int DEBUG = 3;

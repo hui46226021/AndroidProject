@@ -62,14 +62,12 @@ class UserListActivity : BaseListViewActivity() {
 
     }
 
-    //下拉刷新
-    override fun onRefresh() {
-        userListPresenter.onRefresh()
+    override fun onLoad(page: Int) {
+        userListPresenter.onLoad();
+
     }
 
-    //上拉加载
-    override fun onLoad() {
-        userListPresenter.onLoad()
+    override fun onRefresh(page: Int) {
+        userListPresenter.onRefresh();
     }
-
 }

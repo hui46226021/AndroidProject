@@ -19,7 +19,7 @@ import com.sh.zsh.jr_ui_library.R;
  * Created by zhush on 2016/10/31.
  * E-mail 405086805@qq.com
  */
-public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnScrollListener {
+public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnScrollListener ,SwipeRefreshLayout.OnRefreshListener{
     private float mInitialDownY;
     private int mTouchSlop; //滑动到最下面时的上拉操作
     private ListView mListView;
@@ -29,7 +29,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
     private int mLastY; //抬起时的y坐标
     private boolean isLoading; //是否正在加载
 
-
+    int page=1;
     public RefreshLayout(Context context) {
         this(context, null);
     }
@@ -40,7 +40,7 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
 //        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
         mTouchSlop =300;
         mListViewFooter = LayoutInflater.from(context).inflate(R.layout.refresh_layout, null, false);
-
+        super.setOnRefreshListener(this);
 
     }
 
@@ -122,7 +122,8 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
     private void loadData() {
         if (mOnLoadListener != null) {
             setLoading(true);
-            mOnLoadListener.onLoad();
+            page =page+1;
+            mOnLoadListener.onLoad(page);
         }
     }
     public void setLoading(boolean loading) {
@@ -157,9 +158,19 @@ public class RefreshLayout extends SwipeRefreshLayout implements AbsListView.OnS
         }
     }
 
+    @Override
+    public void onRefresh() {
+        page =1;
+        mOnLoadListener.onRefresh(page);
+    }
+
+
+
+
     //加载更多的监听器
     public static interface OnLoadListener {
-        public void onLoad();
+        public void onLoad(int page);
+        public void onRefresh(int page);
     }
     //设置刷新动画
     public void setRefreshing(boolean refreshing) {

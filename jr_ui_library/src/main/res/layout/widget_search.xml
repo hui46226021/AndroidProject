@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="8dp"
-            android:hint="@string/search_hint"
+            android:hint="@string/ui_key_word"
             android:textColor="@color/ui_black"
             android:imeOptions="actionSearch"
             android:maxLength="11"

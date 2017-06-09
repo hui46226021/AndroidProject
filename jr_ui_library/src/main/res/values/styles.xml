@@ -98,5 +98,21 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">11sp</item>
     </style>
+    
+    
+    
+    <style name="ui_line_hori">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/ui_background_grey</item>
+    </style>
+
+    <style name="ui_line_vert">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/ui_background_grey</item>
+    </style>
+
+
 
 </resources>

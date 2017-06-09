@@ -345,16 +345,16 @@ public class HttpUtils {
      */
     public boolean hasErrors(){
 
-//        if(!responseStr.contains("actionErrors")){
-//            return true;
-//        }
-//
-//        if(getList(String.class,"actionErrors").size()>0){
-//            return true;
-//        }else {
-//            return false;
-//            }
-        return !getObject(Boolean.class,"success");
+        if(!responseStr.contains("actionErrors")){
+            return true;
+        }
+
+        if(getList(String.class,"actionErrors").size()>0){
+            return true;
+        }else {
+            return false;
+            }
+//        return !getObject(Boolean.class,"success");
     }
 
     /**
@@ -362,13 +362,13 @@ public class HttpUtils {
      * @return
      */
     public String getMessageString(){
-//        List<String > list = getList(String.class,"actionErrors");
-//        if(list.size()==0){
-//            return "系统错误00001";
-//        }
-//        return list.toString();
+        List<String > list = getList(String.class,"actionErrors");
+        if(list.size()==0){
+            return "系统错误00001";
+        }
+        return list.toString();
 
-        return getObject(String.class,"message");
+//        return getObject(String.class,"message");
     }
 
     /**

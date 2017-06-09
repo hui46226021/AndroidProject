@@ -21,8 +21,8 @@ import com.jruilibrary.utils.JRActivityUtils;
 import com.jruilibrary.widget.RefreshLayout;
 import com.jruilibrary.widget.TemplateTitleBar;
 import com.jruilibrary.widget.cycleview.widget.CycleView;
-import com.jruilibrary.widget.spinner.SpinnerDialog;
-import com.jruilibrary.widget.spinner.SpinnerModel;
+import com.jruilibrary.widget.spinner.OptionDialog;
+import com.jruilibrary.widget.spinner.OptionModel;
 import com.sh.shprojectdemo.R;
 import com.sh.shprojectdemo.adapter.SystemGridViewAdapter;
 import com.sh.shprojectdemo.presenter.HomePresenter;
@@ -54,7 +54,7 @@ import butterknife.InjectView;
 //import com.sh.shprojectdemo.ui.ShVideoActivity;
 
 
-public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialog.SelectedCall {
+public class HomeFragment extends LazyFragment implements HomeView, OptionDialog.SelectedCall {
 
     final int SM = 1001;
     @InjectView(R.id.template)
@@ -67,7 +67,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
     @InjectView(R.id.refreshlayout)
     RefreshLayout refreshlayout;
 
-    SpinnerDialog spinnerDialog;//列表点击操作 弹框
+    OptionDialog OptionDialog;//列表点击操作 弹框
     @InjectView(R.id.gridview_home)
     GridView gridviewHome;
     private int DIQV_REQUEST = 1001;
@@ -128,12 +128,12 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
         refreshlayout.setColorSchemeColors(ContextCompat.getColor(getActivity(), R.color.colorAccent));
 
 
-        List<SpinnerModel> list = new ArrayList<>();
-        list.add(new SpinnerModel("第一个菜单", 111));
-        list.add(new SpinnerModel("第二个菜单", 222));
-        list.add(new SpinnerModel("第三个菜单", 333));
-        spinnerDialog = new SpinnerDialog(this);
-        spinnerDialog.createLoadingDialog(getActivity(), list);
+        List<OptionModel> list = new ArrayList<>();
+        list.add(new OptionModel("第一个菜单", 111));
+        list.add(new OptionModel("第二个菜单", 222));
+        list.add(new OptionModel("第三个菜单", 333));
+        OptionDialog = new OptionDialog(this);
+        OptionDialog.createLoadingDialog(getActivity(), list);
     }
 
     @Override
@@ -174,8 +174,8 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
     }
 
     @Override
-    public void selectedCall(SpinnerModel spinnerModel) {
-        showMessage("点击了" + spinnerModel.getKey() + " 菜单ID" + spinnerModel.getValue());
+    public void selectedCall(OptionModel OptionModel) {
+        showMessage("点击了" + OptionModel.getKey() + " 菜单ID" + OptionModel.getValue());
     }
 
 
@@ -184,7 +184,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
         menuModels.add("SideslipListView");
         menuModels.add("TabLayout");
         menuModels.add("TabLayout2");
-        menuModels.add("SpinnerDialog");
+        menuModels.add("OptionDialog");
         menuModels.add("图片查看器");
         menuModels.add("音频录制播放");
         menuModels.add("视频录制压缩");
@@ -211,7 +211,7 @@ public class HomeFragment extends LazyFragment implements HomeView, SpinnerDialo
                         startActivity(new Intent(getActivity(), TabLayout2Activity.class));
                         break;
                     case 3:
-                        spinnerDialog.show();
+                        OptionDialog.show();
                         break;
                     case 4:
                         Intent intent = new Intent(getActivity(), ImageViewPageActivity.class);
