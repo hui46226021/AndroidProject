@@ -3,11 +3,14 @@ android 开发框架  项目结构采用MVP 架构
 
 
 ## 更新通知
-## 1.0.5
+## 2.0.0
 * 添加通用代码空间 FormCommSpinner
-* 添加下拉刷新上滑加载 RefreshListView 
 * 废弃了 BaseListViewActivity 
 * 废弃了 BaseListFragment 
+* 添加下拉刷新上滑加载 RefreshListView 
+* 添加了 通用 区域选中控件AreaDialog
+* 添加了 通用分页选择器基类BaseRightDialog
+* 添加了 通用列表下拉刷新上滑加载页面基类BaseListView （强烈推荐使用）
 * 增加了 通用values
 ## 1.0.4
 * 导入 ShFormUtils源码
