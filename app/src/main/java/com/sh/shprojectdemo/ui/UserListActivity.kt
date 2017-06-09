@@ -22,7 +22,7 @@ import com.sh.shprojectdemo.model.City
 class UserListActivity : BaseListViewActivity() {
 
     @InjectView(R.id.listview)
-    internal var listview: SideslipListView? = null
+    internal var listviews: SideslipListView? = null
     protected lateinit  var testAdapter: TestAdapter
 
     internal var list: MutableList<User> = ArrayList()
@@ -44,16 +44,16 @@ class UserListActivity : BaseListViewActivity() {
             override fun delete(i: Int) {
                 list.removeAt(i)
                 testAdapter.notifyDataSetChanged()
-                listview!!.turnToNormal()//归为
+                listviews!!.turnToNormal()//归为
             }
 
             override fun read(count: DragIndicatorView, i: Int) {
-                listview!!.turnToNormal()//归为
+                listviews!!.turnToNormal()//归为
                 count.dismissView()
             }
         })
 
-        initListView(listview, refreshlayout, testAdapter)
+        initListView(listviews, refreshlayout, testAdapter)
         setColorSchemeColors(R.color.colorAccent)
     }
 
