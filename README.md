@@ -1,10 +1,10 @@
-# ProjectDemo
+# ProjectFramework
 android 开发框架  项目结构采用MVP 架构
 
 
 ## 更新通知
 ## 2.0.0
-* 添加通用代码空间 FormCommSpinner
+* 添加通用代码控件 FormCommSpinner
 * 废弃了 BaseListViewActivity 
 * 废弃了 BaseListFragment 
 * 添加下拉刷新上滑加载 RefreshListView 
