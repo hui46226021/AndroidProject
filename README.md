@@ -1,6 +1,16 @@
 # ProjectDemo
 android 开发框架  项目结构采用MVP 架构
 
+
+##更新通知
+##1.0.5
+* 添加通用代码空间 FormCommSpinner
+* 添加下拉刷新上滑加载 RefreshListView 
+* 废弃了 BaseListViewActivity 
+* 废弃了 BaseListFragment 
+* 增加了 通用values
+
+
 ## Android项目依赖框架
 * jrbaselibrary   基础框架
 * jrUIlibrary   UI框架
