@@ -11,6 +11,8 @@ android 开发框架  项目结构采用MVP 架构
 * 添加了 通用 区域选中控件AreaDialog
 * 添加了 通用分页选择器基类BaseRightDialog
 * 添加了 通用列表下拉刷新上滑加载页面基类BaseListView （强烈推荐使用）
+* 添加了 单表提交表单封装BaseFormPresenter
+* 添加了 矩阵图片上传控件UploadImageView
 * 增加了 通用values
 ## 1.0.4
 * 导入 ShFormUtils源码
