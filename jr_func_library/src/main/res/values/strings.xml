@@ -30,4 +30,7 @@
         <item name="android:windowEnterAnimation">@anim/right_dialog_in_anim</item>
         <item name="android:windowExitAnimation">@anim/right_dialog_out_anim</item>
     </style>
+
+
+
 </resources>

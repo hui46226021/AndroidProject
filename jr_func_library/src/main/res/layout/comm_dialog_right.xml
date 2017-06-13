@@ -9,8 +9,7 @@
     android:orientation="vertical" >
 
     <TextView
-
-        android:text="地区选择"
+        android:id="@+id/dialog_titel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"

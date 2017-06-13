@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidProject.iml" filepath="$PROJECT_DIR$/AndroidProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShAndroidProject.iml" filepath="$PROJECT_DIR$/ShAndroidProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baidumap_sdk/baidumap_sdk.iml" filepath="$PROJECT_DIR$/baidumap_sdk/baidumap_sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/baidumap_sdk/baidumap_sdk.iml" filepath="$PROJECT_DIR$/baidumap_sdk/baidumap_sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/jr_func_library/jr_func_library.iml" filepath="$PROJECT_DIR$/jr_func_library/jr_func_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jr_func_library/jr_func_library.iml" filepath="$PROJECT_DIR$/jr_func_library/jr_func_library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jr_ui_library/jr_ui_library.iml" filepath="$PROJECT_DIR$/jr_ui_library/jr_ui_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/jr_ui_library/jr_ui_library.iml" filepath="$PROJECT_DIR$/jr_ui_library/jr_ui_library.iml" />
       <module fileurl="file://$PROJECT_DIR$/jrbaselibrary/jrbaselibrary.iml" filepath="$PROJECT_DIR$/jrbaselibrary/jrbaselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jrbaselibrary/jrbaselibrary.iml" filepath="$PROJECT_DIR$/jrbaselibrary/jrbaselibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/umeng_sdk/umeng_sdk.iml" filepath="$PROJECT_DIR$/umeng_sdk/umeng_sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/umeng_sdk/umeng_sdk.iml" filepath="$PROJECT_DIR$/umeng_sdk/umeng_sdk.iml" />
     </modules>
   </component>
