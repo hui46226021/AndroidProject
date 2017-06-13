@@ -3,6 +3,10 @@ android 开发框架  项目结构采用MVP 架构
 
 
 ## 更新通知
+## 2.0.1
+* 解决通用代码控件 FormCommSpinner 不能初始化值问题
+* 解决表单映射工具 FormUtils 下拉框不选会崩溃问题
+* 解决了下拉刷新组件 RefreshLayout 容易出发刷新问题
 ## 2.0.0
 * 添加通用代码控件 FormCommSpinner
 * 废弃了 BaseListViewActivity 
