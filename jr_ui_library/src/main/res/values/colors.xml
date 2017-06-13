@@ -17,9 +17,9 @@
     <color name="split_line">#dedede</color>
     <color name="light_background">#F6F6F6</color>
     <color name="ui_background">#e6e6e6</color>
-    <color name="ui_translucent">#27565555</color>
+    <color name="ui_translucent">#47565555</color>
     <color name="ui_all_translucent">#00ffffff</color>
-    <color name="ui_mask">#62000000</color>
+    <color name="ui_mask">#5a000000</color>
     <color name="ui_background_grey">#808080</color>
     <color name="ui_transparent_half">#91000000</color>
     <color name="refresh_icon">#e70012</color>

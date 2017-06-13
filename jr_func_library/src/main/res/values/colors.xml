@@ -8,4 +8,11 @@
         <!--是否缓存-->
         <attr name="is_cache" format="boolean" />
     </declare-styleable>
+
+
+    <!-- 上传图片控件 -->
+    <declare-styleable name="UploadImageView">
+        <!-- 只做显示 -->
+        <attr name="is_show" format="boolean" />
+    </declare-styleable>
 </resources>
