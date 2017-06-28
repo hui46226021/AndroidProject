@@ -3,6 +3,19 @@ android 开发框架  项目结构采用MVP 架构
 
 
 ## 更新通知
+## 2.0.2
+* 增加工具类方法
+* 修复保存图片找不到根目录
+* 网络访问默认返回驼峰命名
+* 更换IOSSwitchButton控件
+* 修复表单布局ShFormLayout 内部控件在android studio 自定义属性 不提示
+* 增加表单布局ShFormLayout  禁用隐藏
+* 增加ClockingButton 倒计时按钮控件
+* 增加ClockingView 倒计时控件
+* 增加ClockingView 倒计时控件
+* 增加BaseFormPresenter 增加 queryInfo方法 查询明细页面 赋值
+* 修复BaseListView 搜索框不好用
+* 部分其他优化
 ## 2.0.1
 * 解决通用代码控件 FormCommSpinner 不能初始化值问题
 * 解决表单映射工具 FormUtils 下拉框不选会崩溃问题
