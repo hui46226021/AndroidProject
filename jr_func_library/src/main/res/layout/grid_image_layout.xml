@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jruilibrary.widget.SquareLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    >
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:src="@drawable/add_image_push"
+            android:id="@+id/add_image_push"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerCrop"/>
+            <TextView
+                android:id="@+id/delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:textColor="@color/ui_white"
+                android:background="@drawable/rm_image_icon"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textSize="11dp"
+                />
+        </FrameLayout>
+</com.jruilibrary.widget.SquareLayout>

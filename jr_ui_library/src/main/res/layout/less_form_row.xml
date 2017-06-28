@@ -10,6 +10,7 @@
         android:focusableInTouchMode="true"
         android:orientation="horizontal">
         <TextView
+
             android:layout_marginTop="2dp"
             android:visibility="invisible"
             android:id="@+id/line_must"

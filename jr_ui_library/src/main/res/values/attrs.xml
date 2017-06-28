@@ -104,6 +104,12 @@
 
 
     <declare-styleable name="ShFormLayout">
+        <!-- 提交的url -->
+        <!--<attr name="less_form_url" format="string" />-->
+        <attr name="less_form_row_height" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TextView">
         <!-- 名称 -->
         <attr name="less_form_title" format="string" />
         <!--是否显示底部横线-->
@@ -118,6 +124,10 @@
         <attr name="less_form_name" format="string" />
         <!--是否非空-->
         <attr name="less_form_is_null" format="boolean" />
+        <!--是否禁用-->
+        <attr name="less_form_is_enabled" format="boolean" />
+        <!--是否消失-->
+        <attr name="less_form_is_gone" format="boolean" />
         <!--检查类型-->
         <attr name="less_form_check_type" >
             <flag name = "custom" value = "10000" />
@@ -132,9 +142,6 @@
             <flag name = "password" value = "10009" />
         </attr>
 
-        <!-- 提交的url -->
-        <attr name="less_form_url" format="string" />
-        <attr name="less_form_row_height" format="dimension" />
         <!--是否是表单组标题-->
         <attr name="less_form_group_titel" format="boolean" />
         <!--是否是表单组 头布局-->
@@ -160,5 +167,10 @@
         <attr name="less_form_spi_sel" format="integer" />
     </declare-styleable>
 
-
+    <declare-styleable name="IOSSwitchButton">
+        <attr name="hasShadow" format="boolean"/>
+        <attr name="primaryColor" format="color"/>
+        <attr name="primaryColorDark" format="color"/>
+        <attr name="isOpened" format="boolean"/>
+    </declare-styleable>
 </resources>

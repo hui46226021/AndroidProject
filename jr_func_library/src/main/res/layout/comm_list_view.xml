@@ -11,7 +11,7 @@
     <com.jruilibrary.widget.UISearchView
         android:id="@+id/search"
         android:layout_width="match_parent"
-        android:layout_height="50dp"></com.jruilibrary.widget.UISearchView>
+        android:layout_height="50dp"/>
 
     <com.jruilibrary.widget.RefreshListView
         android:layout_width="match_parent"
