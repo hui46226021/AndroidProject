@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jereibaselibrary">
+    package="com.jrbaselibrary">
     <!--网络权限-->
     <!-- Required  一些系统要求的权限，如访问网络等 -->
     <uses-permission android:name="com.jrm.hailing.permission.JPUSH_MESSAGE" />
