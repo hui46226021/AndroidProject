@@ -2,13 +2,12 @@ package com.jrfunclibrary.fileupload;
 
 import android.content.Intent;
 
-import com.jereibaselibrary.application.JrApp;
-import com.jereibaselibrary.tools.JRFileUtils;
-import com.jereibaselibrary.tools.JRLogUtils;
-import com.jereibaselibrary.tools.NotificationUtils;
-import com.liulishuo.filedownloader.BaseDownloadTask;
-import com.liulishuo.filedownloader.FileDownloadListener;
-import com.liulishuo.filedownloader.FileDownloader;
+import com.jrbaselibrary.application.JrApp;
+import com.jrbaselibrary.netowrk.DownloadUtil;
+import com.jrbaselibrary.tools.JRFileUtils;
+import com.jrbaselibrary.tools.JRLogUtils;
+import com.jrbaselibrary.tools.NotificationUtils;
+
 import com.sh.zsh.jrfunclibrary.R;
 
 
@@ -34,8 +33,6 @@ public class DownloadService {
     String  rootAppDirctoryPate=JRFileUtils.getRootAppDirctory(JrApp.getContext());
     String DIRECTORY = rootAppDirctoryPate+"/DOWN/";
 
-
-    int progress;  //下载进度
 
     /**
      * 判断文件是否本地已下载  如果已下载 返回路径
@@ -67,75 +64,29 @@ public class DownloadService {
             return;
         }
 
-        FileDownloader.getImpl().create(url)
 
-                .setPath(DIRECTORY + fileName + fileType)
-                .setListener(new FileDownloadListener() {
-                    @Override
-                    protected void pending(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-                        JRLogUtils.e("DownloaderUtils", "等待链接");
-                        sendBroadcast(WAITCONN,task.getUrl(),0,task.getPath());
-                    }
+        DownloadUtil.get().download(url, DIRECTORY,fileName+fileType, new DownloadUtil.OnDownloadListener() {
+            @Override
+            public void onDownloadSuccess(String url, String path) {
+                sendBroadcast(DOWNLOADFINIS,url,100,path);
+                notificationUtils.addNotification(resourceId,"下载成功",fileName + fileType, true);
+            }
 
-                    @Override
-                    protected void connected(BaseDownloadTask task, String etag, boolean isContinue, int soFarBytes, int totalBytes) {
-                        sendBroadcast(CONN_SUCCESSE,task.getUrl(),0,task.getPath());
-                    }
+            @Override
+            public void onDownloading(int progress, String url, String path) {
+                notificationUtils.addProgressNotification(resourceId,progress,"正在下载",fileName + "." + fileType);
 
-                    @Override
-                    protected void progress(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-                        JRLogUtils.e("hehe", task.getPath() + "进度" + soFarBytes + "/" + totalBytes);
-                        progress = soFarBytes * 100 / totalBytes;
-                        notificationUtils.addProgressNotification(resourceId,progress,"正在下载",fileName + "." + fileType);
+                sendBroadcast(DOWNLOADING,url,progress,path);
+            }
 
-                        sendBroadcast(DOWNLOADING,task.getUrl(),progress,task.getPath());
-                    }
-
-                    @Override
-                    protected void blockComplete(BaseDownloadTask task) {
-                        JRLogUtils.e("hehe", "开始下载");
+            @Override
+            public void onDownloadFailed(String error, String url) {
+                sendBroadcast(DOWNLOAD_FAIL,url,0,"下载失败");
+                notificationUtils.addNotification(resourceId,"下载失败",fileName + fileType, true);
+            }
 
 
-                    }
-
-                    @Override
-                    protected void retry(final BaseDownloadTask task, final Throwable ex, final int retryingTimes, final int soFarBytes) {
-
-                    }
-
-                    @Override
-                    protected void completed(BaseDownloadTask task) {
-                        JRLogUtils.e("DownloaderUtils", "完成" + task.getPath());
-                        notificationUtils.addNotification(resourceId,"下载成功",fileName + fileType, true);
-
-                        sendBroadcast(DOWNLOADFINIS,task.getUrl(),100,task.getPath());
-                    }
-
-                    @Override
-                    protected void paused(BaseDownloadTask task, int soFarBytes, int totalBytes) {
-                        JRLogUtils.e("DownloaderUtils", "暂停" + task.getPath());
-                    }
-
-                    @Override
-                    protected void error(BaseDownloadTask task, Throwable e) {
-                        JRLogUtils.e("DownloaderUtils", "错误" + task.getPath());
-                        if (progress >= 99) {
-                            sendBroadcast(DOWNLOADFINIS,task.getUrl(),100,task.getPath());
-                            notificationUtils.addNotification(resourceId,"下载成功",fileName + fileType, true);
-                        } else {
-                            sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0,e.getMessage());
-                            notificationUtils.addNotification(resourceId,"下载失败",fileName + fileType, true);
-                        }
-
-                    }
-
-                    @Override
-                    protected void warn(BaseDownloadTask task) {
-                        JRLogUtils.e("DownloaderUtils", "有相同任务" + task.getPath());
-                        sendBroadcast(DOWNLOAD_FAIL,task.getUrl(),0,"已存在相同任务");
-                        notificationUtils.addNotification(resourceId,"下载失败",fileName + fileType, true);
-                    }
-                }).start();
+        });
     }
 
     /**
