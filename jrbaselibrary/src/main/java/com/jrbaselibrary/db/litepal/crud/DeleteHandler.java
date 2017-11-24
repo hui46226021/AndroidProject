@@ -375,7 +375,7 @@ class DeleteHandler extends DataHandler {
      * @param modelClass
      *          Used to get the generic table name and value id column.
      * @param supportedGenericFields
-     *          List of all supported generic fields.
+     *          ListBean of all supported generic fields.
      * @param ids
      *          The id array of models.
      */

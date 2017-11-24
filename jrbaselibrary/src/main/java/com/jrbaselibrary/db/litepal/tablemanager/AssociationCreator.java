@@ -425,7 +425,7 @@ public abstract class AssociationCreator extends Generator {
     /**
      * Check if the ColumnModel list contains only id field.
      * @param columnModels
-     *          List contains model fields.
+     *          ListBean contains model fields.
      * @return If ColumnModel list is empty or contains only id, _id field, return true. Otherwise return false.
      */
     private boolean isContainsOnlyIdField(List<ColumnModel> columnModels) {

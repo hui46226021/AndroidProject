@@ -176,9 +176,9 @@ class SaveHandler extends DataHandler {
 	 * @param baseObj
 	 *            Current model to persist.
 	 * @param supportedFields
-	 *            List of all supported fields.
+	 *            ListBean of all supported fields.
      * @param  supportedGenericFields
-     *            List of all supported generic fields.
+     *            ListBean of all supported generic fields.
 	 * @throws InvocationTargetException
 	 * @throws IllegalAccessException
 	 * @throws NoSuchMethodException
@@ -202,7 +202,7 @@ class SaveHandler extends DataHandler {
 	 * @param baseObj
 	 *            Current model to persist.
 	 * @param supportedFields
-	 *            List of all supported fields.
+	 *            ListBean of all supported fields.
 	 * @param values
 	 *            To store data of current model for persisting.
 	 * @throws InvocationTargetException
@@ -243,9 +243,9 @@ class SaveHandler extends DataHandler {
 	 * @param baseObj
 	 *            Current model that is persisted.
 	 * @param supportedFields
-	 *            List of all supported fields.
+	 *            ListBean of all supported fields.
      * @param  supportedGenericFields
-     *            List of all supported generic fields.
+     *            ListBean of all supported generic fields.
 	 * @param id
 	 *            The current model's id.
 	 */
@@ -266,9 +266,9 @@ class SaveHandler extends DataHandler {
 	 * @param baseObj
 	 *            The class of base object.
      * @param supportedFields
-     *            List of all supported fields.
+     *            ListBean of all supported fields.
      * @param  supportedGenericFields
-     *            List of all supported generic fields.
+     *            ListBean of all supported generic fields.
 	 * @throws InvocationTargetException
 	 * @throws IllegalAccessException
 	 * @throws NoSuchMethodException
@@ -293,7 +293,7 @@ class SaveHandler extends DataHandler {
 	 * @param baseObj
 	 *            Current model to update.
 	 * @param supportedFields
-	 *            List of all supported fields.
+	 *            ListBean of all supported fields.
 	 * @param values
 	 *            To store data of current model for updating.
 	 * @throws InvocationTargetException
@@ -335,7 +335,7 @@ class SaveHandler extends DataHandler {
 	 * @param baseObj
 	 *            Current model that is updated.
      * @param  supportedGenericFields
-     *            List of all supported generic fields.
+     *            ListBean of all supported generic fields.
 	 */
 	private void afterUpdate(DataSupport baseObj, List<Field> supportedGenericFields)
             throws InvocationTargetException, IllegalAccessException {
@@ -554,7 +554,7 @@ class SaveHandler extends DataHandler {
      * @param baseObj
      *          Current model that is persisted.
      *@param  supportedGenericFields
-     *            List of all supported generic fields.
+     *            ListBean of all supported generic fields.
      * @param id
      *          The id of current model.
      * @throws IllegalAccessException

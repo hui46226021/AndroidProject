@@ -226,7 +226,7 @@ public abstract class LitePalBase {
 	}
 
 	/**
-	 * If the field type implements from List or Set, regard it as a collection.
+	 * If the field type implements from ListBean or Set, regard it as a collection.
 	 * 
 	 * @param fieldType
 	 *            The field type.
@@ -237,11 +237,11 @@ public abstract class LitePalBase {
 	}
 
 	/**
-	 * If the field type implements from List, regard it as a list.
+	 * If the field type implements from ListBean, regard it as a list.
 	 * 
 	 * @param fieldType
 	 *            The field type.
-	 * @return True if the field type is List, false otherwise.
+	 * @return True if the field type is ListBean, false otherwise.
 	 */
 	protected boolean isList(Class<?> fieldType) {
 		return List.class.isAssignableFrom(fieldType);
@@ -301,12 +301,12 @@ public abstract class LitePalBase {
     }
 
     /**
-     * Get the generic type class of List or Set. If there's no generic type of
-     * List or Set return null.
+     * Get the generic type class of ListBean or Set. If there's no generic type of
+     * ListBean or Set return null.
      *
      * @param field
      *            A generic type field.
-     * @return The generic type of List or Set.
+     * @return The generic type of ListBean or Set.
      */
     protected Class<?> getGenericTypeClass(Field field) {
         Type genericType = field.getGenericType();
@@ -422,8 +422,8 @@ public abstract class LitePalBase {
 	 * Deals with one to any association conditions. e.g. Song and Album. An
 	 * album have many songs, and a song belongs to one album. So if there's an
 	 * Album model defined in Song with private modifier, and in Album there's a
-	 * List or Set with generic type of Song and declared as private modifier,
-	 * they are one2many association. If there's no List or Set defined in
+	 * ListBean or Set with generic type of Song and declared as private modifier,
+	 * they are one2many association. If there's no ListBean or Set defined in
 	 * Album, they will become one2one associations. If there's also a Song
 	 * model defined in Album with private modifier, maybe the album just have
 	 * one song, they are one2one association too.
@@ -473,7 +473,7 @@ public abstract class LitePalBase {
 						}
 						reverseAssociations = true;
 					}
-					// If there's the from class Set or List in
+					// If there's the from class Set or ListBean in
 					// the defined class, they are many2one bidirectional
 					// associations.
 					else if (isCollection(reverseFieldTypeClass)) {
@@ -509,8 +509,8 @@ public abstract class LitePalBase {
 	 * Deals with one to any association conditions. e.g. Song and Album. An
 	 * album have many songs, and a song belongs to one album. So if there's an
 	 * Album model defined in Song with private modifier, and in Album there's a
-	 * List or Set with generic type of Song and declared as private modifier,
-	 * they are one2many association. If there's no List or Set defined in
+	 * ListBean or Set with generic type of Song and declared as private modifier,
+	 * they are one2many association. If there's no ListBean or Set defined in
 	 * Album, they will become one2one associations. If there's also a Song
 	 * model defined in Album with private modifier, maybe the album just have
 	 * one song, they are one2one association too.
@@ -560,7 +560,7 @@ public abstract class LitePalBase {
 							}
 							reverseAssociations = true;
 						}
-						// If there's a List or Set contains from class name
+						// If there's a ListBean or Set contains from class name
 						// defined in the reverse class, they are many2many
 						// association.
 						else if (isCollection(reverseFieldTypeClass)) {
@@ -661,12 +661,12 @@ public abstract class LitePalBase {
 	}
 
 	/**
-	 * Get the generic type name of List or Set. If there's no generic type of
-	 * List or Set return null.
+	 * Get the generic type name of ListBean or Set. If there's no generic type of
+	 * ListBean or Set return null.
 	 * 
 	 * @param field
 	 *            A generic type field.
-	 * @return The name of generic type of List of Set.
+	 * @return The name of generic type of ListBean of Set.
 	 */
 	protected String getGenericTypeName(Field field) {
 		Class<?> genericTypeClass = getGenericTypeClass(field);

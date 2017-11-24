@@ -346,16 +346,16 @@ public class HttpUtils {
      */
     public boolean hasErrors(){
 
-        if(!responseStr.contains("actionErrors")){
-            return true;
-        }
-
-        if(getList(String.class,"actionErrors").size()>0){
-            return true;
-        }else {
-            return false;
-            }
-//        return !getObject(Boolean.class,"success");
+//        if(!responseStr.contains("actionErrors")){
+//            return true;
+//        }
+//
+//        if(getList(String.class,"actionErrors").size()>0){
+//            return true;
+//        }else {
+//            return false;
+//            }
+        return !getObject(Boolean.class,"success");
     }
 
     /**

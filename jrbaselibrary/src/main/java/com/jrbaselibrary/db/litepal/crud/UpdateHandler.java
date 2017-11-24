@@ -322,7 +322,7 @@ class UpdateHandler extends DataHandler {
      * @param baseObj
      *          Current model that is persisted.
      *@param  supportedGenericFields
-     *            List of all supported generic fields.
+     *            ListBean of all supported generic fields.
      * @param ids
      *          The id array of models.
      * @throws IllegalAccessException

@@ -303,7 +303,7 @@ public final class JRSystemUtils {
         //intent.putExtra(Intent.EXTRA_SUBJECT, title);
         intent.putExtra(Intent.EXTRA_TEXT, text);
         ctx.startActivity(Intent.createChooser(intent, title));
-       /* List<ResolveInfo> ris = getShareTargets(ctx);
+       /* ListBean<ResolveInfo> ris = getShareTargets(ctx);
         if (ris != null && ris.size() > 0) {
             ctx.startActivity(Intent.createChooser(intent, title));
         }*/

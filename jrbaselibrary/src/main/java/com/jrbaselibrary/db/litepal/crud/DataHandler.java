@@ -222,7 +222,7 @@ abstract class DataHandler extends LitePalBase {
 	 * @param baseObj
 	 *            Current model to persist or update.
 	 * @param supportedFields
-	 *            List of all supported fields.
+	 *            ListBean of all supported fields.
 	 * @param values
 	 *            To store data of current model for persisting or updating.
 	 * @throws InvocationTargetException
@@ -769,7 +769,7 @@ abstract class DataHandler extends LitePalBase {
      * @param baseObj
      *          The model to set into.
      * @param supportedGenericFields
-     *          List of all supported generic fields.
+     *          ListBean of all supported generic fields.
      * @param genericModelMap
      *          Use HashMap to cache the query information at first loop. Then the rest loop can
      *          get query information directly to speed up.

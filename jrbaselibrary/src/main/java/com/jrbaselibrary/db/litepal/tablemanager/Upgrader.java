@@ -124,7 +124,7 @@ public class Upgrader extends AssociationUpdater {
 	 * there's a field in the class without a corresponding column in the table,
 	 * this field is a new added column. This method find all new added columns.
 	 * 
-	 * @return List with ColumnModel contains information of new columns.
+	 * @return ListBean with ColumnModel contains information of new columns.
 	 */
 	private List<ColumnModel> findColumnsToAdd() {
         List<ColumnModel> columnsToAdd = new ArrayList<ColumnModel>();
@@ -243,7 +243,7 @@ public class Upgrader extends AssociationUpdater {
 	 * table.
 	 * 
 	 * @param columnModelList
-	 *            List with ColumnModel to add new column.
+	 *            ListBean with ColumnModel to add new column.
 	 * @return A SQL list contains add all new columns job.
 	 */
 	private List<String> getAddColumnSQLs(List<ColumnModel> columnModelList) {
@@ -274,7 +274,7 @@ public class Upgrader extends AssociationUpdater {
 	 * should synchronize the changes by adding the corresponding columns.
 	 * 
 	 * @param columnModelList
-	 *            List with ColumnModel to add new column.
+	 *            ListBean with ColumnModel to add new column.
 	 */
 	private void addColumns(List<ColumnModel> columnModelList) {
         LogUtil.d(TAG, "do addColumn");
@@ -289,7 +289,7 @@ public class Upgrader extends AssociationUpdater {
 	 * before columns and create new columns with same name but new types.
 	 * 
 	 * @param columnModelList
-	 *            List with ColumnModel to change column type.
+	 *            ListBean with ColumnModel to change column type.
 	 */
 	private void changeColumnsType(List<ColumnModel> columnModelList) {
         LogUtil.d(TAG, "do changeColumnsType");
@@ -340,10 +340,10 @@ public class Upgrader extends AssociationUpdater {
     }
 
     /**
-     * Generate a SQL List for adding foreign keys. Changing constraints job should remain all the
+     * Generate a SQL ListBean for adding foreign keys. Changing constraints job should remain all the
      * existing columns including foreign keys. This method add origin foreign keys after creating
      * table.
-     * @return A SQL List for adding foreign keys.
+     * @return A SQL ListBean for adding foreign keys.
      */
     private List<String> generateAddForeignKeySQL() {
         List<String> addForeignKeySQLs = new ArrayList<String>();

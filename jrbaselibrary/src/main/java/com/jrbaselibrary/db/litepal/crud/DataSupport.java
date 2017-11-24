@@ -966,17 +966,17 @@ public class DataSupport {
 	 * Finds multiple records by an id array.
 	 * 
 	 * <pre>
-	 * List&lt;Person&gt; people = DataSupport.findAll(Person.class, 1, 2, 3);
+	 * ListBean&lt;Person&gt; people = DataSupport.findAll(Person.class, 1, 2, 3);
 	 * 
 	 * long[] bookIds = { 10, 18 };
-	 * List&lt;Book&gt; books = DataSupport.findAll(Book.class, bookIds);
+	 * ListBean&lt;Book&gt; books = DataSupport.findAll(Book.class, bookIds);
 	 * </pre>
 	 * 
 	 * Of course you can find all records by passing nothing to the ids
 	 * parameter.
 	 * 
 	 * <pre>
-	 * List&lt;Book&gt; allBooks = DataSupport.findAll(Book.class);
+	 * ListBean&lt;Book&gt; allBooks = DataSupport.findAll(Book.class);
 	 * </pre>
 	 * 
 	 * Note that the associated models won't be loaded by default considering
@@ -2114,7 +2114,7 @@ public class DataSupport {
 	 * Get the list which holds all field names to update them into default
 	 * value of model in database.
 	 * 
-	 * @return List holds all the field names which need to be updated into
+	 * @return ListBean holds all the field names which need to be updated into
 	 *         default value of model.
 	 */
 	List<String> getFieldsToSetToDefault() {
@@ -2148,7 +2148,7 @@ public class DataSupport {
 	/**
 	 * Get the associated model's map of self model. It can be used for
 	 * associations actions of CRUD. The key is the name of associated model.
-	 * The value is a List of id of associated models.
+	 * The value is a ListBean of id of associated models.
 	 * 
 	 * @return An associated model's map to update all the foreign key columns
 	 *         of associated models' table with self model's id.

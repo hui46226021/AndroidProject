@@ -372,25 +372,25 @@ public class DBHelper {
 //    DEST lastDest = DataSupport.findLast(DEST.class);
 //    想把DEST表中id为1、3、5、7的数据都查出来，只需要这样写：
 //
-//    List<DEST> mDestList = DataSupport.findAll(DEST.class, 1, 3, 5, 7);
+//    ListBean<DEST> mDestList = DataSupport.findAll(DEST.class, 1, 3, 5, 7);
 //    查询所有数据，只需要这样写：
 //
-//    List<DEST> mDestList = DataSupport.findAll(DEST.class);
+//    ListBean<DEST> mDestList = DataSupport.findAll(DEST.class);
 //    想查询DEST表中所有父类id为"1"的数据，就可以这样写：
 //
-//    List<DEST> mDestList = DataSupport.where("parentId = ?", "1").find(DEST.class);
+//    ListBean<DEST> mDestList = DataSupport.where("parentId = ?", "1").find(DEST.class);
 //    许你并不需要那么多的数据，而是只要cnName和enName这两列数据。那么也很简单，我们只要再增加一个连缀就行了，如下所示：
 //
-//    List<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").find(DEST.class);
+//    ListBean<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").find(DEST.class);
 //    也许你还要数据按照添加的时间倒序排列，那么可以这样：
 //
-//    List<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").order("updateTime desc").find(DEST.class);
+//    ListBean<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").order("updateTime desc").find(DEST.class);
 //    数据太多了，其实你只要前10行就行了，那么可以这样：
 //
-//    List<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").order("updateTime desc").limit(10).find(DEST.class);
+//    ListBean<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").order("updateTime desc").limit(10).find(DEST.class);
 //    如果我们想进行分页展示，那么翻页了，怎么办？可以添加一个偏移量就好了，这样：
 //
-//    List<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").order("updateTime desc").limit(10).offset(10).find(DEST.class);
+//    ListBean<DEST> mDestList = DataSupport.select("cnName", "enName").where("parentId = ?", "1").order("updateTime desc").limit(10).offset(10).find(DEST.class);
 //    LitePal的聚合函数
 //
 //    count()

@@ -88,7 +88,7 @@ abstract class AssociationsAnalyzer extends DataHandler {
 	/**
 	 * Check the associated model collection. If the associated model collection
 	 * is null, try to initialize the associated model collection by the given
-	 * associated field. If the associated field is subclass of List, make an
+	 * associated field. If the associated field is subclass of ListBean, make an
 	 * instance of ArrayList for associated model collection. If the associated
 	 * field is subclass of Set, make an instance of HashSet for associated
 	 * model collection. If the associated model collection is not null, doing

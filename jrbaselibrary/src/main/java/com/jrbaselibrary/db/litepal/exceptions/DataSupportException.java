@@ -41,7 +41,7 @@ public class DataSupportException extends RuntimeException {
 	 * Thrown when developers use wrong field to declare many2one or many2many
 	 * associations.
 	 */
-	public static final String WRONG_FIELD_TYPE_FOR_ASSOCIATIONS = "The field to declare many2one or many2many associations should be List or Set.";
+	public static final String WRONG_FIELD_TYPE_FOR_ASSOCIATIONS = "The field to declare many2one or many2many associations should be ListBean or Set.";
 
 	/**
 	 * Thrown when fail to save a model.
