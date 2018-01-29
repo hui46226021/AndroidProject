@@ -4,6 +4,10 @@ ext{
     COMPILE_SDK_VERSION =25
     BUILD_TOOLS_VERSION ="25.0.0"
     COM_ANDROID_TOOLS_BUILD_VERSION = 'com.android.tools.build:gradle:2.3.2'
+    ANDROID_SUPPORT_V7='com.android.support:appcompat-v7:25.0.0-alpha1'
+    ANDROID_SUPPORT_V4='com.android.support:support-v4:25.0.0-alpha1'
+    ANDROID_SUPPORT_DESIGN='com.android.support:design:26.0.0-alpha1'
+    SUPPORT_VERSON='25.0.0-alpha1'
 }
 
 task clean(type: Delete) {
