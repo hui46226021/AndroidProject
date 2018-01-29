@@ -1,3 +1,6 @@
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
 ext{
     MIN_SDK_VERSION =15
     TARGET_SDK_VERSION =22
@@ -8,7 +11,7 @@ ext{
     ANDROID_SUPPORT_V4='com.android.support:support-v4:25.0.0-alpha1'
     ANDROID_SUPPORT_DESIGN='com.android.support:design:26.0.0-alpha1'
     SUPPORT_VERSON='25.0.0'
-    
+    releaseTime=this.releaseTime
            println "       quu..__\n" +
                     "         \$\$\$b  `---.__\n" +
                     "          \"\$\$bb        `--.                          ___.---uuudP\n" +
@@ -63,6 +66,8 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-def releaseTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
-}
+
+
+
+
+
