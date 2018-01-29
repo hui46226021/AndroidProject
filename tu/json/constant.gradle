@@ -5,7 +5,7 @@ ext{
     BUILD_TOOLS_VERSION ="25.0.0"
     COM_ANDROID_TOOLS_BUILD_VERSION = 'com.android.tools.build:gradle:2.3.2'
 }
-buildscript {
+
     repositories {
        maven{url='http://mvn.jerei.com/nexus/content/groups/public/'}
     }
@@ -17,12 +17,7 @@ buildscript {
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
-}
-allprojects {
-    repositories {
-      maven{url='http://mvn.jerei.com/nexus/content/groups/public/'}
-    }
-}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
